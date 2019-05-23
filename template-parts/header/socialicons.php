@@ -13,8 +13,5 @@
 	</li>
 	<li>
 		<a class="youtube" href="http://www.youtube.com/user/TheCitadelExperience" target="_blank" rel="noopener" title="Citadel YouTube"><i class="fab fa-youtube-square fa-fw"></i></a>
-	</li>
-	<li>
-		<a class="google" href="https://plus.google.com/114656745067051919475" target="_blank" rel="noopener" title="Citadel Google Plus"><i class="fab fa-google-plus-square fa-fw"></i></a>
-	</li>    
+	</li>  
 </ul>
