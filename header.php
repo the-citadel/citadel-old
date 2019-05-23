@@ -26,11 +26,13 @@
 		<!-- Start Secondary Navigation -->
 		<nav id="secondary-nav">
 			<div class="container">
+				<?php if ( has_nav_menu( 'secondary' ) ): ?>
 				<?php wp_nav_menu( array(
 						'theme_location' => 'secondary',
 						'menu_id'        => 'secondary',
 						'container' 	 => '',
 				) ); ?>
+				<?php endif; ?>
 				<div class="right-secondary">
 					<?php
 					//include 'template-parts/header/socialicons.php';
@@ -63,14 +65,19 @@
 			</div>
 			<?php } ?>
 			<div class="right-header">
-				<?php if ( $current_blog_id == 1 ) : ?>
+				<?php if ( ($current_blog_id == 1) && (is_front_page()) ) : ?>
 				<h2 class="secondary-title">The Military College of South Carolina</h2>
+				<?php elseif ( ($current_blog_id == 1) && (!is_front_page()) ) : ?>
+				<p class="secondary-title">The Military College of South Carolina</p>
 				<?php else: ?>
 				<?php
 					switch_to_blog($current_blog_id);
-					$current_blog_details = get_blog_details( array( 'blog_id' => $blog_id ) );
 				?>
-				<h2 class="secondary-title"><?php echo $current_blog_details->blogname; ?></h2>
+				<p class="secondary-title">
+					<a href="<?php echo site_url(); ?>">
+					<?php echo bloginfo(); ?>
+					</a>
+				</p>
 				<?php switch_to_blog(1); ?>
 				<?php endif; ?>
 				<div class="header-buttons">
@@ -90,13 +97,15 @@
 		</div>
 
 		<!-- Start Primary Navigation -->
-			<nav id="primary-nav">
-				<?php wp_nav_menu( array(
-					'theme_location' => 'primary',
-					'menu_id'        => 'primary',
-					'container' 	 => '',
-				) ); ?>
-			</nav>
+		<?php //if ( has_nav_menu( 'primary' ) ): ?>
+		<nav id="primary-nav">
+			<?php wp_nav_menu( array(
+				'theme_location' => 'primary',
+				'menu_id'        => 'primary',
+				'container' 	 => '',
+			) ); ?>
+		</nav>
+		<?php// endif; ?>
 		<!-- End Primary Navigation -->
 
 	</header>
@@ -105,8 +114,11 @@
 
 	<?php if (is_front_page() && has_post_thumbnail() && $blog_id != 1) { ?>
 	<!-- Start Banner Image -->
-	<section id="banner">
-		<?php the_post_thumbnail( 'large' ); ?>
+	<section id="banner" style="background-image: url('<?php echo the_post_thumbnail_url(); ?>')">
+		
+		<header class="entry-header">
+			<h1 class="entry-title"><?php echo bloginfo(); ?></h1>
+		</header><!-- .entry-header -->
 	</section>
 	<!-- End Banner Image -->
 	<?php } ?>

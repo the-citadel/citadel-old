@@ -69,4 +69,5 @@
 
 <!-- External Stylesheets -->
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" lazyload>
-<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet" lazyload>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" lazyload>
+
