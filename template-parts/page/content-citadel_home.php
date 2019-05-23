@@ -1,4 +1,3 @@
-<?php get_header(); ?>
 
 <!-- Home Banner -->
 <section id="home-banner">
@@ -139,5 +138,3 @@
 </section>
 <!-- End Home Video -->
 <?php endif; ?>
-
-<?php get_footer(); ?>
