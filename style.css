@@ -193,7 +193,15 @@ Header Styles
     font-size: 16px;
     margin: 15px 0;
     text-transform: uppercase;
-    font-weight: 100;
+    font-weight: bold;
+}
+
+#citadel-heading .secondary-title a {
+	color: #fff;
+}
+
+#citadel-heading .secondary-title a:hover {
+	text-decoration: underline;
 }
 
 #citadel-heading .header-buttons {
@@ -681,6 +689,12 @@ Main Content
 
 #main-content.no-sidebar {
 	width: 100%;
+	border-left: none;
+	padding: 0;
+	max-width: 800px;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .entry-header .entry-title {
@@ -1216,6 +1230,20 @@ Footer
 
 /*
 ----------
+Ninja Forms
+----------
+*/
+
+.nf-form-cont .nf-form-content {
+	padding: 0;
+}
+
+.nf-form-fields-required {
+	margin-bottom: 10px;
+}
+
+/*
+----------
 Responsive Styles
 ----------
 */
@@ -1549,6 +1577,10 @@ Responsive Styles
 		float: none;
 	}
 
+	.sidebar .widgettitle {
+		margin: 0;
+	}
+
 	.sidebar .widgettitle a {
 		color: #3975B7;
 		cursor: pointer;
@@ -1558,7 +1590,11 @@ Responsive Styles
 		display: inline-block;
 	}
 
-	.sidebar .widget_nav_menu > div {
+	.sidebar .widget_nav_menu {
+		padding-bottom: 40px;
+	}
+
+	.sidebar .widget_nav_menu .menu {
 		display: none;
 	}
 

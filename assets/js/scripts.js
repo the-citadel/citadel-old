@@ -72,6 +72,13 @@ jQuery(document).ready(function($) {
 		});
 	}
 
+	function mainContentHeight() {
+		if (($('#left-sidebar').length) && $('.mobile').is(':hidden')) {
+			var sidebarHeight = $('#left-sidebar').outerHeight(true);
+			$('#main-content').css('min-height', sidebarHeight);
+		}
+	}
+
 	// Shows sub menu of primary nav item and hides other sub menus
 	$('#primary.menu > .menu-item-has-children > a').click(function(e) {
 			e.preventDefault();
@@ -143,10 +150,10 @@ jQuery(document).ready(function($) {
 	});
 
 	// Toggle show/hide sidebar menus on mobile
-	$('.sidebar .widget_nav_menu .widgettitle').click(function(e) {
-		e.preventDefault();
+	$('.sidebar .widget_nav_menu .widgettitle a').click(function(e) {
 		if ($('.mobile').is(':visible')) {
-			$(this).next().stop().slideToggle(500);
+			e.preventDefault();
+			$(this).parent().next().stop().slideToggle(500);
 		}
 	});
 
@@ -171,21 +178,34 @@ jQuery(document).ready(function($) {
 		$('#tools').stop().slideToggle(500);
 	});
 
+	// Add arrow to current page menu item
+	$('.sidebar .widget_nav_menu .current_page_item a, .sidebar .widget_nav_menu .current_page_ancestor a').append('<i class="fas fa-angle-right"></i>');
+
+	// Mobile Functions
+	function mobileFunctions() {
+		if ($('.mobile').is(':visible')) {
+
+		} else {
+			$('.sidebar .widget_nav_menu .menu, #primary-nav').css('display','');
+
+		}
+	}
+	
 	// Functions to call on page load
-	headerHeights();
 	navSpacing();
-	//footerPosition();
+	mainContentHeight();
 	dropdownMenus();
 	toolMenu();
 	tableOverflow();
+	mobileFunctions();
 
 	//Functions to call when window is resized
 	jQuery(window).resize(function($) {
-		headerHeights();
-		//footerPosition();
+		mainContentHeight();
 		dropdownMenus();
 		toolMenu();
 		tableOverflow();
+		mobileFunctions();
 	});
 
 	//Functions to call when window is scrolled
