@@ -86,6 +86,10 @@ a:hover {
 	text-decoration: underline;
 }
 
+img {
+	border: none;
+}
+
 hr {
 	border: none;
 	border-top: 1px solid #CEC7BF;
@@ -194,10 +198,10 @@ Header Styles
 
 #citadel-heading .secondary-title {
 	color: #fff;
-    font-size: 16px;
-    margin: 15px 0;
-    text-transform: uppercase;
-    font-weight: bold;
+	font-size: 16px;
+	margin: 15px 0;
+	text-transform: uppercase;
+	font-weight: bold;
 }
 
 #citadel-heading .secondary-title a {
@@ -654,16 +658,16 @@ Banner Image
 
 #banner {
 	display: block;
-    width: 100%;
-    position: relative;
-    height: 25vw;
-    min-height: 400px;
-    overflow: hidden;
-    background-color: #1F3A60;
-    z-index: 0;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+	width: 100%;
+	position: relative;
+	height: 25vw;
+	min-height: 400px;
+	overflow: hidden;
+	background-color: #1F3A60;
+	z-index: 0;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 #banner::before {
@@ -675,35 +679,36 @@ Banner Image
 	bottom: 0;
 	width: 100%;
 	height: 100%;
-    background-color: #1f3a60;
-    opacity: .7;
+	background-color: #1f3a60;
+	opacity: .7;
 }
 
 #banner img {
 	min-width: 100vw;
-    min-height: 100%;
-    height: auto;
-    width: auto;
-    position: absolute;
-    display: block;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    opacity: .3;
+	min-height: 100%;
+	height: auto;
+	width: auto;
+	position: absolute;
+	display: block;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	opacity: .3;
 }
 
 #banner .entry-header {
 	position: absolute;
-    text-align: center;
-    width: 100%;
-    top: 50%;
-    left: 0;
-    transform: translate(0,-50%);
+	text-align: center;
+	width: 100%;
+	top: 50%;
+	left: 0;
+	transform: translate(0,-50%);
 }
 
 #banner .entry-header h1 {
 	color: #fff;
 	padding: 0 30px;
+	border: none;
 }
 
 /*
@@ -714,10 +719,10 @@ Main Content
 
 #main-content {
 	padding: 0 0 0 30px;
-    display: block;
-    float: right;
-    width: calc(100% - 250px);
-    border-left: 1px solid #CEC7BF;
+	display: block;
+	float: right;
+	width: calc(100% - 250px);
+	border-left: 1px solid #CEC7BF;
 }
 
 #main-content.no-sidebar {
@@ -725,16 +730,22 @@ Main Content
 	border-left: none;
 	padding: 0;
 	max-width: 800px;
-    float: none;
-    margin-left: auto;
-    margin-right: auto;
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .entry-header .entry-title {
 	margin: 0;
-	text-align: center;
-	font-size: 40px;
-	margin-bottom: 30px;
+    text-align: center;
+    font-size: 40px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #CEC7BF;
+}
+
+.entry-header.with-children .entry-title {
+    margin-bottom: 0;
 }
 
 #page {
@@ -1097,7 +1108,7 @@ Entry Content
 }
 
 .entry-content {
-	margin: 40px 0;
+	margin: 30px 0;
 }
 
 .entry-content :first-child {
@@ -1217,7 +1228,7 @@ Sidebars
 
 #left-sidebar {
 	padding: 0 30px 0 0;
-	margin-top: 40px;
+	margin-top: 30px;
 }
 
 #right-sidebar {
@@ -1233,11 +1244,7 @@ Sidebars
 	padding: 0;
 }
 
-.sidebar .widget_nav_menu .children {
-	display: none;
-}
-
-.sidebar .widget_nav_menu ul:not(.children) {
+.sidebar .widget_nav_menu ul:not(.sub-menu) {
 	border-top: 1px solid #CEC7BF;
 }
 
@@ -1281,7 +1288,8 @@ Sidebars
 	margin: 0;
 }
 
-.sidebar .widget_nav_menu .menu-item-has-children {
+.sidebar .widget_nav_menu .menu-item-has-children,
+.sidebar .widget_nav_menu .current-page-ancestor {
 	position: relative;
 }
 
@@ -1317,18 +1325,18 @@ Sidebars
 }
 
 .sidebar .widget_nav_menu .current_page_item a,
-.sidebar .widget_nav_menu .current_page_ancestor a {
+.sidebar .widget_nav_menu .current-page-ancestor a {
 	color: #1F3A60;
 	position: relative;
 	padding-right: 15px;
 }
 
 .sidebar .widget_nav_menu .current_page_item i,
-.sidebar .widget_nav_menu .current_page_ancestor i {
+.sidebar .widget_nav_menu .current-page-ancestor i {
 	position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translate(0,-50%);
+	right: 0;
+	top: 50%;
+	transform: translate(0,-50%);
 }
 
 /*
@@ -1807,7 +1815,7 @@ Responsive Styles
 	
 	.entry-content img {
 		width: 100%;
-    	height: auto;
+		height: auto;
 	}
 
 	.entry-content blockquote {
