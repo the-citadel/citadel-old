@@ -1359,6 +1359,7 @@ Footer
 	text-decoration: underline;
 	display: inline-block;
 	padding: 1px 0;
+	outline-color: #fff;
 }
 
 #footer a:hover {
@@ -1396,10 +1397,10 @@ Footer
 	display: inline-block;
 	vertical-align: middle;
 	margin-right: 40px;
-    font-weight: bold;
-    line-height: 1.1em;
-    font-size: 15px;
-    text-align: left;
+	font-weight: bold;
+	line-height: 1.1em;
+	font-size: 15px;
+	text-align: left;
 }
 
 #footer .footer-contact i {
@@ -1438,9 +1439,9 @@ Footer
 
 #footer .secondary-footer {
 	color: #fff;
-    font-size: 10px;
-    padding: 15px;
-    background-color: #1f3a60;
+	font-size: 10px;
+	padding: 15px;
+	background-color: #1f3a60;
 }
 
 #footer .secondary-footer .container {
