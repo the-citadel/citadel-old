@@ -58,8 +58,8 @@ if ($blog_id == 1) {
 	) );
 
 	register_sidebar(array(
-		'name' 			=> 'Home Spotlight 1',
-		'id'         	=> 'home-spotlight-1',
+		'name' 			=> 'Home Spotlights',
+		'id'         	=> 'home-spotlights',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => "</div>\n",
 		'before_title'  => '<h3 class="widgettitle">',
@@ -67,30 +67,10 @@ if ($blog_id == 1) {
 	) );
 
 	register_sidebar(array(
-		'name' 			=> 'Home Spotlight 2',
-		'id'         	=> 'home-spotlight-2',
+		'name' 			=> 'Home CTA',
+		'id'         	=> 'home-cta',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => "</div>\n",
-		'before_title'  => '<h3 class="widgettitle">',
-		'after_title'   => "</h3>\n",
-	) );
-
-	register_sidebar(array(
-		'name' 			=> 'Home Spotlight 3',
-		'id'         	=> 'home-spotlight-3',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => "</div>\n",
-		'before_title'  => '<h3 class="widgettitle">',
-		'after_title'   => "</h3>\n",
-	) );
-
-	register_sidebar(array(
-		'name' 			=> 'Home Spotlight 4',
-		'id'         	=> 'home-spotlight-4',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => "</div>\n",
-		'before_title'  => '<h3 class="widgettitle">',
-		'after_title'   => "</h3>\n",
 	) );
 
 	register_sidebar(array(

@@ -40,7 +40,6 @@
 		</p>
 		<?php endif; ?>
 
-		<hr style="margin: 0 0 30px;"/>
 		<?php endif; ?>
 
 		<?php if ( has_nav_menu( 'leftmenu' ) ): ?>
@@ -50,8 +49,8 @@
 			</h2>
 			<div class="widget_nav_menu">
 				<?php wp_nav_menu( array(
-					'theme_location' => 'primary',
-					'menu_id'        => 'primary',
+					'theme_location' => 'leftmenu',
+					'menu_id'        => 'leftmenu',
 					'container' 	 => '',
 				) ); ?>
 			</div>
