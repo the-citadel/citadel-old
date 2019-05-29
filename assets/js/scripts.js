@@ -1,15 +1,5 @@
 jQuery(document).ready(function($) {
 
-	// Evenly spaces primary nav items
-	function navSpacing() {
-		var n = $('#primary.menu > li').length,
-			width = 100 / n;
-
-		$('#primary.menu > li').each(function() {
-			$(this).css('width', width + '%');
-		});
-	}
-
 	// Pushes footer to bottom of page if content is short
 	function footerPosition() {
 		var headerHeight = $('#main-header').outerHeight(),
@@ -36,7 +26,7 @@ jQuery(document).ready(function($) {
 				function() {
 					$(this).removeClass('hover');
 					if ($(this).hasClass('menu-item-has-children')) {
-						$(this).find('.sub-menu').hide();
+						$(this).find('> .sub-menu').hide();
 					}
 				}
 			);
@@ -72,12 +62,61 @@ jQuery(document).ready(function($) {
 		});
 	}
 
+	// Sets minimum height for content based on sidebar
 	function mainContentHeight() {
 		if (($('#left-sidebar').length) && $('.mobile').is(':hidden')) {
 			var sidebarHeight = $('#left-sidebar').outerHeight(true);
 			$('#main-content').css('min-height', sidebarHeight);
 		}
 	}
+
+	// Adds/removes active class for homepage classifications
+	function homeClassifications() {
+		$('#home-journey .classification').hover(
+			function() {
+				if ( !($(this).hasClass('active')) ) {
+					$('#home-journey .classification.active').removeClass('active');
+					$(this).addClass('active');
+				}
+			},
+
+			function() {
+				$('#home-journey .classification.active').removeClass('active');
+			}
+		);
+
+		$('#home-journey .classification a').focus(function() {
+			if ( !($(this).parent().hasClass('active')) ) {
+				$('#home-journey .classification.active').removeClass('active');
+				$(this).parent().addClass('active');
+			}
+		});
+	}
+
+	// Evenly spaces items
+	function evenWidth(e) {
+		var n = $(e).length,
+			width = 100 / n;
+
+		$(e).css('width', width + '%');
+	}
+
+	evenWidth('#home-ctas a');
+	evenWidth('#primary-nav > ul > li');
+	evenWidth('.widget_citadel_spotlight_widget');
+
+	$('#primary-nav .sub-menu').each(function() {
+		var n = $(this).find('> .nav-title').length,
+			width = 100 / n;
+
+		$(this).find('> .nav-title').css('width', width + '%');
+	});
+
+	$('#primary-nav > ul > li > .sub-menu').each(function() {
+		if (!($(this).find('.sub-menu').length)) {
+			$(this).parent().addClass('single');
+		}
+	});
 
 	// Shows sub menu of primary nav item and hides other sub menus
 	$('#primary.menu > .menu-item-has-children > a').click(function(e) {
@@ -158,12 +197,12 @@ jQuery(document).ready(function($) {
 	});
 
 	// Sidebar sub menu add arrow icon and show sub menu if it or parent is active
-	$('.sidebar .widget_nav_menu .menu-item-has-children').each(function() {
-		$(this).prepend('<a href="#" class="sub-nav-toggle"><i class="fas fa-angle-down fa-fw"></i></a>');
-		if (($(this).hasClass('current_page_parent')) || ($(this).hasClass('current-menu-item'))) {
-			$(this).children('.sub-nav-toggle').addClass('active');
-		}
-	});
+	// $('.sidebar .widget_nav_menu .menu-item-has-children').each(function() {
+	// 	$(this).prepend('<a href="#" class="sub-nav-toggle"><i class="fas fa-angle-down fa-fw"></i></a>');
+	// 	if (($(this).hasClass('current_page_parent')) || ($(this).hasClass('current-menu-item'))) {
+	// 		$(this).children('.sub-nav-toggle').addClass('active');
+	// 	}
+	// });
 
 	// Sidebar sub menu toggle show/hide
 	$('.sidebar .widget_nav_menu .sub-nav-toggle').click(function(e) {
@@ -179,7 +218,7 @@ jQuery(document).ready(function($) {
 	});
 
 	// Add arrow to current page menu item
-	$('.sidebar .widget_nav_menu .current_page_item a, .sidebar .widget_nav_menu .current_page_ancestor a').append('<i class="fas fa-angle-right"></i>');
+	$('.sidebar .widget_nav_menu .current_page_item a, .sidebar .widget_nav_menu .current-page-ancestor a').append('<i class="fas fa-angle-right"></i>');
 
 	// Mobile Functions
 	function mobileFunctions() {
@@ -192,12 +231,13 @@ jQuery(document).ready(function($) {
 	}
 	
 	// Functions to call on page load
-	navSpacing();
 	mainContentHeight();
 	dropdownMenus();
 	toolMenu();
 	tableOverflow();
 	mobileFunctions();
+	homeClassifications();
+	//ctaWidth();
 
 	//Functions to call when window is resized
 	jQuery(window).resize(function($) {

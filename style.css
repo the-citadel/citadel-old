@@ -746,6 +746,8 @@ Main Content
 #citadel-home #page {
 	display: block;
 	overflow: visible;
+	max-width: 100%;
+	padding: 0;
 }
 
 #citadel-home #page > hr {
@@ -754,29 +756,29 @@ Main Content
 
 #citadel-home .entry-header {
 	position: absolute;
-    margin-bottom: 0;
-    top: calc(-50vh + 15px);
+	margin-bottom: 0;
+	top: calc(-50vh + 15px);
 	left: 0;
-    width: 100%;
-    text-align: center;
+	width: 100%;
+	text-align: center;
 }
 
 #citadel-home .entry-header .entry-title {
 	margin-bottom: 0;
-    max-width: 600px;
-    line-height: 55px;
-    font-size: 50px;
-    margin: 0 auto;
-    color: #fff;
+	max-width: 600px;
+	line-height: 55px;
+	font-size: 50px;
+	margin: 0 auto;
+	color: #fff;
 }
 
 #breadcrumbs {
 	font-size: 12px;
-    margin-top: 0;
-    margin-bottom: 10px;
-    text-align: center;
-    list-style: none;
-    padding: 0;
+	margin-top: 0;
+	margin-bottom: 10px;
+	text-align: center;
+	list-style: none;
+	padding: 0;
 }
 
 ol#breadcrumbs li {
@@ -790,96 +792,292 @@ ol#breadcrumbs li {
 
 .section-items-pages {
 	text-align: center;
-    border-top: 1px solid #CEC7BF;
-    margin: 0;
+    border-bottom: 1px solid #CEC7BF;
+    margin: 0 0 30px 0;
     padding: 3px 0;
     font-weight: bold;
 }
 
 .section-items-pages a {
-    display: inline-block;
-    padding: 5px 10px;
-    margin: 3px 0 3px -5px;
-    border-right: 1px solid #CEC7BF;
+	display: inline-block;
+	padding: 5px 10px;
+	margin: 3px 0 3px -5px;
+	border-right: 1px solid #CEC7BF;
 }
 
-#home-cta {
-	float: none;
-    width: 100%;
-    background-color: #1f3a60;
-    padding: 30px 0;
-    clear: both;
+#home-banner {
+	max-height: 77vh;
+	position: relative;
+	overflow: hidden;
+	height: 54vw;
+	z-index: 0;
+	width: 100%;
 }
 
-#home-cta .container {
+#home-banner video {
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	transform: translate(-50%,-50%);
+}
+
+#citadel-home main section {
+	padding: 3em 0;
+	clear: both;
+}
+
+#citadel-home section h2 {
+	text-align: center;
+	font-size: 2.5em;
+	margin-top: 0;
+}
+
+#home-infographic {
+	background-color: rgba(206, 199, 191, .4);
+	overflow: visible;
+	padding: 3em 0;
+}
+
+#home-infographic a,
+#home-ctas .container a {
+	float: left;
+	padding: 0 15px;
+	width: 25%;
+	text-align: center;
+	display: block;
+}
+
+#home-infographic a {
+	text-decoration: none;
+	color: #282E36;
+	font-size: 14px;
+}
+
+#home-infographic img {
+	width: 100%;
+	max-width: 150px;
+	margin: 0 auto;
+	height: auto;
+	display: block;
+}
+
+#home-infographic p {
+	line-height: 16px;
+	margin: 0;
+}
+
+#home-spotlights .widget_citadel_spotlight_widget {
+	padding: 0 15px;
+	float: left;
+}
+
+#home-spotlights .widget_citadel_spotlight_widget img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: 8%;
+}
+
+#home-spotlights .widget_citadel_spotlight_widget > a {
+	display: block;
+}
+
+#home-spotlights .widget_citadel_spotlight_widget h3 {
+	margin: 15px 0;
+}
+
+#home-spotlights .widget_citadel_spotlight_widget p {
+	margin-top: 0;
+}
+
+#home-spotlights .widget_citadel_spotlight_widget .spotlight-more {
+	white-space: nowrap;
+}
+
+#home-spotlights .widget_citadel_spotlight_widget .spotlight-more i {
+	margin-left: 5px;
+	vertical-align: middle;
+}
+
+#home-ctas {
+	background-color: #3975B7;
+	padding: 2em 0;
+}
+
+#home-ctas i {
+	color: #ffffff;
+	background-color: #1f3a60;
+	padding: 13px 9px;
+	font-size: 34px;
+	border-radius: 50px;
+	border: 3px solid #ffffff;
+	margin-bottom: 10px;
+	width: 66px;
+	transition: all .5s ease;
+}
+
+#home-ctas a {
+	color: #fff;
+	text-transform: uppercase;
+	float: left;
+	text-align: center;
+	padding: 0 10px;
+}
+
+#home-ctas a:hover i, #home-ctas a:focus i {
+	background-color: #fff;
+	color: #1f3a60;
+}
+
+#home-ctas span {
+	display: block;
+}
+
+#citadel-home section#home-journey {
+	padding: 0;
+}
+
+#home-journey .classification-container {
+	height: 70vh;
+	overflow: hidden;
+	width: 100%;
 	display: table;
+}
+
+#home-journey .classification {
+	display: table-cell;
+	height: 100%;
+	vertical-align: middle;
+	position: relative;
+	overflow: hidden;
+	width: 14%;
+	-webkit-transition: all ease .5s;
+	-moz-transition: all ease .5s;
+	-o-transition: all ease .5s;
+	-ms-transition: all ease .5s;
+	transition: all ease .5s;
+}
+
+#home-journey .classification.active {
+	width: 44%;
+}
+
+#home-journey .classification a {
+	display: block;
+	height: 100%;
+	width: 100%;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#home-journey .classification .title {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	z-index: 1;
+	background-color: #1F3A60;
+	opacity: 0;
+	font-weight: 600;
+	text-transform: uppercase;
+	color: #fff;
+	font-size: 1.75em;
+	-webkit-transition: all ease .5s;
+	-moz-transition: all ease .5s;
+	-o-transition: all ease .5s;
+	-ms-transition: all ease .5s;
+	transition: all ease .5s;
+}
+
+#home-journey .classification.active .title {
+	opacity: .85;
+}
+
+#home-journey .classification span {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translate(0, -50%);
+	width: 100%;
 	text-align: center;
 }
 
-#home-cta .widget {
-	display: inline-block;
-    text-align: center;
-    vertical-align: top;
-    padding: 10px 15px;
-    margin-bottom: 0;
-    width: 25%;
+#home-news-events {
+	background-color: rgba(206, 199, 191, .4);
 }
 
-#home-cta .widget a {
-	display: inline-block;
+#home-news-events .news-item {
+	float: left;
+	width: 33.333%;
+	overflow: hidden;
+	padding: 15px;
+	font-size: 16px;
 }
 
-#home-cta .widget .cta-icon {
-	display: inline-block;
-    font-size: 34px;
-    border: 3px solid #fff;
-    border-radius: 100%;
-    padding: 10px 12px;
-    color: #fff;
-    background-color: #3975b7;
-    -webkit-transition: all .5s ease;
-    -moz-transition: all .5s ease;
-    -ms-transition: all .5s ease;
-    -o-transition: all .5s ease;
-    transition: all .5s ease;
+#home-news-events .news-item > a {
+	background-color: #ffffff;
+	padding: 15px;
+	display: block;
+	border-radius: 4%;
+    overflow: hidden;
 }
 
-#home-cta .widget a:hover .cta-icon,
-#home-cta .widget a:focus .cta-icon {
-	background-color: #fff;
-    color: #3975b7;
+#home-news-events .news-item > a > div {
+	position: relative;
+	height: 230px;
+	overflow: hidden;
+	margin: -15px -15px 15px -15px;
 }
 
-#home-cta .widget span {
-	text-transform: uppercase;
-    display: block;
-    padding: 8px 0 0;
-    font-size: 18px;
-    color: #ffffff;
+#home-news-events .news-item > a > div img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	height: 100%;
+	width: auto;
+	-webkit-transition: all ease .5s;
+	-moz-transition: all ease .5s;
+	-o-transition: all ease .5s;
+	-ms-transition: all ease .5s;
+	transition: all ease .5s;
 }
 
-#home-cta .widget a:hover span,
-#home-cta .widget a:focus span {
-	text-decoration: underline;
+#home-news-events .news-item:hover > a > div img {
+	height: 110%;
+}
+
+#home-news-events .news-item > a > p:nth-child(1) {
+	display: none;
+}
+
+#home-news-events .news-item > a > p:nth-last-child(1) {
+	margin: 0;
+}
+
+#home-news-events .news-item img.size-thumbnail {
+	display: none;
 }
 
 #home-feature-video {
 	width: 100%;
 	float: none;
 	background: transparent url(http://www.citadel.edu/root/templates/citadel-new-home/images/eh-landing-page/video-bg.jpg) no-repeat center top;
-    background-size: cover;
+	background-size: cover;
 }
 
-#home-feature-video .video-container {
-	max-width: 600px;
-    padding: 0;
-    margin: 0 auto;
-    width: 100%;
-    overflow: hidden;
+main section#home-video {
+	padding: 0;
+	background: transparent url(assets/images/homepage/video-bg.jpg) no-repeat center top;
+	background-size: cover;
+	padding: 0;
 }
 
-#home-feature-video .widget {
-	margin-bottom: 0;
+#home-video .container {
+	max-width: 800px;
 }
 
 /*
@@ -1554,6 +1752,38 @@ Responsive Styles
 	
 	#home-cta .widget {
 		width: auto;
+	}
+
+	#home-journey .classification-container {
+		height: auto;
+		display: block;
+		overflow: visible;
+	}
+
+	#home-journey .classification {
+		display: block;
+		height: auto;
+		width: 50%;
+		height: 50vw;
+		float: left;
+	}
+
+	#home-journey .classification:nth-child(1),
+	#home-journey .classification.active:nth-child(1) {
+		height: 100vw;
+		width: 100%;
+	}
+
+	#home-journey .classification.active {
+		width: 50%;
+	}
+
+	#home-journey .classification img {
+		display: block;
+	}
+
+	#home-journey .classification .title {
+		opacity: .85;
 	}
 
 	#main-content {
