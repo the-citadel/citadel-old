@@ -12,15 +12,6 @@ add_action( 'wp_enqueue_scripts', 'citadel_adding_scripts' );
 // Add post thumbnail feature
 add_theme_support( 'post-thumbnails' );
 
-// Customizer settings
-include('inc/customizer.php');
-
-// Custom WP admin settings
-include('inc/admin.php');
-
-// Default new WPMU settings
-include('inc/musettings.php');
-
 /*
 ----------
 Add New Menus & Widget Areas
