@@ -53,14 +53,14 @@
 		<div id="citadel-heading" class="container">
 			<?php if ( $current_blog_id == 1 && is_front_page() ) { ?>
 			<h1 class="header-img">
-				<a href="<?php echo network_site_url(); ?>">
-					<img src="<?php echo network_site_url(); ?>/wp-content/themes/citadel/assets/images/citadel-logo-white.png" alt="<?php echo get_bloginfo( 'name' ); ?>">
+				<a href="<?php echo get_blog_details( 1 )->path; ?>">
+					<img src="<?php echo get_blog_details( 1 )->path; ?>/wp-content/themes/citadel/assets/images/citadel-logo-white.png" alt="<?php echo get_bloginfo( 'name' ); ?>">
 				</a>
 			</h1>
 			<?php } else { ?>
 			<div class="header-img">
-				<a href="<?php echo network_site_url(); ?>">
-					<img src="<?php echo network_site_url(); ?>/wp-content/themes/citadel/assets/images/citadel-logo-white.png" alt="<?php echo get_bloginfo( 'name' ); ?>">
+				<a href="<?php echo get_blog_details( 1 )->path; ?>">
+					<img src="<?php echo get_blog_details( 1 )->path; ?>/wp-content/themes/citadel/assets/images/citadel-logo-white.png" alt="<?php echo get_bloginfo( 'name' ); ?>">
 				</a>
 			</div>
 			<?php } ?>
