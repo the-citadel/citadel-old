@@ -96,7 +96,7 @@ function the_breadcrumb()
     $before = '<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><span class="current" itemprop="title">'; // tag before the current crumb
     $after = '</span></li>'; // tag after the current crumb
     global $post;
-    $networkHomeLink = network_site_url();
+    $networkHomeLink = get_blog_details( 1 )->path;
     $homeLink = get_bloginfo('url');
     if ($showOnHome == 1) {
         echo '<ol id="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . $networkHomeLink . '" itemprop="url"><span itemprop="title">The Citadel</span></a></li> ' . $delimiter . ' <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . $homeLink . '" itemprop="url"><span itemprop="title">' . $home . '</span></a></li> ' . $delimiter . ' ';
@@ -207,6 +207,41 @@ function prefix_nav_description( $item_output, $item, $depth, $args ) {
     return $item_output;
 }
 add_filter( 'walker_nav_menu_start_el', 'prefix_nav_description', 10, 4 );
+
+/*
+----------
+Approved Gutenberg Blocks
+----------
+*/
+
+$user = wp_get_current_user();
+
+$allowed_roles = array('super_admin', 'administrator');
+
+if( !array_intersect($allowed_roles, $user->roles ) ) {
+	add_filter( 'allowed_block_types', 'citadel_allowed_block_types' );
+	function citadel_allowed_block_types( $allowed_blocks ) {
+		return array(
+			'core/paragraph',
+			'core/heading',
+			'core/image',
+			'core/list',
+			'core/gallery',
+			'core/quote',
+			'core/file',			
+			'core/video',
+			'core/table',
+			'core/media-text',
+			'core/separator',
+			'core/shortcode',
+			'core-embed/twitter',
+			'core-embed/youtube',
+			'core-embed/facebook',
+			'core-embed/instagram',
+			'core-embed/vimeo',
+		);
+	}
+}
 
 /*
 ----------
