@@ -220,6 +220,78 @@ jQuery(document).ready(function($) {
 	// Add arrow to current page menu item
 	$('.sidebar .widget_nav_menu .current_page_item a, .sidebar .widget_nav_menu .current-page-ancestor a').append('<i class="fas fa-angle-right"></i>');
 
+	//Search functionality
+	function listingHeight() {
+		var windowHeight = $(window).height(),
+			searchHeight = $('#search-overlay .search-form').outerHeight(),
+			finalHeight = windowHeight - searchHeight,
+			listHeight = $('#site-list').outerHeight();
+
+			console.log(windowHeight + ', ' + searchHeight + ', ' + finalHeight + ', ' + listHeight);
+
+		if (finalHeight < $('#site-list').outerHeight()) {
+			$('#site-list').css('overflow-y', 'scroll');
+		} else {
+			$('#site-list').css('overflow-y', '');
+		}
+
+		$('#site-list').css('max-height', finalHeight);
+	}
+
+	function filterListing($term) {
+
+		$('#site-list li').each(function() {
+			var value = $(this).text(),
+				lowerTerm = $term.toLowerCase();
+
+			if (!$('#search-overlay .search-field').val()){
+				$('#site-list').hide();
+			} else {
+				if (!$('#site-list').is(':visible')) {
+					$('#site-list').fadeIn(500);
+				}
+			}
+
+			if (!(value.toLowerCase().indexOf(lowerTerm) >= 0)) { // If term does NOT match
+				$(this).removeClass('visible').addClass('hidden');
+			} else { // If term does match
+				$(this).removeClass('hidden').addClass('visible');
+			}
+		});
+
+		var error = 'Press enter to search the site...';
+
+		if (!($('#site-list li.visible').length > 0)) {
+			if ($('#site-list .error').length) {
+				$('#site-list .error').show();
+			} else {
+				$('#site-list').append('<li class="error">' + error  + '</li>');
+			}
+		} else {
+			$('#site-list .error').hide();
+		}
+	}
+
+	$('#search-toggle').click(function() {
+		$('body').addClass('noScroll');
+		$('#search-overlay').fadeIn(500);
+		$('#search-overlay .search-field').focus();
+	});
+
+	$('#search-close').click(function() {
+		$('body').removeClass('noScroll');
+		$('#search-overlay').fadeOut(500);
+		$('#search-overlay .search-field').focusout().val('');
+		$('#search-overlay .search-form').removeClass('active');
+		$('#site-list').hide();
+	});
+
+	$('#search-overlay .search-field').keyup(function() {
+		var entry = $(this).val();
+		$('#search-overlay .search-form').addClass('active');
+		filterListing(entry);
+	});
+
 	// Mobile Functions
 	function mobileFunctions() {
 		if ($('.mobile').is(':visible')) {
@@ -237,6 +309,7 @@ jQuery(document).ready(function($) {
 	tableOverflow();
 	mobileFunctions();
 	homeClassifications();
+	listingHeight();
 	//ctaWidth();
 
 	//Functions to call when window is resized
@@ -246,6 +319,7 @@ jQuery(document).ready(function($) {
 		toolMenu();
 		tableOverflow();
 		mobileFunctions();
+		listingHeight();
 	});
 
 	//Functions to call when window is scrolled
