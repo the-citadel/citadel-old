@@ -1,12 +1,13 @@
 /*
-Theme Name: Citadel
-Theme URI: http://citadel.edu/web/
-Author: The Citadel Webmaster
-Author URI: http://citadel.edu/web/
-Description: Theme for The Citadel, Military College of South Carolina. Development started in September 2018.
-Version: 1.0.0
-Text Domain: citadel
-Tags: one-column, two-columns, flexible-header, accessibility-ready, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
+Theme Name: 	Citadel
+Theme URI: 		http://citadel.edu/
+Author: 		The Citadel Webmaster
+Author URI: 	http://citadel.edu/
+Description: 	Theme for The Citadel, Military College of South Carolina. Development started in September 2018.
+Version: 		1.0.0
+License:      	GNU General Public License v2 or later
+License URI:  	http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: 	citadel
 */
 
 /*
@@ -609,10 +610,9 @@ nav a {
 	right: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(255, 255, 255, .95);
+	background-color: rgba(255, 255, 255, .98);
 	z-index: 999;
 	display: none;
-	overflow-y: scroll;
 }
 
 #search-toggle {
@@ -700,6 +700,7 @@ nav a {
 	display: none;
 	height: 100%;
 	border-top: 1px solid #CEC7BF;
+	overflow-y: scroll;
 }
 
 #search-overlay #site-list li {
