@@ -2,17 +2,19 @@ jQuery(document).ready(function($) {
 
 	// Pushes footer to bottom of page if content is short
 	function footerPosition() {
-		var headerHeight = $('#main-header').outerHeight(),
-			pageHeight = $('#page').outerHeight(),
-			footerHeight = $('#footer').outerHeight(),
+		var headerHeight = $('#main-header').height(),
+			pageHeight = $('#page').height(),
+			footerHeight = $('#footer').height(),
 			windowHeight = $(window).height(),
-			totalHeight = headerHeight + pageHeight + footerHeight;
+			mainHeight = windowHeight - (headerHeight + footerHeight) - 7;
 
-		if (windowHeight > totalHeight) {
-			$('#footer').css('position', 'absolute');
-		} else {
-			$('#footer').css('position', '');
-		}
+			if (pageHeight >= mainHeight) {
+				$('#page').css('min-height', '');
+			} else {
+				$('#page').css('min-height', mainHeight);
+			}
+			
+
 	}
 
 	// Hides dropdown menus on hover out
@@ -310,7 +312,7 @@ jQuery(document).ready(function($) {
 	mobileFunctions();
 	homeClassifications();
 	listingHeight();
-	//ctaWidth();
+	footerPosition();
 
 	//Functions to call when window is resized
 	jQuery(window).resize(function($) {
@@ -320,6 +322,7 @@ jQuery(document).ready(function($) {
 		tableOverflow();
 		mobileFunctions();
 		listingHeight();
+		footerPosition();
 	});
 
 	//Functions to call when window is scrolled

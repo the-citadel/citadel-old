@@ -393,28 +393,3 @@ function my_cpt_row_actions( $actions, $post ) {
     }
     return $actions;
 }
-
-// Remove Dashboard Widgets
-function remove_dashboard_widgets() {
-	remove_meta_box( 'dashboard_activity', 'dashboard', 'normal' );   // Recent Activity
-	remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' ); // Recent Comments
-	remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );  // Incoming Links
-	remove_meta_box( 'dashboard_plugins', 'dashboard', 'normal' );   // Plugins
-	remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );  // Quick Press
-	remove_meta_box( 'dashboard_recent_drafts', 'dashboard', 'side' );  // Recent Drafts
-	remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );   // WordPress blog
-	remove_meta_box( 'dashboard_secondary', 'dashboard', 'side' );   // Other WordPress News
-	remove_meta_box('dashboard_right_now', 'dashboard', 'normal'); //Removes the 'At a Glance' widget
-}
-add_action( 'wp_dashboard_setup', 'remove_dashboard_widgets' );
-
-remove_action( 'welcome_panel', 'wp_welcome_panel' );
-remove_action( 'try_gutenberg_panel', 'wp_try_gutenberg_panel' );
-
-add_action('wp_network_dashboard_setup', 'hhs_remove_network_dashboard_widgets' );
-function hhs_remove_network_dashboard_widgets() {
-    remove_meta_box ( 'network_dashboard_right_now', 'dashboard-network', 'normal' ); // Right Now
-    remove_meta_box ( 'dashboard_plugins', 'dashboard-network', 'normal' ); // Plugins
-    remove_meta_box ( 'dashboard_primary', 'dashboard-network', 'side' ); // WordPress Blog
-    remove_meta_box ( 'dashboard_secondary', 'dashboard-network', 'side' ); // Other WordPress News
-}
