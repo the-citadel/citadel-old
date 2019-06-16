@@ -1,9 +1,5 @@
 <?php $unique_id = esc_attr( uniqid( 'search-form-' ) ); ?>
 
-<button id="search-toggle" type="button" aria-label="Search citadel.edu">
-	<span class="screen-reader-text"><i class="fas fa-search"></i> Search</span>
-</button>
-
 <section id="search-overlay">
 	<button id="search-close" aria-label="Close search">
 		<span class="screen-reader-text"><i class="fas fa-times"></i></span>

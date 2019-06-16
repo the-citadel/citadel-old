@@ -310,6 +310,11 @@ Header Styles
 	background-color: #3975B7;
 }
 
+#mobile-buttons a:hover {
+	background-color: #ffffff;
+	color: #3975B7;
+}
+
 #mobile-buttons a.active {
 	color: #3975B7;
 	background-color: #fff;
@@ -538,7 +543,6 @@ nav a {
 
 #secondary-nav .right-secondary a {
 	display: inline-block;
-	vertical-align: middle;
 	margin-left: 5px;
 }
 
@@ -615,19 +619,20 @@ nav a {
 	display: none;
 }
 
-#search-toggle {
+.search-toggle {
 	background-color: #3975b7;
     border: none;
     color: #ffffff;
     padding: 5px 10px;
     cursor: pointer;
+    font-size: 1em;
 }
 
-#search-toggle i {
+.search-toggle i {
 	margin-right: 5px;
 }
 
-#search-toggle:hover {
+.search-toggle:hover {
 	color: #3975b7;
 	background-color: #ffffff;
 }
@@ -642,6 +647,7 @@ nav a {
     font-size: 2em;
     color: #3975b7;
     cursor: pointer;
+    z-index: 999;
 }
 
 #search-close:hover {
@@ -680,6 +686,9 @@ nav a {
 	width: 100%;
     font-size: 2em;
     padding: 5px 15px;
+    border-radius: 0;
+    border-style: none;
+    border: 1px solid #CEC7BF;
 }
 
 #search-overlay .search-form .search-submit {
@@ -701,6 +710,8 @@ nav a {
 	height: 100%;
 	border-top: 1px solid #CEC7BF;
 	overflow-y: scroll;
+	padding: 0;
+	list-style: none;
 }
 
 #search-overlay #site-list li {
@@ -823,6 +834,7 @@ Main Content
 	margin: 0;
 	text-align: center;
 	font-size: 40px;
+	line-height: 1.1;
 	padding-bottom: 30px;
 	margin-bottom: 30px;
 	border-bottom: 1px solid #CEC7BF;
@@ -1692,11 +1704,6 @@ Responsive Styles
 		display: block;
 	}
 
-	#main-header .search-form {
-		display: none;
-		overflow: visible;
-	}
-
 	#main-header .search-form .search-field {
 		width: 100%;
 		text-align: center;
@@ -1709,12 +1716,9 @@ Responsive Styles
 		font-weight: normal;
 	}
 
-	#main-header .search-form .search-submit {
-		position: absolute;
-		right: 0;
-		top: 0;
-		font-size: 18px;
-		padding: 10px 15px;
+	#search-overlay #site-list a,
+	#search-overlay #site-list .error {
+		font-size: 1.5em;
 	}
 
 	#secondary li {

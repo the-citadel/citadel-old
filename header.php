@@ -22,7 +22,7 @@
 	<!-- Start Header -->
 	<?php switch_to_blog(1); ?>
 	<header id="main-header">
-
+		<?php include 'searchform.php'; ?>
 		<!-- Start Secondary Navigation -->
 		<nav id="secondary-nav">
 			<div class="container">
@@ -36,8 +36,7 @@
 				<div class="right-secondary">
 					<?php
 					//include 'template-parts/header/socialicons.php';
-
-					include 'searchform.php';
+					include 'template-parts/header/search-toggle.php';
 
 					?>
 					<a href="#" class="tools-toggle" role="button">Tools <i class="fas fa-angle-down"></i></a>

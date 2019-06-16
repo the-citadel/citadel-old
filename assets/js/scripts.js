@@ -149,13 +149,22 @@ jQuery(document).ready(function($) {
 		}
 	});
 
+	function searchToggle() {
+		$('body').addClass('noScroll');
+		$('#search-overlay').fadeIn(500);
+		$('#search-overlay .search-field').focus();
+	}
+
+	$('.search-toggle').click(function() {
+		searchToggle();
+	});
+
 	// Mobile search button functionality
 	$('#mobile-buttons .mobile-search').click(function(e) {
 		e.preventDefault();
-		$(this).toggleClass('active');
-		$(this).children().toggleClass('fa-search fa-times');
-		$('#mobile-search form').stop().slideToggle(250);
-		$('#mobile-search input').focus();
+		// $(this).toggleClass('active');
+		// $(this).children().toggleClass('fa-search fa-times');
+		searchToggle();
 		
 		if ($('#mobile-buttons .mobile-menu').hasClass('active')) {
 			$('nav').stop().slideUp(500);
@@ -229,8 +238,6 @@ jQuery(document).ready(function($) {
 			finalHeight = windowHeight - searchHeight,
 			listHeight = $('#site-list').outerHeight();
 
-			console.log(windowHeight + ', ' + searchHeight + ', ' + finalHeight + ', ' + listHeight);
-
 		if (finalHeight < $('#site-list').outerHeight()) {
 			$('#site-list').css('overflow-y', 'scroll');
 		} else {
@@ -272,13 +279,7 @@ jQuery(document).ready(function($) {
 		} else {
 			$('#site-list .error').hide();
 		}
-	}
-
-	$('#search-toggle').click(function() {
-		$('body').addClass('noScroll');
-		$('#search-overlay').fadeIn(500);
-		$('#search-overlay .search-field').focus();
-	});
+	}	
 
 	$('#search-close').click(function() {
 		$('body').removeClass('noScroll');
