@@ -1478,7 +1478,7 @@ Footer
 #footer .footer-img {
 	display: inline-block;
 	vertical-align: middle;
-	margin-right: 40px;
+	margin-right: 20px;
 }
 
 #footer .footer-img a {
@@ -1494,7 +1494,7 @@ Footer
 #footer .footer-contact {
 	display: inline-block;
 	vertical-align: middle;
-	margin-right: 40px;
+	margin: 10px 20px;
 	font-weight: bold;
 	line-height: 1.1em;
 	font-size: 15px;
@@ -1515,7 +1515,7 @@ Footer
 
 #footer .social-links {
 	text-align: center;
-	margin-bottom: 5px;
+	margin: 10px 20px;
 	vertical-align: middle;
 	display: inline-block;
 }

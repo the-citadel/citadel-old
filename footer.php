@@ -13,7 +13,7 @@
 				switch_to_blog(1);
 			?>
 			<div class="footer-img">
-				<a href="<?php echo network_site_url(); ?>">
+				<a href="<?php echo get_blog_details( 1 )->path; ?>">
 					<img src="<?php echo network_site_url(); ?>/wp-content/themes/citadel/assets/images/citadel-logo-white.png" alt="<?php echo get_bloginfo( 'name' ); ?>">
 				</a>
 			</div>
@@ -45,7 +45,7 @@
 	            </div>
 			</section>
 			<div id="copyright">
-				<span>&copy; <?php echo date("Y"); ?> <a href="<?php echo network_site_url(); ?>">The Citadel</a>. All rights reserved. | <a href="<?php echo site_url(); ?>/wp-admin" target="_blank">Login</a></span>
+				<span>&copy; <?php echo date("Y"); ?> <a href="<?php echo get_blog_details( 1 )->path; ?>">The Citadel</a>. All rights reserved. | <a href="<?php echo site_url(); ?>/wp-admin" target="_blank">Login</a></span>
 			</div>
 			<?php switch_to_blog(1); ?>
 			<div id="legal-menu">
