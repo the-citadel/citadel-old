@@ -2005,6 +2005,9 @@ Responsive Styles
 		margin: 0 0 30px;
 	}
 
+	.entry-header .entry-title {
+		font-size: 32px;
+	}
 }
 
 /*
