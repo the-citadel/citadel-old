@@ -5,6 +5,8 @@ global $blog_id;
 //Enqueue scripts and styles
 function citadel_adding_scripts() {
 	wp_enqueue_style('style', get_template_directory_uri() . '/style.css');
+	wp_enqueue_style('citadel-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+	wp_enqueue_style('font-awesome', 'https://use.fontawesome.com/releases/v5.8.2/css/all.css');
 	wp_enqueue_script( 'customjs', get_template_directory_uri() . '/assets/js/scripts.js', array('jquery'), '', true );
 }
 add_action( 'wp_enqueue_scripts', 'citadel_adding_scripts' );
@@ -88,7 +90,7 @@ function the_breadcrumb()
     $after = '</span></li>'; // tag after the current crumb
     global $post;
     $networkHomeLink = get_blog_details( 1 )->path;
-    $homeLink = get_bloginfo('url');
+    $homeLink = home_url();
     if ($showOnHome == 1) {
         echo '<ol id="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . $networkHomeLink . '" itemprop="url"><span itemprop="title">The Citadel</span></a></li> ' . $delimiter . ' <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . $homeLink . '" itemprop="url"><span itemprop="title">' . $home . '</span></a></li> ' . $delimiter . ' ';
         if (is_category()) {

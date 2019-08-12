@@ -67,7 +67,3 @@
 <meta name="msapplication-square310x310logo" content="wp-content/themes/citadel/assets/favicon/arge.jpg"/>
 <meta name="msapplication-TileColor" content="#1F3A60"/>
 
-<!-- External Stylesheets -->
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" lazyload>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" lazyload>
-
