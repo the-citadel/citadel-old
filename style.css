@@ -1478,7 +1478,7 @@ Footer
 #footer .footer-img {
 	display: inline-block;
 	vertical-align: middle;
-	margin-right: 20px;
+	margin: 0 20px;
 }
 
 #footer .footer-img a {
