@@ -1,0 +1,78 @@
+/*
+--------------------
+Fonts
+--------------------
+*/
+
+$body_font: 'open-sans', helvetica, arial, sans-serif;
+$header_font: 'adobe-garamond-pro', times, serif;
+
+/*
+--------------------
+Colors
+--------------------
+*/
+
+// Standard
+$citadel_navy: #1F3A60;
+$citadel_blue: #3975B7;
+$pt_barracks: #CEC7BF;
+$shako: #282E36;
+$band_gold: #CDA31F;
+$officer_sash: #7D2935;
+
+// Shades
+$citadel_navy_80: rgba(31, 58, 96, 0.8);
+$citadel_navy_60: rgba(31, 58, 96, 0.6);
+$citadel_navy_40: rgba(31, 58, 96, 0.4);
+$citadel_navy_20: rgba(31, 58, 96, 0.2);
+
+$citadel_blue_80: rgba(57, 117, 183, 0.8);
+$citadel_blue_60: rgba(57, 117, 183, 0.6);
+$citadel_blue_40: rgba(57, 117, 183, 0.4);
+$citadel_blue_20: rgba(57, 117, 183, 0.2);
+
+$pt_barracks_80: rgba(206, 199, 191, 0.8);
+$pt_barracks_60: rgba(206, 199, 191, 0.6);
+$pt_barracks_40: rgba(206, 199, 191, 0.4);
+$pt_barracks_20: rgba(206, 199, 191, 0.2);
+
+$shako_80: rgba(40, 46, 54, 0.8);
+$shako_60: rgba(40, 46, 54, 0.6);
+$shako_40: rgba(40, 46, 54, 0.4);
+$shako_20: rgba(40, 46, 54, 0.2);
+
+$band_gold_80: rgba(205, 163, 31, 0.8);
+$band_gold_60: rgba(205, 163, 31, 0.6);
+$band_gold_40: rgba(205, 163, 31, 0.4);
+$band_gold_20: rgba(205, 163, 31, 0.2);
+
+$officer_sash_80: rgba(125, 41, 53, 0.8);
+$officer_sash_60: rgba(125, 41, 53, 0.6);
+$officer_sash_40: rgba(125, 41, 53, 0.4);
+$officer_sash_20: rgba(125, 41, 53, 0.2);
+
+/*
+--------------------
+Modular Sizes
+--------------------
+*/
+
+// Fonts
+$xs_font: 1rem;
+$sm_font: 1.13rem;
+$md_font: 1.33rem;
+$lg_font: 1.5rem;
+$xl_font: 1.77rem;
+
+// Spacing
+$sp_1: .42rem;
+$sp_2: .56rem;
+$sp_3: .75rem;
+$sp_4: 1rem;
+$sp_5: 1.33rem;
+$sp_6: 1.77rem;
+$sp_7: 2.37rem;
+$sp_8: 3.16rem;
+$sp_9: 4.21rem;
+$sp_10: 5.62rem;

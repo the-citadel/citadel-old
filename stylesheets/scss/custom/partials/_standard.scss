@@ -1,0 +1,87 @@
+body {
+	font-family: $body_font;
+	color: $shako;
+	line-height: 1.5;
+	background-color: #ffffff;
+	font-size: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $body_font;
+	color: $citadel_navy;
+	margin-top: $sp_8;
+}
+
+p {
+	font-size: $md_font;
+}
+
+a {
+	color: $shako;
+ 	text-decoration: none;
+ 	border-bottom: 1px solid $citadel_blue;
+}
+
+a:hover {
+	color: $citadel_blue;
+}
+
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+	background-color: $citadel_navy;
+	border: 2px solid $citadel_navy;
+	padding: $sp_2;
+	cursor: pointer;
+	color: #ffffff;
+	@include basic-transition;
+
+	&:hover {
+		color: $citadel_navy;
+		background-color: #ffffff;
+	}
+
+	&:disabled {
+		background-color: $citadel_navy_80;
+		color: #ffffff;
+		cursor: not-allowed;
+	}
+}
+
+ul,
+ol,
+dl {
+	font-size: $md_font;
+}
+
+img {
+	max-width: 100%;
+}
+
+table {
+	font-size: $md_font;
+}
+
+blockquote {
+	border-left: 5px solid $citadel_blue;
+	border-right: 5px solid $citadel_blue;
+	padding: 0 $sp_6;
+}
+
+video {
+	max-width: 100%;
+}
+
+audio {
+	max-width: 100%;
+}
+
+cite {
+	font-size: $sm_font;
+}
