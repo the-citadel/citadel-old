@@ -20,6 +20,7 @@ $pt_barracks: #CEC7BF;
 $shako: #282E36;
 $band_gold: #CDA31F;
 $officer_sash: #7D2935;
+$citadel_dark_navy: #1A3152;
 
 // Shades
 $citadel_navy_80: rgba(31, 58, 96, 0.8);
@@ -58,21 +59,43 @@ Modular Sizes
 --------------------
 */
 
+$size_1: .42rem;
+$size_2: .47rem;
+$size_3: .56rem;
+$size_4: .63rem;
+$size_5: .75rem;
+$size_6: .84rem;
+$size_7: 1rem;
+$size_8: 1.13rem;
+$size_9: 1.33rem;
+$size_10: 1.5rem;
+$size_11: 1.77rem;
+$size_12: 2rem;
+$size_13: 2.37rem;
+$size_14: 2.67rem;
+$size_15: 3.16rem;
+$size_16: 3.56rem;
+$size_17: 4.21rem;
+$size_18: 4.74rem;
+$size_19: 5.62rem;
+
 // Fonts
-$xs_font: 1rem;
-$sm_font: 1.13rem;
-$md_font: 1.33rem;
-$lg_font: 1.5rem;
-$xl_font: 1.77rem;
+$xxs_font: $size_6;
+$xs_font: $size_7;
+$sm_font: $size_8;
+$md_font: $size_9;
+$lg_font: $size_10;
+$xl_font: $size_11;
+$xxl_font: $size_12;
 
 // Spacing
-$sp_1: .42rem;
-$sp_2: .56rem;
-$sp_3: .75rem;
-$sp_4: 1rem;
-$sp_5: 1.33rem;
-$sp_6: 1.77rem;
-$sp_7: 2.37rem;
-$sp_8: 3.16rem;
-$sp_9: 4.21rem;
-$sp_10: 5.62rem;
+$sp_1: $size_1;
+$sp_2: $size_3;
+$sp_3: $size_5;
+$sp_4: $size_7;
+$sp_5: $size_9;
+$sp_6: $size_11;
+$sp_7: $size_13;
+$sp_8: $size_15;
+$sp_9: $size_17;
+$sp_10: $size_19;

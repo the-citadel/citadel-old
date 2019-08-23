@@ -1,0 +1,68 @@
+header {
+	background-color: $citadel_navy;
+
+	a {
+		color: #ffffff;
+	}
+}
+
+.top-header {
+	background-color: $citadel_dark_navy;
+	padding-top: $sp_2;
+	padding-bottom: $sp_2;
+
+	.institution-title {
+		border-bottom: none;
+	}
+
+	img {
+		width: 100%;
+		max-width: 125px;
+		display: block;
+	}
+}
+
+.main-header {
+	padding-top: $sp_4;
+	padding-bottom: $sp_4;
+	display: table;
+
+	.header-logo {
+		border-bottom: none;
+		display: table-cell;
+
+		img {
+			height: 90px;
+			transition: all ease .5s;
+		}
+	}
+
+	.lockup-text {
+		display: table-cell;
+		vertical-align: middle;
+		padding-top: $sp_3;
+
+		a {
+			border-bottom-color: transparent;
+			display: table;
+		    margin-left: $sp_4;
+			letter-spacing: .75px;
+		    font-family: $header_font;
+
+			&:hover {
+				color: #ffffff;
+				border-bottom-color: #ffffff;
+			} 
+		}
+
+		.parent-site {
+			line-height: $sp_4;
+		    font-size: $xs_font;
+		}
+
+		.current-site {
+		    font-size: $xxl_font;
+		    line-height: 1.2;
+		}
+	}
+}

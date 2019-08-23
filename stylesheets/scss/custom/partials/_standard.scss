@@ -25,6 +25,10 @@ a {
 	color: $shako;
  	text-decoration: none;
  	border-bottom: 1px solid $citadel_blue;
+
+ 	img {
+		display: block;
+	}
 }
 
 a:hover {

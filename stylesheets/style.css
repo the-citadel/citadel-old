@@ -13,6 +13,11 @@ Colors
 Modular Sizes
 --------------------
 */
+/*
+--------------------
+CSS Grid
+--------------------
+*/
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -349,6 +354,8 @@ a {
   color: #282E36;
   text-decoration: none;
   border-bottom: 1px solid #3975B7; }
+  a img {
+    display: block; }
 
 a:hover {
   color: #3975B7; }
@@ -362,10 +369,6 @@ input[type="reset"] {
   padding: 0.56rem;
   cursor: pointer;
   color: #ffffff;
-  -webkit-transition: all ease .4s;
-  -moz-transition: all ease .4s;
-  -o-transition: all ease .4s;
-  -ms-transition: all ease .4s;
   transition: all ease .4s; }
   button:hover,
   input[type="submit"]:hover,
@@ -409,6 +412,47 @@ cite {
 .wrapper {
   padding-left: 5.62vw;
   padding-right: 5.62vw; }
+
+.full-width {
+  left: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  position: relative;
+  right: 50%;
+  width: 100vw; }
+
+.skip {
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.show-on-focus:not(:focus):not(:active) {
+  clip: rect(0 0 0 0) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important; }
+
+/*
+--------------------
+CSS Grid
+--------------------
+*/
+@supports (display: grid) {
+  .grid-container {
+    display: -ms-grid;
+    display: grid; } }
+
+.grid-child {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-column: 2/3;
+  grid-row: 2/3; }
 
 /*
 --------------------
@@ -498,3 +542,49 @@ Colors
 
 .cit-sash-bg {
   background-color: #7D2935; }
+
+header {
+  background-color: #1F3A60; }
+  header a {
+    color: #ffffff; }
+
+.top-header {
+  background-color: #1A3152;
+  padding-top: 0.56rem;
+  padding-bottom: 0.56rem; }
+  .top-header .institution-title {
+    border-bottom: none; }
+  .top-header img {
+    width: 100%;
+    max-width: 125px;
+    display: block; }
+
+.main-header {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: table; }
+  .main-header .header-logo {
+    border-bottom: none;
+    display: table-cell; }
+    .main-header .header-logo img {
+      height: 90px;
+      transition: all ease .5s; }
+  .main-header .lockup-text {
+    display: table-cell;
+    vertical-align: middle;
+    padding-top: 0.75rem; }
+    .main-header .lockup-text a {
+      border-bottom-color: transparent;
+      display: table;
+      margin-left: 1rem;
+      letter-spacing: .75px;
+      font-family: "adobe-garamond-pro", times, serif; }
+      .main-header .lockup-text a:hover {
+        color: #ffffff;
+        border-bottom-color: #ffffff; }
+    .main-header .lockup-text .parent-site {
+      line-height: 1rem;
+      font-size: 1rem; }
+    .main-header .lockup-text .current-site {
+      font-size: 2rem;
+      line-height: 1.2; }

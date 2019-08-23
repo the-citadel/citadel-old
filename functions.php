@@ -4,6 +4,7 @@ defined( 'ABSPATH' ) || exit;
 
 $citadel_includes = array(
 	'/enqueue.php',
+	'/menus.php',
 );
 
 foreach ( $citadel_includes as $file ) {
