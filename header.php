@@ -55,7 +55,7 @@
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/brandmark/Citadel_Logo_Brandmark_Reverse.png" alt="The Citadel Brandmark">
 				</a>
 				<div class="lockup-text table-element align-middle">
-					<?php if ( ( $blog_id != 1 ) && ($main_blogname != $main_site)  ) : ?>
+					<?php if ( ( $blog_id != 1 )  ) : ?>
 					<a href="<?php echo esc_url(get_blog_details( 1 )->path ); ?>" class="parent-site table-container"><?php echo get_blog_details( 1 )->blogname; ?></a>
 					<?php endif; ?>
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="current-site table-container"><?php echo bloginfo('name'); ?></a>

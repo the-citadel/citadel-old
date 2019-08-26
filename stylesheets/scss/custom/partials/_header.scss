@@ -38,6 +38,7 @@ header {
 
 		a {
 			border-bottom: none;
+			margin-left: $sp_2;
 
 			&:hover,
 			&:focus {
@@ -45,6 +46,10 @@ header {
 				border-bottom: 1px solid;
 			}
 		}
+	}
+
+	.search-toggle {
+		margin-left: $sp_4;
 	}
 
 	.tools-toggle {
@@ -178,6 +183,7 @@ header {
 		padding: 0;
 		margin: 0;
 		position: relative;
+		list-style: none;
 	}
 
 	> ul > li {
@@ -208,7 +214,9 @@ header {
 		}
 	}
 
-		
+	.has-submenu:not(.wide-nav) {
+		position: relative;
+	}	
 
 	.has-submenu > a::after {
 		margin-left: $sp_1;
@@ -216,5 +224,10 @@ header {
 		font-weight: 900;
 		content: "\f078";
 		font-size: $xxs_font;
+	}
+
+	.submenu {
+		position: absolute;
+		top: 100%;
 	}
 }

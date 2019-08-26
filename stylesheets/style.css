@@ -631,10 +631,13 @@ header {
   .top-header .secondary-nav li {
     text-align: right; }
   .top-header .secondary-nav a {
-    border-bottom: none; }
+    border-bottom: none;
+    margin-left: 0.56rem; }
     .top-header .secondary-nav a:hover, .top-header .secondary-nav a:focus {
       color: #ffffff;
       border-bottom: 1px solid; }
+  .top-header .search-toggle {
+    margin-left: 1rem; }
   .top-header .tools-toggle {
     background-color: #1A3152;
     border-color: #1A3152;
@@ -723,7 +726,8 @@ header {
   .main-nav ul {
     padding: 0;
     margin: 0;
-    position: relative; }
+    position: relative;
+    list-style: none; }
   .main-nav > ul > li {
     text-transform: uppercase;
     width: 20%;
@@ -750,12 +754,17 @@ header {
         color: #1F3A60; }
     .main-nav > ul > li:hover, .main-nav > ul > li:focus {
       background-color: #ffffff; }
+  .main-nav .has-submenu:not(.wide-nav) {
+    position: relative; }
   .main-nav .has-submenu > a::after {
     margin-left: 0.42rem;
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     content: "\f078";
     font-size: 0.84rem; }
+  .main-nav .submenu {
+    position: absolute;
+    top: 100%; }
 
 .mobile-show {
   display: none; }
