@@ -8,11 +8,10 @@ header {
 
 .top-header {
 	background-color: $citadel_dark_navy;
-	padding-top: $sp_2;
-	padding-bottom: $sp_2;
 
 	.institution-title {
 		border-bottom: none;
+		width: 125px;
 	}
 
 	img {
@@ -20,34 +19,80 @@ header {
 		max-width: 125px;
 		display: block;
 	}
+
+	.right-header {
+		width: calc(100% - 125px);
+	}
+
+	.secondary-nav {
+
+		ul {
+			margin: 0;
+			padding: 0;
+			font-size: $xxs_font;
+		}
+
+		li {
+			text-align: right;
+		}
+
+		a {
+			border-bottom: none;
+
+			&:hover,
+			&:focus {
+				color: #ffffff	;
+				border-bottom: 1px solid;
+			}
+		}
+	}
+
+	.tools-toggle {
+		background-color: $citadel_dark_navy;
+		border-color: $citadel_dark_navy;
+		font-size: $xxs_font;
+
+		&::after {
+			margin-left: $sp_1;
+			font-family: "Font Awesome 5 Free";
+			font-weight: 900;
+			content: "\f078";
+			font-size: $xxs_font;
+		}
+
+		&:hover,
+		&:focus {
+			border-bottom: 1px solid;
+			color: #ffffff;
+		}
+	}
 }
 
 .main-header {
 	padding-top: $sp_4;
 	padding-bottom: $sp_4;
-	display: table;
 
 	.header-logo {
 		border-bottom: none;
-		display: table-cell;
 
 		img {
 			height: 90px;
+			width: auto;
+			max-width: none;
 			transition: all ease .5s;
 		}
 	}
 
 	.lockup-text {
-		display: table-cell;
-		vertical-align: middle;
 		padding-top: $sp_3;
+	    padding-left: $sp_4;
 
 		a {
 			border-bottom-color: transparent;
-			display: table;
-		    margin-left: $sp_4;
 			letter-spacing: .75px;
 		    font-family: $header_font;
+		    width: auto;
+			@include basic-transition;
 
 			&:hover {
 				color: #ffffff;
@@ -56,13 +101,120 @@ header {
 		}
 
 		.parent-site {
-			line-height: $sp_4;
+			line-height: 1;
 		    font-size: $xs_font;
+		    margin-bottom: $sp_1;
 		}
 
 		.current-site {
 		    font-size: $xxl_font;
-		    line-height: 1.2;
+		    line-height: 1;
 		}
+	}
+
+	.main-cta {
+
+		a {
+			background-color: $citadel_blue;
+			border-bottom: none;
+			font-family: $body_font;
+			padding: $sp_1 $sp_4;
+			font-size: $xs_font;
+			text-transform: uppercase;
+			font-weight: 600;
+			white-space: nowrap;
+    		display: inline-block;
+    		margin: $sp_1 0 $sp_1 $sp_1;
+			@include basic-transition;
+
+			&:hover,
+			&:focus {
+				color: $citadel_blue;
+				background-color: #ffffff;
+			}
+		}
+	}
+
+	.mobile-buttons {
+		display: none;
+
+		button {
+			background-color: $citadel_blue;
+			color: #ffffff;
+			padding: $sp_3 $sp_4;
+			font-size: $md_font;
+			margin-left: $sp_1;
+
+			&::before,
+			&::after {
+				margin: 0;
+				font-size: $md_font;
+			}
+
+			&:hover,
+			&:focus {
+				background-color: #ffffff;
+				color: $citadel_blue;
+			}
+		}
+
+		.search-toggle {
+
+			&::before {
+				display: none;
+			}
+		}
+	}
+
+	.menu-toggle {
+
+	}
+}
+
+.main-nav {
+	background-color: $citadel_blue;
+
+	ul {
+		padding: 0;
+		margin: 0;
+		position: relative;
+	}
+
+	> ul > li {
+		text-transform: uppercase;
+		width: 20%;
+		@include basic-transition;
+
+		a {
+			color: #ffffff;
+			padding: $sp_2 $sp_6;
+			display: block;
+			font-size: $xs_font;
+			cursor: pointer;
+			border-bottom: none;
+			font-weight: 600;
+			@include basic-transition;
+
+			&:hover,
+			&:focus {
+				background-color: #ffffff;
+				color: $citadel_navy;
+			}
+		}
+
+		&:hover,
+		&:focus {
+			background-color: #ffffff;
+		}
+	}
+
+		
+
+	.has-submenu > a::after {
+		margin-left: $sp_1;
+		font-family: "Font Awesome 5 Free";
+		font-weight: 900;
+		content: "\f078";
+		font-size: $xxs_font;
 	}
 }

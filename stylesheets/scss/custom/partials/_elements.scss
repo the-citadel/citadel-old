@@ -16,6 +16,18 @@
 	position: absolute;
 	top: 0;
 	left: 0;
+
+    a {
+        background-color: #fff;
+        color: $citadel_blue;
+        display: block;
+        padding: $sp_2 $sp_6;
+        font-size: $sm_font;
+    }
+}
+
+.nowrap {
+    white-space: nowrap;
 }
 
 .show-on-focus:not(:focus):not(:active) {
@@ -29,21 +41,88 @@
     white-space: nowrap!important;
 }
 
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+button.search-toggle {
+    background-color: $citadel_blue;
+
+    &::before {
+        margin-right: $sp_1;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\f002";
+        font-size: $xxs_font;
+    }
+
+    &:hover,
+    &:focus {
+        background-color: #ffffff;
+    }
+}
+
 /*
 --------------------
-CSS Grid
+Layout
 --------------------
 */
 
-.grid-container {
-	@supports (display: grid) {
-		@include display-grid;
-	}
-	
+.table-container {
+    display: table;
+    width: 100%;
 }
 
-.grid-child {
-  @include grid-child(2, 3, 2, 3);
+.table-element {
+    display: table-cell;
+    width: auto;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.clear::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.align-top {
+    vertical-align: top;
+}
+
+.align-middle {
+    vertical-align: middle;
+}
+
+.align-bottom {
+    vertical-align: bottom;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.align-right {
+    text-align: right;
 }
 
 /*

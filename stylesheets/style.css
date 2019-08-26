@@ -13,11 +13,6 @@ Colors
 Modular Sizes
 --------------------
 */
-/*
---------------------
-CSS Grid
---------------------
-*/
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -335,7 +330,9 @@ body {
   color: #282E36;
   line-height: 1.5;
   background-color: #ffffff;
-  font-size: 100%; }
+  font-size: 100%;
+  max-width: 100%;
+  overflow: hidden; }
 
 h1,
 h2,
@@ -353,7 +350,12 @@ p {
 a {
   color: #282E36;
   text-decoration: none;
-  border-bottom: 1px solid #3975B7; }
+  border-bottom: 1px solid #3975B7;
+  -webkit-transition: all ease .4s;
+  -moz-transition: all ease .4s;
+  -o-transition: all ease .4s;
+  -ms-transition: all ease .4s;
+  transition: all ease .4s; }
   a img {
     display: block; }
 
@@ -369,11 +371,18 @@ input[type="reset"] {
   padding: 0.56rem;
   cursor: pointer;
   color: #ffffff;
+  -webkit-transition: all ease .4s;
+  -moz-transition: all ease .4s;
+  -o-transition: all ease .4s;
+  -ms-transition: all ease .4s;
   transition: all ease .4s; }
-  button:hover,
+  button:hover, button:focus,
   input[type="submit"]:hover,
+  input[type="submit"]:focus,
   input[type="button"]:hover,
-  input[type="reset"]:hover {
+  input[type="button"]:focus,
+  input[type="reset"]:hover,
+  input[type="reset"]:focus {
     color: #1F3A60;
     background-color: #ffffff; }
   button:disabled,
@@ -425,6 +434,15 @@ cite {
   position: absolute;
   top: 0;
   left: 0; }
+  .skip a {
+    background-color: #fff;
+    color: #3975B7;
+    display: block;
+    padding: 0.56rem 1.77rem;
+    font-size: 1.13rem; }
+
+.nowrap {
+  white-space: nowrap; }
 
 .show-on-focus:not(:focus):not(:active) {
   clip: rect(0 0 0 0) !important;
@@ -436,23 +454,70 @@ cite {
   width: 1px !important;
   white-space: nowrap !important; }
 
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important; }
+
+button.search-toggle {
+  background-color: #3975B7; }
+  button.search-toggle::before {
+    margin-right: 0.42rem;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f002";
+    font-size: 0.84rem; }
+  button.search-toggle:hover, button.search-toggle:focus {
+    background-color: #ffffff; }
+
 /*
 --------------------
-CSS Grid
+Layout
 --------------------
 */
-@supports (display: grid) {
-  .grid-container {
-    display: -ms-grid;
-    display: grid; } }
+.table-container {
+  display: table;
+  width: 100%; }
 
-.grid-child {
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 1;
-  grid-column: 2/3;
-  grid-row: 2/3; }
+.table-element {
+  display: table-cell;
+  width: auto; }
+
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+.clear::after {
+  content: '';
+  display: table;
+  clear: both; }
+
+.align-top {
+  vertical-align: top; }
+
+.align-middle {
+  vertical-align: middle; }
+
+.align-bottom {
+  vertical-align: bottom; }
+
+.align-left {
+  text-align: left; }
+
+.align-center {
+  text-align: center; }
+
+.align-right {
+  text-align: right; }
 
 /*
 --------------------
@@ -549,42 +614,158 @@ header {
     color: #ffffff; }
 
 .top-header {
-  background-color: #1A3152;
-  padding-top: 0.56rem;
-  padding-bottom: 0.56rem; }
+  background-color: #1A3152; }
   .top-header .institution-title {
-    border-bottom: none; }
+    border-bottom: none;
+    width: 125px; }
   .top-header img {
     width: 100%;
     max-width: 125px;
     display: block; }
+  .top-header .right-header {
+    width: calc(100% - 125px); }
+  .top-header .secondary-nav ul {
+    margin: 0;
+    padding: 0;
+    font-size: 0.84rem; }
+  .top-header .secondary-nav li {
+    text-align: right; }
+  .top-header .secondary-nav a {
+    border-bottom: none; }
+    .top-header .secondary-nav a:hover, .top-header .secondary-nav a:focus {
+      color: #ffffff;
+      border-bottom: 1px solid; }
+  .top-header .tools-toggle {
+    background-color: #1A3152;
+    border-color: #1A3152;
+    font-size: 0.84rem; }
+    .top-header .tools-toggle::after {
+      margin-left: 0.42rem;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f078";
+      font-size: 0.84rem; }
+    .top-header .tools-toggle:hover, .top-header .tools-toggle:focus {
+      border-bottom: 1px solid;
+      color: #ffffff; }
 
 .main-header {
   padding-top: 1rem;
-  padding-bottom: 1rem;
-  display: table; }
+  padding-bottom: 1rem; }
   .main-header .header-logo {
-    border-bottom: none;
-    display: table-cell; }
+    border-bottom: none; }
     .main-header .header-logo img {
       height: 90px;
+      width: auto;
+      max-width: none;
       transition: all ease .5s; }
   .main-header .lockup-text {
-    display: table-cell;
-    vertical-align: middle;
-    padding-top: 0.75rem; }
+    padding-top: 0.75rem;
+    padding-left: 1rem; }
     .main-header .lockup-text a {
       border-bottom-color: transparent;
-      display: table;
-      margin-left: 1rem;
       letter-spacing: .75px;
-      font-family: "adobe-garamond-pro", times, serif; }
+      font-family: "adobe-garamond-pro", times, serif;
+      width: auto;
+      -webkit-transition: all ease .4s;
+      -moz-transition: all ease .4s;
+      -o-transition: all ease .4s;
+      -ms-transition: all ease .4s;
+      transition: all ease .4s; }
       .main-header .lockup-text a:hover {
         color: #ffffff;
         border-bottom-color: #ffffff; }
     .main-header .lockup-text .parent-site {
-      line-height: 1rem;
-      font-size: 1rem; }
+      line-height: 1;
+      font-size: 1rem;
+      margin-bottom: 0.42rem; }
     .main-header .lockup-text .current-site {
       font-size: 2rem;
-      line-height: 1.2; }
+      line-height: 1; }
+  .main-header .main-cta a {
+    background-color: #3975B7;
+    border-bottom: none;
+    font-family: "open-sans", helvetica, arial, sans-serif;
+    padding: 0.42rem 1rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    white-space: nowrap;
+    display: inline-block;
+    margin: 0.42rem 0 0.42rem 0.42rem;
+    -webkit-transition: all ease .4s;
+    -moz-transition: all ease .4s;
+    -o-transition: all ease .4s;
+    -ms-transition: all ease .4s;
+    transition: all ease .4s; }
+    .main-header .main-cta a:hover, .main-header .main-cta a:focus {
+      color: #3975B7;
+      background-color: #ffffff; }
+  .main-header .mobile-buttons {
+    display: none; }
+    .main-header .mobile-buttons button {
+      background-color: #3975B7;
+      color: #ffffff;
+      padding: 0.75rem 1rem;
+      font-size: 1.33rem;
+      margin-left: 0.42rem; }
+      .main-header .mobile-buttons button::before, .main-header .mobile-buttons button::after {
+        margin: 0;
+        font-size: 1.33rem; }
+      .main-header .mobile-buttons button:hover, .main-header .mobile-buttons button:focus {
+        background-color: #ffffff;
+        color: #3975B7; }
+    .main-header .mobile-buttons .search-toggle::before {
+      display: none; }
+
+.main-nav {
+  background-color: #3975B7; }
+  .main-nav ul {
+    padding: 0;
+    margin: 0;
+    position: relative; }
+  .main-nav > ul > li {
+    text-transform: uppercase;
+    width: 20%;
+    -webkit-transition: all ease .4s;
+    -moz-transition: all ease .4s;
+    -o-transition: all ease .4s;
+    -ms-transition: all ease .4s;
+    transition: all ease .4s; }
+    .main-nav > ul > li a {
+      color: #ffffff;
+      padding: 0.56rem 1.77rem;
+      display: block;
+      font-size: 1rem;
+      cursor: pointer;
+      border-bottom: none;
+      font-weight: 600;
+      -webkit-transition: all ease .4s;
+      -moz-transition: all ease .4s;
+      -o-transition: all ease .4s;
+      -ms-transition: all ease .4s;
+      transition: all ease .4s; }
+      .main-nav > ul > li a:hover, .main-nav > ul > li a:focus {
+        background-color: #ffffff;
+        color: #1F3A60; }
+    .main-nav > ul > li:hover, .main-nav > ul > li:focus {
+      background-color: #ffffff; }
+  .main-nav .has-submenu > a::after {
+    margin-left: 0.42rem;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f078";
+    font-size: 0.84rem; }
+
+.mobile-show {
+  display: none; }
+
+@media screen and (max-width: 56.12em) {
+  .mobile-hide {
+    display: none; }
+
+  .mobile-show {
+    display: block; }
+
+  .main-header .mobile-buttons {
+    display: table-cell; } }

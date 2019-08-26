@@ -1,4 +1,16 @@
-// Medium devices (tablets and up)
-@media screen and (min-width: 56.12em) {
-	
+// Medium devices (tablets and down)
+@media screen and (max-width: 56.12em) {
+	.mobile-hide {
+	    display: none;
+	}
+
+	.mobile-show {
+	    display: block;
+	}
+
+	.main-header {
+		.mobile-buttons {
+			display: table-cell;
+		}
+	}
 }
