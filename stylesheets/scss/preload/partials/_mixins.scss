@@ -2,6 +2,19 @@
 	-webkit-transition: all ease .4s;
 	-moz-transition: all ease .4s;
 	-o-transition: all ease .4s;
-	-ms-transition: all ease .4s;
 	transition: all ease .4s;
+}
+
+@mixin flex {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+@mixin flex-grow ($size) {
+	@supports not (display: flex) {
+		width: $size'%';
+	}
+	flex-grow: $size;
 }

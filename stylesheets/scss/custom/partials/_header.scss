@@ -8,20 +8,15 @@ header {
 
 .top-header {
 	background-color: $citadel_dark_navy;
+	position: relative;
 
 	.institution-title {
 		border-bottom: none;
-		width: 125px;
 	}
 
 	img {
 		width: 100%;
 		max-width: 125px;
-		display: block;
-	}
-
-	.right-header {
-		width: calc(100% - 125px);
 	}
 
 	.secondary-nav {
@@ -33,29 +28,40 @@ header {
 		}
 
 		li {
-			text-align: right;
+			margin: 0 $sp_2;
 		}
 
 		a {
-			border-bottom: none;
-			margin-left: $sp_2;
+			border-bottom: 1px solid transparent;
+			
 
 			&:hover,
 			&:focus {
-				color: #ffffff	;
+				color: #ffffff;
 				border-bottom: 1px solid;
 			}
 		}
 	}
 
 	.search-toggle {
-		margin-left: $sp_4;
+		border: none;
+		font-size: $xxs_font;
+	}
+
+	.action-buttons {
+		margin-left: $sp_2;
 	}
 
 	.tools-toggle {
 		background-color: $citadel_dark_navy;
 		border-color: $citadel_dark_navy;
 		font-size: $xxs_font;
+		border: none;
+
+		span {
+			border-bottom: 1px solid transparent;
+			@include basic-transition;
+		}
 
 		&::after {
 			margin-left: $sp_1;
@@ -67,6 +73,11 @@ header {
 
 		&:hover,
 		&:focus {
+			color: #ffffff;
+		}
+
+		&:hover span,
+		&:focus span {
 			border-bottom: 1px solid;
 			color: #ffffff;
 		}
@@ -128,7 +139,6 @@ header {
 			text-transform: uppercase;
 			font-weight: 600;
 			white-space: nowrap;
-    		display: inline-block;
     		margin: $sp_1 0 $sp_1 $sp_1;
 			@include basic-transition;
 
@@ -188,29 +198,30 @@ header {
 
 	> ul > li {
 		text-transform: uppercase;
-		width: 20%;
+		text-align: center;
+		@include flex-grow (20);
 		@include basic-transition;
 
 		a {
 			color: #ffffff;
 			padding: $sp_2 $sp_6;
 			display: block;
+			width: 100%;
 			font-size: $xs_font;
 			cursor: pointer;
 			border-bottom: none;
 			font-weight: 600;
 			@include basic-transition;
-
-			&:hover,
-			&:focus {
-				background-color: #ffffff;
-				color: $citadel_navy;
-			}
 		}
 
 		&:hover,
 		&:focus {
 			background-color: #ffffff;
+		}
+
+		&:hover a,
+		&:focus a {
+			color: $citadel_navy;
 		}
 	}
 
@@ -229,5 +240,62 @@ header {
 	.submenu {
 		position: absolute;
 		top: 100%;
+		left: -1px;
+		display: none;
+		width: calc(100% + 2px);
+		border: 1px solid $citadel_blue;
+		border-top: 0;
+		display: none;
+	}
+
+	ul.submenu {
+
+		li {
+			margin-top: -1px;
+		}
+
+		li:nth-last-child(1) a {
+			border-bottom: none;
+		}
+
+		a {
+			color: $citadel_blue;
+			border-top: 1px solid transparent;
+			border-bottom: 1px solid transparent;
+			@include basic-transition;
+
+			&:hover,
+			&:focus {
+				border-top: 1px solid $citadel_blue;
+				border-bottom: 1px solid $citadel_blue;
+			}
+		}
+	}
+
+	div.submenu {
+
+	}
+}
+
+#tools {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 100%;
+	background-color: $citadel_navy;
+
+	ul {
+		margin: 0;
+		list-style: none;
+
+		li {
+			text-align: center;
+			@include flex-grow (20);
+
+			a,
+			p {
+				font-size: $xs_font;
+			}
+		}
 	}
 }

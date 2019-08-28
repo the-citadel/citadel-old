@@ -10,7 +10,7 @@
 
 	.main-header {
 		.mobile-buttons {
-			display: table-cell;
+			@include flex;
 		}
 	}
 }

@@ -31,4 +31,9 @@ jQuery(document).ready(function($) {
 		$('.main-nav').stop().slideToggle(500);
 	});
 
+	$('.has-submenu .primary').click(function(e) {
+		e.preventDefault();
+		$('+ .submenu', this).toggleClass('active').stop().slideToggle(500);
+	});
+
 });
