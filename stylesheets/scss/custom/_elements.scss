@@ -79,14 +79,21 @@ Flex Layout
 */
 
 .flex-container {
+	display: table;
+	width: 100%;
 	@include flex;
 
-	&::after {
-		clear:both;
+	@media screen\9 {
+		@include clearfix;
+	}
+    
+	@media screen\0 {
+		@include clearfix;
 	}
 }
 
 .flex-item {
+	display: table-cell;
 	@include flex;
 }
 
@@ -121,6 +128,7 @@ Flex Layout
 }
 
 .flex-middle {
+	vertical-align: middle;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
 		-ms-flex-align: center;

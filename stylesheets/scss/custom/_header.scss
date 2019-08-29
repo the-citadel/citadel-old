@@ -28,11 +28,12 @@ header {
 		}
 
 		li {
-			margin: 0 $sp_2;
+			
 		}
 
 		a {
 			border-bottom: 1px solid transparent;
+			margin: 0 $sp_2;
 			
 
 			&:hover,
@@ -45,11 +46,8 @@ header {
 
 	.search-toggle {
 		border: none;
-		font-size: $xxs_font;
-	}
-
-	.action-buttons {
 		margin-left: $sp_2;
+		font-size: $xxs_font;
 	}
 
 	.tools-toggle {
@@ -241,7 +239,9 @@ header {
 		position: absolute;
 		top: 100%;
 		left: -1px;
+		z-index: 90;
 		display: none;
+		background-color: #ffffff;
 		width: calc(100% + 2px);
 		border: 1px solid $citadel_blue;
 		border-top: 0;
@@ -260,6 +260,8 @@ header {
 
 		a {
 			color: $citadel_blue;
+			font-size: $xxs_font;
+			text-transform: none;
 			border-top: 1px solid transparent;
 			border-bottom: 1px solid transparent;
 			@include basic-transition;
@@ -278,6 +280,7 @@ header {
 }
 
 #tools {
+	display: none;
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -288,6 +291,7 @@ header {
 	ul {
 		margin: 0;
 		list-style: none;
+		height: 100%;
 
 		li {
 			text-align: center;

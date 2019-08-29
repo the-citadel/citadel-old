@@ -18,3 +18,10 @@
 	}
 	flex-grow: $size;
 }
+
+@mixin clearfix {
+	&::after {
+		content: "";
+		clear: both;
+	}
+}
