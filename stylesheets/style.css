@@ -877,7 +877,8 @@ header {
   left: 0;
   right: 0;
   top: 100%;
-  background-color: #1F3A60; }
+  background-color: #1F3A60;
+  display: none; }
   #tools ul {
     margin: 0;
     list-style: none; }

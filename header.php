@@ -26,12 +26,14 @@
 	<header role="banner">
 
 		<!-- start .top-header -->
+		<?php if ($blogname != $main_site): ?>
 		<div class="wrapper top-header mobile-hide flex-container flex-between">
-			<?php if ($blogname != $main_site): ?>
 			<a href="https://citadel.edu/" title="Go to The Citadel home page" aria-label="Go to The Citadel home page" class="institution-title flex-item flex-middle" rel="home">
 				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/wordmark/Citadel_Logo_Wordmark_Reverse.png" alt="The Citadel Wordmark">
 			</a>
-			<?php endif; ?>
+		<?php else: ?>
+		<div class="wrapper top-header mobile-hide flex-container flex-row-rev">
+		<?php endif; ?>
 			<div class="right-header flex-item flex-middle">
 				<nav class="secondary-nav" role="navigation" aria-label="secondary navigation">
 					<?php include 'php/secondary-nav.php'; ?>
