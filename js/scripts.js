@@ -36,4 +36,11 @@ jQuery(document).ready(function($) {
 		$('+ .submenu', this).toggleClass('active').stop().slideToggle(500);
 	});
 
+	var mainHeader = $('.main-header').outerHeight();
+	$('#tools').height(mainHeader);
+
+	$('.tools-toggle').click(function() {
+		$('#tools').stop().slideToggle(400);
+	});
+
 });
