@@ -50,7 +50,7 @@
 		<div class="wrapper main-header flex-container flex-between">
 			<div class="lockup flex-item">
 				<?php if ( ( $blog_id == 1 ) && ($main_blogname == $main_site) ) : ?>
-				<a class="header-logo flex-item flex-middle" title="Go to The Citadel home page" aria-label="Go to The Citadel home page" href="https://citadel.edu/" rel="home">
+				<a class="header-logo main-logo flex-item flex-middle" title="Go to The Citadel home page" aria-label="Go to The Citadel home page" href="https://citadel.edu/" rel="home">
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/brand_signature/Citadel_Logo_Signature_Horizontal_Reverse.png" alt="The Citadel Brandmark">
 				</a>
 				<?php else: ?>

@@ -13,4 +13,16 @@
 			@include flex;
 		}
 	}
+
+	.main-header {
+
+		.main-logo {
+
+			img {
+				height: auto;
+				width: 100%;
+				max-width: 330px;
+			}
+		}
+	}
 }

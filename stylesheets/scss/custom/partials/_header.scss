@@ -107,7 +107,6 @@ header {
 			border-bottom-color: transparent;
 			letter-spacing: .75px;
 		    font-family: $header_font;
-		    width: auto;
 			@include basic-transition;
 
 			&:hover {
@@ -152,6 +151,7 @@ header {
 
 	.mobile-buttons {
 		display: none;
+		margin-left: $sp_2;
 
 		button {
 			background-color: $citadel_blue;

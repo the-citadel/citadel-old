@@ -755,7 +755,6 @@ header {
       border-bottom-color: transparent;
       letter-spacing: .75px;
       font-family: "adobe-garamond-pro", times, serif;
-      width: auto;
       -webkit-transition: all ease .4s;
       -moz-transition: all ease .4s;
       -o-transition: all ease .4s;
@@ -788,7 +787,8 @@ header {
       color: #3975B7;
       background-color: #ffffff; }
   .main-header .mobile-buttons {
-    display: none; }
+    display: none;
+    margin-left: 0.56rem; }
     .main-header .mobile-buttons button {
       background-color: #3975B7;
       color: #ffffff;
@@ -906,4 +906,19 @@ header {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: flex; } }
+    display: flex; }
+
+  .main-header .main-logo img {
+    height: auto;
+    width: 100%;
+    max-width: 330px; } }
+@media screen and (max-width: 42.09em) {
+  .main-header .header-logo:not(.main-logo) img {
+    height: auto;
+    width: 8vw;
+    max-width: 44px;
+    min-width: 30px; }
+  .main-header .lockup-text .parent-site {
+    font-size: 2.5vw; }
+  .main-header .lockup-text .current-site {
+    font-size: 5vw; } }
