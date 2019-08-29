@@ -11,12 +11,14 @@
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
-    <title><?php wp_title(); ?></title>
+    <title><?php include 'php/title-tag.php' ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="profile" href="http://gmpg.org/xfn/11" />
+    <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
     <?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
     <?php wp_head(); ?>
+	<?php include 'php/header_scripts.php' ?>
 </head>
 <body <?php body_class(); ?>>
 	<nav class="skip"  role="navigation">
@@ -34,11 +36,11 @@
 		<?php else: ?>
 		<div class="wrapper top-header mobile-hide flex-container flex-row-rev">
 		<?php endif; ?>
-			<div class="right-header flex-item flex-middle">
-				<nav class="secondary-nav" role="navigation" aria-label="secondary navigation">
+			<div class="right-header flex-item flex-middle flex-right">
+				<nav class="secondary-nav flex-item flex-middle" role="navigation" aria-label="secondary navigation">
 					<?php include 'php/secondary-nav.php'; ?>
 				</nav>
-				<div class="action-buttons">
+				<div class="action-buttons flex-item flex-middle">
 					<button class="search-toggle">Search</button>
 					<button class="tools-toggle"><span>Tools</span></button>
 				</div>
@@ -70,12 +72,16 @@
 				<?php endif; ?>
 			</div>
 			<div class="main-cta mobile-hide flex-item flex-middle">
-				<a href="">Apply Now</a>
-				<a href="">Give Online</a>
+				<div class="flex-container text-right">
+					<a href="">Apply Now</a>
+					<a href="">Give Online</a>
+				</div>
 			</div>
 			<div class="mobile-buttons flex-item flex-middle">
-				<button class="search-toggle"><span class="screen-reader-text">Search</span><i class="fas fa-search fa-fw"></i></button>
-				<button class="menu-toggle"><span class="screen-reader-text">Main Menu</span><i class="fas fa-bars fa-fw"></i></button>
+				<div class="flex-container text-right">
+					<button class="search-toggle"><span class="screen-reader-text">Search</span><i class="fas fa-search fa-fw"></i></button>
+					<button class="menu-toggle"><span class="screen-reader-text">Main Menu</span><i class="fas fa-bars fa-fw"></i></button>
+				</div>
 			</div>
 		</div><!-- end .main-header -->
 
@@ -88,4 +94,5 @@
 
 	<!-- start #main -->
 	<main class="wrapper" id="main" role="main">
+		<?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?>
 	

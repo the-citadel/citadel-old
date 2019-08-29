@@ -487,14 +487,23 @@ Flex Layout
 --------------------
 */
 .flex-container {
+  display: table;
+  width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex; }
-  .flex-container::after {
-    clear: both; }
+  @media screen\9 {
+    .flex-container::after {
+      content: "";
+      clear: both; } }
+  @media screen\0 {
+    .flex-container::after {
+      content: "";
+      clear: both; } }
 
 .flex-item {
+  display: table-cell;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -527,6 +536,7 @@ Flex Layout
   align-items: flex-start; }
 
 .flex-middle {
+  vertical-align: middle;
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
@@ -703,18 +713,16 @@ header {
     margin: 0;
     padding: 0;
     font-size: 0.84rem; }
-  .top-header .secondary-nav li {
-    margin: 0 0.56rem; }
   .top-header .secondary-nav a {
-    border-bottom: 1px solid transparent; }
+    border-bottom: 1px solid transparent;
+    margin: 0 0.56rem; }
     .top-header .secondary-nav a:hover, .top-header .secondary-nav a:focus {
       color: #ffffff;
       border-bottom: 1px solid; }
   .top-header .search-toggle {
     border: none;
+    margin-left: 0.56rem;
     font-size: 0.84rem; }
-  .top-header .action-buttons {
-    margin-left: 0.56rem; }
   .top-header .tools-toggle {
     background-color: #1A3152;
     border-color: #1A3152;
@@ -851,7 +859,9 @@ header {
     position: absolute;
     top: 100%;
     left: -1px;
+    z-index: 90;
     display: none;
+    background-color: #ffffff;
     width: calc(100% + 2px);
     border: 1px solid #3975B7;
     border-top: 0;
@@ -862,6 +872,8 @@ header {
     border-bottom: none; }
   .main-nav ul.submenu a {
     color: #3975B7;
+    font-size: 0.84rem;
+    text-transform: none;
     border-top: 1px solid transparent;
     border-bottom: 1px solid transparent;
     -webkit-transition: all ease .4s;
@@ -873,6 +885,7 @@ header {
       border-bottom: 1px solid #3975B7; }
 
 #tools {
+  display: none;
   position: absolute;
   left: 0;
   right: 0;
@@ -881,7 +894,8 @@ header {
   display: none; }
   #tools ul {
     margin: 0;
-    list-style: none; }
+    list-style: none;
+    height: 100%; }
     #tools ul li {
       text-align: center;
       flex-grow: 20; }
@@ -892,8 +906,73 @@ header {
       #tools ul li p {
         font-size: 1rem; }
 
-.mobile-show {
-  display: none; }
+#main {
+  padding-top: 1rem;
+  padding-bottom: 1rem; }
+
+footer {
+  color: #ffffff;
+  background-color: #3975B7; }
+  footer a {
+    color: #ffffff;
+    border-bottom-color: #3975B7; }
+    footer a:hover {
+      color: #ffffff;
+      border-bottom-color: #ffffff; }
+
+.main-footer {
+  padding-top: 1.77rem;
+  padding-bottom: 1.77rem;
+  border-bottom: 1px solid #ffffff;
+  width: auto; }
+  .main-footer .footer-brand {
+    width: 100%;
+    max-width: 250px;
+    display: inline-block;
+    vertical-align: middle; }
+    .main-footer .footer-brand:hover {
+      border-bottom-color: #3975B7; }
+    .main-footer .footer-brand img {
+      width: 100%;
+      height: auto; }
+  .main-footer .footer-contact {
+    text-align: left;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5.62rem; }
+    .main-footer .footer-contact.address::before {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f3c5";
+      margin-right: 0.56rem; }
+    .main-footer .footer-contact.phone::before {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f095";
+      margin-right: 0.56rem; }
+
+.report-issue {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 1rem;
+  border-bottom: 1px solid #ffffff; }
+  .report-issue a {
+    border-bottom-color: #ffffff; }
+    .report-issue a:hover {
+      border-bottom-color: #3975B7; }
+
+.bottom-footer {
+  font-size: 0.84rem;
+  padding-top: 0.56rem;
+  padding-bottom: 0.56rem; }
+
+.social-links {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  .social-links a {
+    padding: 0 2px;
+    font-size: 1.5rem; }
 
 @media screen and (max-width: 56.12em) {
   .mobile-hide {
