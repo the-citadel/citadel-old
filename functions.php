@@ -4,6 +4,7 @@ defined( 'ABSPATH' ) || exit;
 
 $citadel_includes = array(
 	'/enqueue.php',
+	'/theme_support.php',
 	'/menus.php',
 	'/breadcrumbs.php',
 );
