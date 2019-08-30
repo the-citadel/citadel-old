@@ -27,8 +27,13 @@
 }
 
 @mixin wrapper {
-	padding-left: 5.62vw;
-	padding-right: 5.62vw;
+	padding-left: $site_padding;
+	padding-right: $site_padding;
+}
+
+@mixin remove_wrapper {
+	margin-left: -$site_padding;
+	margin-right: -$site_padding;
 }
 
 @mixin absolute_center {

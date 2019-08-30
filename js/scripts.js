@@ -43,4 +43,8 @@ jQuery(document).ready(function($) {
 		$('#tools').stop().slideToggle(400);
 	});
 
+	$('.leftmenu-toggle').click(function() {
+		$(this).parent().next().stop().slideToggle(400);
+	});
+
 });

@@ -9,25 +9,32 @@
 
 	<?php else: ?>
 
-		<?php if ( is_home() || is_front_page() ) : ?>
+		<header class="wrapper entry-header">
 
-			<header class="wrapper entry-header home-header">
-				<h1 class="text-center "><?php echo bloginfo('name'); ?></h1>
+			<?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?>
 
-		<?php else: ?>
+			<?php if ( is_home() || is_front_page() ) : ?>
 
-			<header class="wrapper entry-header">
-				<?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?>
-				<h1 class="text-center"><?php the_title(); ?></h1>
+			<h1 class="text-center "><?php echo bloginfo('name'); ?></h1>
 
-		<?php endif; ?>
+			<?php else: ?>
 
-			</header>
+			<h1 class="text-center"><?php the_title(); ?></h1>
+
+			<?php endif; ?>
+
+		</header>
 
 	<?php endif; ?>
-
-	<div class="entry-content">
-		<?php the_content(); ?>
-	</div><!-- .entry-content -->
+	<div class="wrapper flex-container page-content mobile-no-flex">
+		<?php if ( has_nav_menu( 'leftmenu' ) ): ?>
+			<?php get_sidebar(); ?>
+		<?php endif; ?>
+		<div class="flex-item content-container">
+			<div class="entry-content<?php if ( !has_nav_menu( 'leftmenu' ) ): ?> no-sidebar<?php endif; ?>">
+				<?php the_content(); ?>
+			</div>
+		</div><!-- .entry-content -->
+	</div>
 
 </article><!-- #post-<?php the_ID(); ?> -->

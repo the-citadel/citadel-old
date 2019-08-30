@@ -16,7 +16,38 @@ h5,
 h6 {
 	font-family: $body_font;
 	color: $citadel_navy;
+	margin-bottom: $size_11;
+	line-height: 1.3;
+}
+
+h1 {
+	font-size: $size_14;
+	margin-top: $sp_10;
+}
+
+h2 {
+	font-size: $size_13;
+	margin-top: $sp_10;
+}
+
+h3 {
+	font-size: $size_11;
+	margin-top: $sp_9;
+}
+
+h4 {
+	font-size: $size_10;
 	margin-top: $sp_8;
+}
+
+h5 {
+	font-size: $size_9;
+	margin-top: $sp_7;
+}
+
+h6 {
+	font-size: $size_8;
+	margin-top: $sp_6;
 }
 
 p {
