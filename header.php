@@ -11,21 +11,21 @@
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
-    <title><?php include 'php/title-tag.php' ?></title>
+    <title><?php include 'template-parts/header/title-tag.php' ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="profile" href="http://gmpg.org/xfn/11" />
     <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
     <?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
     <?php wp_head(); ?>
-	<?php include 'php/header_scripts.php' ?>
+	<?php include 'template-parts/header/header_scripts.php' ?>
 </head>
 <body <?php body_class(); ?>>
 	<nav class="skip"  role="navigation">
 		<a class="show-on-focus" href="#main">Skip to main content</a>
 	</nav>
 
-	<header role="banner">
+	<header role="banner" id="header">
 
 		<!-- start .top-header -->
 		<?php if ($blogname != $main_site): ?>
@@ -38,13 +38,13 @@
 		<?php endif; ?>
 			<div class="right-header flex-item flex-middle flex-right">
 				<nav class="secondary-nav flex-item flex-middle" role="navigation" aria-label="secondary navigation">
-					<?php include 'php/secondary-nav.php'; ?>
+					<?php include 'template-parts/header/secondary-nav.php'; ?>
 				</nav>
 				<div class="action-buttons flex-item flex-middle">
 					<button class="search-toggle">Search</button>
 					<button class="tools-toggle"><span>Tools</span></button>
 				</div>
-				<?php include 'php/tools.php'; ?>
+				<?php include 'template-parts/header/tools.php'; ?>
 			</div>
 		</div><!-- end .top-header -->
 
@@ -60,7 +60,7 @@
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/brandmark/Citadel_Logo_Brandmark_Reverse.png" alt="The Citadel Brandmark">
 				</a>
 				<div class="lockup-text flex-container flex-center flex-col">
-					<?php if ( ( $blog_id != 1 ) /*&& ($main_blogname != $main_site)*/  ) : ?>
+					<?php if ( ( $blog_id != 1 ) && ($main_blogname != $main_site)  ) : ?>
 					<div class="parent-site flex-item">
 						<a href="<?php echo esc_url(get_blog_details( 1 )->path ); ?>" class=""><?php echo get_blog_details( 1 )->blogname; ?></a>
 					</div>
@@ -87,12 +87,12 @@
 
 		<!-- start .main-nav -->
 		<nav class="wrapper main-nav mobile-hide" role="navigation" aria-label="main navigation">
-			<?php include 'php/main-nav.php'; ?>
+			<?php include 'template-parts/header/main-nav.php'; ?>
 		</nav><!-- end .main-nav -->
 
 	</header>
 
 	<!-- start #main -->
-	<main class="wrapper" id="main" role="main">
-		<?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?>
+	<main id="main" role="main">
+		
 	

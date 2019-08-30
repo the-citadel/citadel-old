@@ -1,5 +1,5 @@
-<section id="tools" class="">
-	<ul class="flex-container flex-center wrapper">
+<div id="tools">
+	<ul class="flex-container flex-center wrapper flex-between">
 		<li class="flex-item flex-middle">
 			<a href="https://bdmsprd.citadel.edu/AppXtender/login.aspx">
 				<i class="fas fa-bold fa-fw"></i>
@@ -37,4 +37,4 @@
 			</a>
 		</li>
 	</ul>
-</section>
+</div>

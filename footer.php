@@ -15,7 +15,7 @@
 			<a href="tel:+18432253294">843.225.3294</a>
 		</div>
 		<div class="footer-contact">
-			<?php include 'php/social.php' ?>
+			<?php include 'template-parts/footer/social.php' ?>
 		</div>
 	</div>
 
@@ -34,8 +34,8 @@
 
 <?php wp_footer(); ?>
 
-<?php include 'php/footer_scripts.php' ?>
-<?php include 'php/custom_scripts.php' ?>
+<?php include 'template-parts/footer/footer_scripts.php' ?>
+<?php include 'template-parts/footer/custom_scripts.php' ?>
 
 </body>
 </html>
