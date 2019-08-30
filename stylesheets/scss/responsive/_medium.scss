@@ -25,4 +25,22 @@
 			}
 		}
 	}
+
+	.entry-header {
+
+		&.header-image {
+			height: auto;
+
+			h1 {
+				@include absolute_center_unset;
+				padding: 0;
+			}
+
+			img {
+				min-height: 100%;
+				width: auto;
+				max-width: none;
+			}
+		}
+	}
 }

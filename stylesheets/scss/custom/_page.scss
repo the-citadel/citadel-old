@@ -1,4 +1,69 @@
-#main {
-	padding-top: $sp_4;
-	padding-bottom: $sp_4;
+.entry-header {
+	background-color: $pt_barracks_20;
+	padding-top: $sp_8;
+	padding-bottom: $sp_8;
+
+	h1 {
+		margin-top: $sp_4;
+		margin-bottom: 0;
+		font-size: $size_14;
+		line-height: 1;
+	}
+
+	&.home-header {
+
+		h1 {
+			margin-top: 0;
+		}
+	}
+
+	&.header-image {
+		background-repeat: no-repeat;
+		background-color: $citadel_navy;
+		position: relative;
+		overflow: hidden;
+		height: 30vw;
+
+		h1 {
+			z-index: 2;
+			width: 100%;
+			color: #ffffff;
+			@include absolute_center;
+		}
+
+		img {
+			z-index: 1;
+			width: 100%;
+			height: auto;
+			opacity: .3;
+			@include absolute_center;
+		}
+	}
+}
+
+#breadcrumbs {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: $xxs_font;
+	text-align: center;
+
+	li {
+		display: inline-block;
+	}
+
+	i {
+		display: inline-block;
+		margin: 0 4px;
+	}
+}
+
+.entry-content {
+	padding-top: $sp_8;
+	padding-bottom: $sp_8;
+
+	p {
+		margin-top: 0;
+		@include wrapper;
+	}
 }
