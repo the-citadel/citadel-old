@@ -1,6 +1,5 @@
 .wrapper {
-	padding-left: 5.62vw;
-	padding-right: 5.62vw;
+	@include wrapper;
 }
 
 .full-width {

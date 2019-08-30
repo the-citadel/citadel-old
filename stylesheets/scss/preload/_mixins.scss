@@ -25,3 +25,22 @@
 		clear: both;
 	}
 }
+
+@mixin wrapper {
+	padding-left: 5.62vw;
+	padding-right: 5.62vw;
+}
+
+@mixin absolute_center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@mixin absolute_center_unset {
+	position: relative;
+	transform: none;
+	top: 0;
+	left: 0;
+}

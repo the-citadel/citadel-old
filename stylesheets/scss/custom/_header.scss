@@ -1,4 +1,4 @@
-header {
+header[role="banner"] {
 	background-color: $citadel_navy;
 
 	a {
@@ -295,11 +295,24 @@ header {
 
 		li {
 			text-align: center;
-			@include flex-grow (20);
 
-			a,
+			a {
+				border-bottom-color: $citadel_navy;
+
+				&:hover {
+					border-bottom-color: #ffffff;
+					color: #ffffff;
+				}
+			}
+
 			p {
 				font-size: $xs_font;
+				margin: 0;
+			}
+
+			i {
+				font-size: $lg_font;
+				margin-bottom: $sp_2;
 			}
 		}
 	}
