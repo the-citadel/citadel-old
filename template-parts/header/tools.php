@@ -1,3 +1,9 @@
+<?php 
+
+defined( 'ABSPATH' ) || exit;
+
+?>
+
 <div id="tools">
 	<ul class="flex-container flex-center wrapper flex-between">
 		<li class="flex-item flex-middle">

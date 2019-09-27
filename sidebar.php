@@ -1,3 +1,9 @@
+<?php 
+
+defined( 'ABSPATH' ) || exit;
+
+?>
+
 <aside class="sidebar flex-item" role="complementary">
 	<?php if ( has_nav_menu( 'leftmenu' ) ): ?>
 		<nav class="widget_nav_menu" role="navigation" aria-label="local navigation">

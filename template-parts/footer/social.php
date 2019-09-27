@@ -1,3 +1,9 @@
+<?php 
+
+defined( 'ABSPATH' ) || exit;
+
+?>
+
 <ul class="social-links flex-container">
 	<li class="flex-item">
 		<a class="" href="https://www.facebook.com/TheCitadel" target="_blank" rel="noopener" title="Citadel Facebook"><i class="fab fa-facebook-square fa-fw"></i></a>

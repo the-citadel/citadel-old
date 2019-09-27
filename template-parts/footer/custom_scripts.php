@@ -1,4 +1,8 @@
-<?php /* 
+<?php 
+
+defined( 'ABSPATH' ) || exit;
+
+/* 
 
 This file is used to add custom scripts for to a site. This should not be modified in the main theme files!
 

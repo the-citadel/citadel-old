@@ -1,4 +1,6 @@
-<?php
+<?php 
+
+defined( 'ABSPATH' ) || exit;
 
 function the_breadcrumb()
 {

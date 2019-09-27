@@ -1,4 +1,8 @@
-<?php /*
+<?php 
+
+defined( 'ABSPATH' ) || exit;
+
+/*
 
 The scripts below will be included site-wide in the header for any site using this theme or child theme.
 

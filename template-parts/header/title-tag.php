@@ -1,5 +1,11 @@
 <?php 
 
+defined( 'ABSPATH' ) || exit;
+
+?>
+
+<?php 
+
 // Main Site Homepage
 if ( ($blogname == $main_site) && (is_front_page()) ) {
 	echo $main_site; ?> | The Military College of South Carolina

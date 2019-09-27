@@ -1,3 +1,9 @@
+<?php 
+
+defined( 'ABSPATH' ) || exit;
+
+?>
+
 <ul class="flex-container">
 	<li class="flex-item"><a href="">Alumni</a></li>
 	<li class="flex-item"><a href="">Faculty &amp; Staff</a></li>

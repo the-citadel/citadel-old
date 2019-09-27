@@ -3,16 +3,13 @@
 defined( 'ABSPATH' ) || exit;
 
 $citadel_includes = array(
-	'/enqueue.php',
-	'/hooks.php',
-	'/theme_support.php',
-	'/menus.php',
-	'/breadcrumbs.php',
-	'/defaults.php',
+	'/admin.php',
+	'/new-site.php',
+	'/widgets.php',
 );
 
 foreach ( $citadel_includes as $file ) {
-	$filepath = locate_template( 'inc' . $file );
+	$filepath = locate_template( 'inc/defaults' . $file );
 	if ( ! $filepath ) {
 		trigger_error( sprintf( 'Error locating /inc%s for inclusion', $file ), E_USER_ERROR );
 	}

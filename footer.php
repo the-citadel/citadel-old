@@ -1,8 +1,14 @@
+<?php 
+
+defined( 'ABSPATH' ) || exit;
+
+?>
+
 </main>
 <!-- End Page Content -->
 
 <!-- Start Footer -->
-<footer id="footer">
+<footer id="footer" role="contentinfo">
 
 	<div class="main-footer wrapper text-center">
 		<a href="https://citadel.edu/" class="footer-brand">
@@ -20,12 +26,12 @@
 	</div>
 
 	<div class="report-issue wrapper text-center">
-		<span>Outdated? Incorrect? Broken? <a href="https://citadel.edu/web/issue">Report a problem with this page.</a></span>
+		<span><?php citadel_report_problem(); ?></span>
 	</div>
 
 	<div class="bottom-footer wrapper flex-container">
 		<div class="copyright flex-item flex-middle">
-			<span>&copy; <?php echo date("Y"); ?> <a href="https://citadel.edu">The Citadel</a>. All rights reserved. | <a href="<?php echo site_url(); ?>/wp-admin" target="_blank">Login</a></span>
+			<span><?php citadel_footer_copyright(); ?></span>
 		</div>
 	</div>
 

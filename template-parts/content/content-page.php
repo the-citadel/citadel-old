@@ -1,3 +1,9 @@
+<?php 
+
+defined( 'ABSPATH' ) || exit;
+
+?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<?php if ( ( is_home() || is_front_page() ) && has_post_thumbnail() ) : ?>

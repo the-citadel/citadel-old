@@ -1,3 +1,9 @@
+<?php 
+
+defined( 'ABSPATH' ) || exit;
+
+?>
+
 <ul class="flex-container flex-center">
 	<li class="has-submenu wide-nav flex-item flex-middle">
 		<a href="#" class="primary">Academics</a>
