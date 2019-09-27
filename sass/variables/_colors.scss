@@ -1,19 +1,5 @@
-/*
---------------------
-Fonts
---------------------
-*/
 
-$body_font: 'open-sans', helvetica, arial, sans-serif;
-$header_font: 'adobe-garamond-pro', times, serif;
-
-/*
---------------------
-Colors
---------------------
-*/
-
-// Standard
+// Base Colors
 $citadel_navy: #1F3A60;
 $citadel_blue: #3975B7;
 $pt_barracks: #CEC7BF;
@@ -22,7 +8,7 @@ $band_gold: #CDA31F;
 $officer_sash: #7D2935;
 $citadel_dark_navy: #1A3152;
 
-// Shades
+// Color Opacities
 $citadel_navy_80: rgba(31, 58, 96, 0.8);
 $citadel_navy_60: rgba(31, 58, 96, 0.6);
 $citadel_navy_40: rgba(31, 58, 96, 0.4);
@@ -53,58 +39,19 @@ $officer_sash_60: rgba(125, 41, 53, 0.6);
 $officer_sash_40: rgba(125, 41, 53, 0.4);
 $officer_sash_20: rgba(125, 41, 53, 0.2);
 
-/*
---------------------
-Modular Sizes
---------------------
-*/
+// Backgrounds
+$color__background-body: #fff;
+$color__background-input: #fff;
+$color__background-button: $citadel_blue;
+$color__background-button-hover: $citadel_navy;
+$color__background_selection: $citadel_navy;
 
-$size_1: .42rem;
-$size_2: .47rem;
-$size_3: .56rem;
-$size_4: .63rem;
-$size_5: .75rem;
-$size_6: .84rem;
-$size_7: 1rem;
-$size_8: 1.13rem;
-$size_9: 1.33rem;
-$size_10: 1.5rem;
-$size_11: 1.77rem;
-$size_12: 2rem;
-$size_13: 2.37rem;
-$size_14: 2.67rem;
-$size_15: 3.16rem;
-$size_16: 3.56rem;
-$size_17: 4.21rem;
-$size_18: 4.74rem;
-$size_19: 5.62rem;
+// Text
+$color__text-main: $shako;
+$color__text-input: $shako_80;
+$color__text-light: $shako_60;
 
-// Fonts
-$xxs_font: $size_6;
-$xs_font: $size_7;
-$sm_font: $size_8;
-$md_font: $size_9;
-$lg_font: $size_10;
-$xl_font: $size_11;
-$xxl_font: $size_12;
-
-// Spacing
-$sp_1: $size_1;
-$sp_2: $size_3;
-$sp_3: $size_5;
-$sp_4: $size_7;
-$sp_5: $size_9;
-$sp_6: $size_11;
-$sp_7: $size_13;
-$sp_8: $size_15;
-$sp_9: $size_17;
-$sp_10: $size_19;
-
-/*
---------------------
-Layout
---------------------
-*/
-
-$site_padding: 5.62vw;
-$sidebar_width: 350px;
+// Links
+$color__link: $shako;
+$color__link-visited: $shako;
+$color__link-hover: $citadel_blue;

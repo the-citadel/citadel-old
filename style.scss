@@ -1,0 +1,98 @@
+/*
+Theme Name: 	Citadel
+Theme URI: 		http://citadel.edu/
+Author: 		The Citadel Webmaster
+Author URI: 	http://citadel.edu/
+Description: 	Theme for The Citadel, Military College of South Carolina. Development started in September 2018.
+Version: 		1.0.0
+License:      	GNU General Public License v2 or later
+License URI:  	http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: 	citadel
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Variables
+# Normalize
+# Typography
+	## Headings
+	## Copy
+# Elements
+	## Lists
+	## Tables
+# Forms
+	## Buttons
+	## Fields
+# Navigation
+	## Links
+	## Menus
+	## Next & Previous
+# Accessibility
+# Alignments
+# Clearings
+# Layout
+# Widgets
+# Content
+	## Archives
+	## Posts and pages
+	## Comments
+# Blocks
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+@import 'sass/variables/variables';
+@import 'sass/mixins/mixins';
+
+/* Normalize */
+
+@import 'sass/normalize';
+
+/* Typography */
+
+@import 'sass/typography/typography';
+
+/* Elements */
+
+@import 'sass/elements/elements';
+
+/* Forms */
+
+@import 'sass/forms/forms';
+
+/* Navigation */
+
+//@import 'sass/navigation/navigation';
+
+/* Accessibility */
+
+//@import 'sass/modules/accessibility';
+
+/* Alignments */
+
+//@import 'sass/modules/alignments';
+
+/* Clearings */
+
+//@import 'sass/modules/clearings';
+
+/* Layout */
+
+//@import 'sass/layout/layout';
+
+/* Content */
+
+//@import 'sass/site/site';
+
+/* Widgets */
+
+//@import 'sass/site/secondary/widgets';
+
+/* Blocks */
+
+//@import 'sass/blocks/blocks';
+
+/* Media */
+
+//@import 'sass/media/media';

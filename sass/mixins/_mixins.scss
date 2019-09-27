@@ -1,7 +1,4 @@
 @mixin basic-transition {
-	-webkit-transition: all ease .4s;
-	-moz-transition: all ease .4s;
-	-o-transition: all ease .4s;
 	transition: all ease .4s;
 }
 
@@ -49,3 +46,5 @@
 	top: 0;
 	left: 0;
 }
+
+@import "utilities";

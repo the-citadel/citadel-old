@@ -1,0 +1,45 @@
+
+// Modular Sizes
+$size_1: .42rem;
+$size_2: .47rem;
+$size_3: .56rem;
+$size_4: .63rem;
+$size_5: .75rem;
+$size_6: .84rem;
+$size_7: 1rem;
+$size_8: 1.13rem;
+$size_9: 1.33rem;
+$size_10: 1.5rem;
+$size_11: 1.77rem;
+$size_12: 2rem;
+$size_13: 2.37rem;
+$size_14: 2.67rem;
+$size_15: 3.16rem;
+$size_16: 3.56rem;
+$size_17: 4.21rem;
+$size_18: 4.74rem;
+$size_19: 5.62rem;
+
+// Spacing
+$sp_1: $size_1;
+$sp_2: $size_3;
+$sp_3: $size_5;
+$sp_4: $size_7;
+$sp_5: $size_9;
+$sp_6: $size_11;
+$sp_7: $size_13;
+$sp_8: $size_15;
+$sp_9: $size_17;
+$sp_10: $size_19;
+
+//Layout
+$site_padding: 5.62vw;
+$sidebar_width: 350px;
+
+// Responsive widths
+$size__spacing-unit: 1rem;
+
+$mobile_width: 42.09em;
+$tablet_width: 56.12em;
+$desktop_width: 74.83em;
+$wide_width: 99.77em;
