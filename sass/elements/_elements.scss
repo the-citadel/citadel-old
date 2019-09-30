@@ -20,6 +20,7 @@ html {
 
 body {
 	background-color: $color__background-body;
+	overflow-x: hidden;
 }
 
 a {
@@ -84,6 +85,42 @@ blockquote {
 	cite {
 		color: $color__text-light;
 	}
+}
+
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+	background-color: $citadel_navy;
+	border: 2px solid $citadel_navy;
+	padding: $sp_2;
+	cursor: pointer;
+	color: #ffffff;
+	@include basic-transition;
+
+	&:hover,
+	&:focus {
+		color: $citadel_navy;
+		background-color: #ffffff;
+	}
+
+	&:disabled {
+		background-color: $citadel_navy_80;
+		color: #ffffff;
+		cursor: not-allowed;
+	}
+}
+
+video {
+	max-width: 100%;
+}
+
+audio {
+	max-width: 100%;
+}
+
+cite {
+	font-size: $font__size-sm;
 }
 
 @import 'tables';

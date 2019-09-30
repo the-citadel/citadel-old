@@ -1,0 +1,94 @@
+.main-nav {
+	background-color: $citadel_blue;
+
+	ul {
+		padding: 0;
+		margin: 0;
+		position: relative;
+		list-style: none;
+	}
+
+	> ul > li {
+		text-transform: uppercase;
+		text-align: center;
+		@include flex-grow (20);
+		@include basic-transition;
+
+		a {
+			color: #ffffff;
+			padding: $sp_2 $sp_6;
+			display: block;
+			width: 100%;
+			font-size: $xs_font;
+			cursor: pointer;
+			border-bottom: none;
+			font-weight: 600;
+			@include basic-transition;
+		}
+
+		&:hover,
+		&:focus {
+			background-color: #ffffff;
+		}
+
+		&:hover a,
+		&:focus a {
+			color: $citadel_navy;
+		}
+	}
+
+	.has-submenu:not(.wide-nav) {
+		position: relative;
+	}	
+
+	.has-submenu > a::after {
+		margin-left: $sp_1;
+		font-family: "Font Awesome 5 Free";
+		font-weight: 900;
+		content: "\f078";
+		font-size: $xxs_font;
+	}
+
+	.submenu {
+		position: absolute;
+		top: 100%;
+		left: -1px;
+		z-index: 90;
+		display: none;
+		background-color: #ffffff;
+		width: calc(100% + 2px);
+		border: 1px solid $citadel_blue;
+		border-top: 0;
+		display: none;
+	}
+
+	ul.submenu {
+
+		li {
+			margin-top: -1px;
+		}
+
+		li:nth-last-child(1) a {
+			border-bottom: none;
+		}
+
+		a {
+			color: $citadel_blue;
+			font-size: $xxs_font;
+			text-transform: none;
+			border-top: 1px solid transparent;
+			border-bottom: 1px solid transparent;
+			@include basic-transition;
+
+			&:hover,
+			&:focus {
+				border-top: 1px solid $citadel_blue;
+				border-bottom: 1px solid $citadel_blue;
+			}
+		}
+	}
+
+	div.submenu {
+
+	}
+}

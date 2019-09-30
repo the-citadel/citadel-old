@@ -6,11 +6,9 @@ input[type="submit"] {
 
 	background: $color__background-button;
 	border: none;
-	border-radius: 5px;
 	box-sizing: border-box;
 	color: $color__background-body;
-	font-size: $font__size-sm;
-	font-weight: 700;
+	font-size: $font__size-md;
 	line-height: $font__line-height-heading;
 	outline: none;
 	padding: ( $size__spacing-unit * .76 ) $size__spacing-unit;

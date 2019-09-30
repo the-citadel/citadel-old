@@ -3,12 +3,19 @@
 defined( 'ABSPATH' ) || exit;
 
 
-//Add custom admin CSS
-function admin_style() {
-  wp_enqueue_style('admin-styles', get_template_directory_uri() . '/stylesheets/admin.css');
-  wp_enqueue_style('font-awesome', 'https://use.fontawesome.com/releases/v5.3.1/css/all.css');
+if ( ! function_exists( 'citadel_admin_scripts' ) ) {
+    //Add custom admin CSS
+    function citadel_admin_style() {
+        // Get the theme data
+        $the_theme     = wp_get_theme();
+        $theme_version = $the_theme->get( 'Version' );
+
+        $css_version = $theme_version . '.' . filemtime( get_template_directory() . '/style-editor.css' );
+        wp_enqueue_style('citadel-admin-styles', get_template_directory_uri() . '/style-editor.css', array(), $css_version);
+        wp_enqueue_style('font-awesome', 'https://use.fontawesome.com/releases/v5.3.1/css/all.css');
+    }
+    add_action('admin_enqueue_scripts', 'citadel_admin_style');
 }
-add_action('admin_enqueue_scripts', 'admin_style');
 
 // Hide Admin Toolbar
 show_admin_bar( false );
@@ -31,7 +38,7 @@ function my_login_logo() { ?>
 	<style type="text/css">
 		body { background: #F5F4F2 !important; }
 		#login h1 a, .login h1 a {
-			background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/brandmark/Citadel_Logo_Brandmark_Navy.png);
+			background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/brandmark/Citadel_Logo_Brandmark_Navy_Square.png);
 			height: 150px;
 			width: 150px;
 			background-size: 150px 150px;

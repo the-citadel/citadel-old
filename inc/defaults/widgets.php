@@ -96,7 +96,7 @@ function citadel_network_pending_dashboard_widget_function() {
 					$pending_posts->the_post();
 					echo  '<tr>' .
 							'<td class="row-title"><a href="' . get_edit_post_link() . '">' . get_the_title() . '</a></td>' .
-							'<td><a href="mailto:' . get_the_author_email() . '">' . get_the_author() .  '</a></td>' .
+							'<td><a href="mailto:' . get_the_author_meta('email') . '">' . get_the_author() .  '</a></td>' .
 							'<td><a href="' . get_site_url() . '/wp-admin/edit.php?post_status=pending&post_type=page">' . get_bloginfo() . '</a></td>' .
 							'<td style="min-width: 100px;">' . get_the_date() . '</td>' .
 						'</tr>';

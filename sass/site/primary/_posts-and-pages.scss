@@ -1,0 +1,90 @@
+.entry-header {
+	background-color: $pt_barracks_20;
+	padding-top: $sp_8;
+	padding-bottom: $sp_8;
+
+	h1 {
+		margin-top: $sp_4;
+		font-size: $font__size-lg;
+		margin-bottom: 0;
+	}
+
+	&.home-header {
+
+		h1 {
+			margin-top: 0;
+		}
+	}
+
+	&.header-image {
+		background-repeat: no-repeat;
+		background-color: $citadel_navy;
+		position: relative;
+		overflow: hidden;
+		height: 30vw;
+
+		h1 {
+			z-index: 2;
+			width: 100%;
+			color: #ffffff;
+			padding-bottom: $sp_6;
+			@include absolute_center;
+		}
+
+		img {
+			z-index: 1;
+			width: 100%;
+			height: auto;
+			opacity: .125;
+			@include absolute_center;
+		}
+	}
+}
+
+#breadcrumbs {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: $xxs_font;
+	text-align: center;
+
+	li {
+		display: inline-block;
+	}
+
+	i {
+		display: inline-block;
+		margin: 0 4px;
+	}
+}
+
+.page-content {
+	padding-top: $sp_9;
+	padding-bottom: $sp_9;
+}
+
+.content-container {
+	width: 100%;
+}
+
+.entry-content {
+	padding-left: $site_padding;
+	width: 100%;
+
+	&.no-sidebar {
+		padding-left: 0;
+	}
+
+	p {
+		margin-top: 0;
+		margin-bottom: $sp_6;
+	}
+
+	> :first-child {
+		margin-top: 0;
+	}
+
+	> :last-child {
+		margin-bottom: 0;
+	}
+}

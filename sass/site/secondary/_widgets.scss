@@ -1,0 +1,65 @@
+.sidebar {
+	width: $sidebar_width;
+	border-top: 5px solid #3975b7;
+	padding: $sp_5 $sp_4;
+
+	h3 {
+		margin-top: 0;
+		font-size: $size_9;
+		line-height: 1.2;
+	}
+
+	nav ul {
+		font-size: $xs_font; 
+
+		li {
+			margin-bottom: $sp_2;
+		}
+
+		a {
+			color: $citadel_blue;
+			border-bottom-color: #ffffff;
+			font-weight: bold;
+			text-transform: capitalize;
+
+			&:hover {
+				border-bottom-color: $citadel_blue;
+			}
+		}
+
+		.sub-menu {
+			display: none;
+			padding: $sp_2 $sp_4;
+		}
+	}
+	
+	.leftmenu-toggle {
+		display: none;
+		color: #1F3A60;
+	    padding: 0;
+	    border: none;
+	    background-color: #fff;
+	    margin-right: $sp_1;
+	}
+}
+
+#leftmenu {
+
+	.current-menu-item {
+		position: relative;
+
+		&::before {
+			position: absolute;
+			margin-right: $sp_2;
+			right: 100%;
+			color: $citadel_navy;
+			font-family: "Font Awesome 5 Free";
+			font-weight: 900;
+			content: "\f30b";
+		}
+	}
+
+	> :last-child {
+		margin-bottom: 0;
+	}
+}

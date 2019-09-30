@@ -1,0 +1,10 @@
+.menu-item-has-children > a {
+
+	&::after {
+		margin-left: $sp_1;
+		font-family: "Font Awesome 5 Free";
+		font-weight: 900;
+		content: "\f078";
+		font-size: $xxs_font;
+	}
+}

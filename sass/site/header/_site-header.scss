@@ -1,0 +1,272 @@
+
+header[role="banner"] {
+	background-color: $citadel_navy;
+
+	a {
+		color: #ffffff;
+	}
+}
+
+.top-header {
+	background-color: $citadel_dark_navy;
+	position: relative;
+
+	.institution-title {
+		border-bottom: none;
+	}
+
+	img {
+		width: 100%;
+		max-width: 125px;
+	}
+
+	.secondary-nav {
+
+		ul {
+			margin: 0;
+			padding: 0;
+			font-size: $font__size-xs;
+		}
+
+		li {
+			
+		}
+
+		a {
+			border-bottom: 1px solid transparent;
+			margin: 0 $sp_2;
+			
+
+			&:hover,
+			&:focus {
+				color: #ffffff;
+				border-bottom: 1px solid;
+			}
+		}
+	}
+
+	.search-toggle {
+		border: none;
+		margin-left: $sp_2;
+		font-size: $font__size-xs;
+	}
+
+	.tools-toggle {
+		background-color: $citadel_dark_navy;
+		border-color: $citadel_dark_navy;
+		font-size: $font__size-xs;
+		border: none;
+
+		span {
+			border-bottom: 1px solid transparent;
+			@include basic-transition;
+		}
+
+		&::after {
+			margin-left: $sp_1;
+			font-family: "Font Awesome 5 Free";
+			font-weight: 900;
+			content: "\f078";
+			font-size: $font__size-xs;
+		}
+
+		&:hover,
+		&:focus {
+			color: #ffffff;
+		}
+
+		&:hover span,
+		&:focus span {
+			border-bottom: 1px solid;
+			color: #ffffff;
+		}
+	}
+}
+
+.main-header {
+	padding-top: $sp_4;
+	padding-bottom: $sp_4;
+
+	.header-logo {
+		border-bottom: none;
+
+		img {
+			height: 90px;
+			width: auto;
+			max-width: none;
+			transition: all ease .5s;
+		}
+		
+		@include media( mobile ) {
+			&:not(.main-logo) img {
+				height: auto;
+				width: 8vw;
+				max-width: 44px;
+				min-width: 30px;
+			}
+		}
+
+		@include media( tablet ) {
+			.main-logo img {
+				height: auto;
+				width: 100%;
+				max-width: 330px;
+			}
+		}
+
+	}
+
+	.lockup-text {
+		padding-top: $sp_3;
+	    padding-left: $sp_4;
+
+		a {
+			border-bottom-color: transparent;
+			letter-spacing: .75px;
+		    font-family: $font__heading;
+			@include basic-transition;
+
+			&:hover {
+				color: #ffffff;
+				border-bottom-color: #ffffff;
+			} 
+		}
+
+		.parent-site {
+			line-height: 1;
+		    font-size: $xs_font;
+		    margin-bottom: $sp_1;
+
+		    @include media( mobile ) {
+		    	font-size: 2.5vw;
+		    }
+		}
+
+		.current-site {
+		    font-size: $xxl_font;
+		    line-height: 1;
+
+		     @include media( mobile ) {
+		    	font-size: 5vw;
+		    }
+		}
+	}
+
+	.main-cta {
+
+		a {
+			background-color: $citadel_blue;
+			border-bottom: none;
+			font-family: $font__body;
+			padding: $sp_1 $sp_4;
+			font-size: $xs_font;
+			text-transform: uppercase;
+			font-weight: 600;
+			white-space: nowrap;
+    		margin: $sp_1 0 $sp_1 $sp_1;
+			@include basic-transition;
+
+			&:hover,
+			&:focus {
+				color: $citadel_blue;
+				background-color: #ffffff;
+			}
+		}
+	}
+
+	.mobile-buttons {
+		display: none;
+		margin-left: $sp_2;
+
+		@include media(tablet) {
+			@include flex;
+		}
+
+		button {
+			background-color: $citadel_blue;
+			color: #ffffff;
+			padding: $sp_3 $sp_4;
+			font-size: $md_font;
+			margin-left: $sp_1;
+
+			&::before,
+			&::after {
+				margin: 0;
+				font-size: $md_font;
+			}
+
+			&:hover,
+			&:focus {
+				background-color: #ffffff;
+				color: $citadel_blue;
+			}
+		}
+
+		.search-toggle {
+
+			&::before {
+				display: none;
+			}
+		}
+	}
+
+	.menu-toggle {
+
+	}
+}
+
+#tools {
+	display: none;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 100%;
+	background-color: $citadel_navy;
+	display: none;
+
+	ul {
+		margin: 0;
+		list-style: none;
+		height: 100%;
+
+		li {
+			text-align: center;
+
+			a {
+				border-bottom-color: $citadel_navy;
+
+				&:hover {
+					border-bottom-color: #ffffff;
+					color: #ffffff;
+				}
+			}
+
+			p {
+				font-size: $xs_font;
+				margin: 0;
+			}
+
+			i {
+				font-size: $lg_font;
+				margin-bottom: $sp_2;
+			}
+		}
+	}
+}
+
+button.search-toggle {
+	background-color: $citadel_blue;
+
+	&::before {
+		margin-right: $sp_1;
+		font-family: "Font Awesome 5 Free";
+		font-weight: 900;
+		content: "\f002";
+		font-size: $xxs_font;
+	}
+
+	&:hover,
+	&:focus {
+		background-color: #ffffff;
+	}
+}
