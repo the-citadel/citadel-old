@@ -14,12 +14,12 @@
 		@include flex-grow (20);
 		@include basic-transition;
 
-		a {
+		> a {
 			color: #ffffff;
-			padding: $sp_2 $sp_6;
+			padding: $sp_1 $sp_4;
 			display: block;
 			width: 100%;
-			font-size: $xs_font;
+			font-size: $font__size-sm;
 			cursor: pointer;
 			border-bottom: none;
 			font-weight: 600;
@@ -31,8 +31,8 @@
 			background-color: #ffffff;
 		}
 
-		&:hover a,
-		&:focus a {
+		&:hover > a,
+		&:focus > a {
 			color: $citadel_navy;
 		}
 	}
@@ -46,7 +46,7 @@
 		font-family: "Font Awesome 5 Free";
 		font-weight: 900;
 		content: "\f078";
-		font-size: $xxs_font;
+		font-size: $font__size-xs;
 	}
 
 	.submenu {
@@ -60,9 +60,44 @@
 		border: 1px solid $citadel_blue;
 		border-top: 0;
 		display: none;
+		text-transform: none;
+		text-align: left;
+		color: $shako;
+
+		.flex-container {
+			padding: $sp_6 $sp_3;
+		}
+
+		.nav-title {
+			font-size: $font__size-md;
+			margin-top: 0;
+		}
+
+		.nav-col {
+			flex-basis: 0;
+			flex: 1 1 0px;
+			padding: 0 $sp_3;
+			font-weight: bold;
+
+			> :last-child {
+				margin-bottom: 0;
+			}
+
+			a {
+				font-size: $font__size-sm;
+			}
+		}
+
+		.nav-link-description {
+			display: block;
+			font-weight: normal;
+		}
 	}
 
 	ul.submenu {
+
+		text-align: center;
+		font-weight: bold;
 
 		li {
 			margin-top: -1px;
@@ -74,8 +109,10 @@
 
 		a {
 			color: $citadel_blue;
-			font-size: $xxs_font;
+			font-size: $font__size-sm;
 			text-transform: none;
+			padding: $sp_1;
+			display: block;
 			border-top: 1px solid transparent;
 			border-bottom: 1px solid transparent;
 			@include basic-transition;

@@ -323,9 +323,12 @@ Editor Styles
   max-width: 849px;
 }
 
-.block-editor .editor-post-title__block .editor-post-title__input,
+.block-editor .editor-post-title__block .editor-post-title__input {
+  font-family: "poynter-oldstyle-display", "adobe-garamond-pro", times, serif;
+}
+
 .block-editor .editor-styles-wrapper {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "open-sans", helvetica, arial, sans-serif;
 }
 
 .editor-post-title__block .editor-post-title__input,
@@ -352,11 +355,15 @@ Editor Styles
 }
 
 .block-editor-rich-text__editable a {
+  border-bottom: 1px solid #3975B7;
+  color: #282E36;
+  text-decoration: none;
+}
+.block-editor-rich-text__editable a:hover {
   color: #3975B7;
   text-decoration: none;
 }
 
-.block-editor-rich-text__editable a:hover {
-  color: #1F3A60;
-  text-decoration: underline;
+.wp-block-quote {
+  border-left-color: #3975B7;
 }

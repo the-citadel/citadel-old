@@ -58,18 +58,18 @@ function the_breadcrumb() {
 				$post_type = get_post_type_object(get_post_type());
 				$slug = $post_type->rewrite;
 				echo '<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . $homeLink . '/' . $slug['slug'] . '/" itemprop="url"><span itemprop="title">' . $post_type->labels->singular_name . '</span></a></li>';
-				if ($showCurrent == 1) {
+				if ( $showCurrent == 1 && !( is_home() || is_front_page() ) ) {
 					echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
 				}
 			} else {
 				$cat = get_the_category();
 				$cat = $cat[0];
 				$cats = get_category_parents($cat, true, ' ' . $delimiter . ' ');
-				if ($showCurrent == 0) {
+				if ($showCurrent == 0 || is_home() || is_front_page() ) {
 					$cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
 				}
 				echo $cats;
-				if ($showCurrent == 1) {
+				if ($showCurrent == 1 && !( is_home() || is_front_page() ) ) {
 					echo $before . get_the_title() . $after;
 				}
 			}
@@ -82,11 +82,11 @@ function the_breadcrumb() {
 			$cat = $cat[0];
 			echo get_category_parents($cat, true, ' ' . $delimiter . ' ');
 			echo '<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . get_permalink($parent) . '" itemprop="url"><span itemprop="title">' . $parent->post_title . '</span></a></li>';
-			if ($showCurrent == 1) {
+			if ($showCurrent == 1 && !( is_home() || is_front_page() )) {
 				echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
 			}
 		} elseif (is_page() && !$post->post_parent) {
-			if ($showCurrent == 1) {
+			if ($showCurrent == 1 && !( is_home() || is_front_page() )) {
 				echo $before . get_the_title() . $after;
 			}
 		} elseif (is_page() && $post->post_parent) {
@@ -104,7 +104,7 @@ function the_breadcrumb() {
 					echo ' ' . $delimiter . ' ';
 				}
 			}
-			if ($showCurrent == 1) {
+			if ($showCurrent == 1 && !( is_home() || is_front_page() )) {
 				echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
 			}
 		} elseif (is_tag()) {

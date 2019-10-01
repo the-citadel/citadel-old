@@ -54,6 +54,18 @@
 	word-wrap: normal !important;
 }
 
+.mobile-hide {
+	@include media(tablet) {
+		display: none !important;
+	}
+}
+
+.mobile-show {
+	@include media(tablet) {
+		display: block;
+	}
+}
+
 /*
 --------------------
 Flex Layout
@@ -77,6 +89,15 @@ Flex Layout
 .flex-item {
 	display: table-cell;
 	@include flex;
+}
+
+@include media(tablet) {
+	.flex-container,
+	.flex-item {
+		&.mobile-no-flex {
+			display: block;
+		}
+	}
 }
 
 .flex-left {

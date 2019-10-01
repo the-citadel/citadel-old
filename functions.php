@@ -7,8 +7,11 @@ $citadel_includes = array(
 	'/hooks.php',
 	'/theme_support.php',
 	'/menus.php',
+	'/widgets.php',
 	'/breadcrumbs.php',
 	'/defaults.php',
+	'/child-menu.php',
+	'/post-meta.php',
 );
 
 foreach ( $citadel_includes as $file ) {

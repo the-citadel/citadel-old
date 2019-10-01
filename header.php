@@ -63,14 +63,15 @@ $blogname = get_bloginfo( 'name' );
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/brandmark/Citadel_Logo_Brandmark_Reverse.png" alt="The Citadel Brandmark">
 				</a>
 				<div class="lockup-text flex-container flex-center flex-col">
+					
+					<div class="current-site flex-item">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class=""><?php echo bloginfo('name'); ?></a>
+					</div>
 					<?php if ( ( $blog_id != 1 ) && ($main_blogname != $main_site)  ) : ?>
 					<div class="parent-site flex-item">
 						<a href="<?php echo esc_url(get_blog_details( 1 )->path ); ?>" class=""><?php echo get_blog_details( 1 )->blogname; ?></a>
 					</div>
 					<?php endif; ?>
-					<div class="current-site flex-item">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class=""><?php echo bloginfo('name'); ?></a>
-					</div>
 				</div>
 				<?php endif; ?>
 			</div>

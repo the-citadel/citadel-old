@@ -5,9 +5,11 @@ footer {
 
 	a {
 		color: #ffffff;
-			border-bottom-color: $citadel_blue;
+		border-bottom-color: $citadel_blue;
 
-		&:hover {
+		&:hover,
+		&:focus,
+		&:active {
 			color: #ffffff;
 			border-bottom-color: #ffffff;
 		}

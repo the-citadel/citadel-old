@@ -1,0 +1,67 @@
+#home-cta {
+	width: 100%;
+	background-color: $citadel_navy;
+	clear: both;
+	text-align: center;
+	
+	.widget {
+		display: inline-block;
+		vertical-align: top;
+		margin: $sp_4;
+
+		a {
+			display: inline-block;
+
+			&:hover,
+			&:focus {
+				border-bottom-color: #ffffff;
+
+				.cta-icon {
+					background-color: #fff;
+					color: $citadel_blue;
+				}
+			}
+		}
+
+		.cta-icon {
+			display: inline-block;
+			font-size: $font__size-xl;
+			border: 3px solid #fff;
+			border-radius: 100%;
+			padding: $sp_4 $sp_3;
+			color: #fff;
+			background-color: $citadel_blue;
+			@include basic-transition;
+		}
+
+		span {
+			text-transform: uppercase;
+			display: block;
+			padding: 8px 0 0;
+			font-size: 18px;
+			color: #ffffff;
+			@include basic-transition;
+		}
+
+		i {
+			display: block;
+		}
+	}
+
+}
+
+#home-featured-video {
+	width: 100%;
+	float: none;
+	background: transparent url(http://www.citadel.edu/root/templates/citadel-new-home/images/eh-landing-page/video-bg.jpg) no-repeat center top;
+	background-size: cover;
+
+	.widget {
+		margin-bottom: 0;
+		max-width: 800px;
+		padding: 0;
+		margin: 0 auto;
+		width: 100%;
+		overflow: hidden;
+	}
+}

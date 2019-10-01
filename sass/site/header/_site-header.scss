@@ -2,7 +2,8 @@
 header[role="banner"] {
 	background-color: $citadel_navy;
 
-	a {
+	.main-header a,
+	.top-header a {
 		color: #ffffff;
 	}
 }
@@ -49,12 +50,14 @@ header[role="banner"] {
 		border: none;
 		margin-left: $sp_2;
 		font-size: $font__size-xs;
+		padding: $sp_1 $sp_2;
 	}
 
 	.tools-toggle {
 		background-color: $citadel_dark_navy;
 		border-color: $citadel_dark_navy;
 		font-size: $font__size-xs;
+		padding: $sp_1 $sp_2;
 		border: none;
 
 		span {
@@ -84,8 +87,8 @@ header[role="banner"] {
 }
 
 .main-header {
-	padding-top: $sp_4;
-	padding-bottom: $sp_4;
+	padding-top: $sp_5;
+	padding-bottom: $sp_5;
 
 	.header-logo {
 		border-bottom: none;
@@ -118,7 +121,7 @@ header[role="banner"] {
 
 	.lockup-text {
 		padding-top: $sp_3;
-	    padding-left: $sp_4;
+	    padding-left: $sp_5;
 
 		a {
 			border-bottom-color: transparent;
@@ -134,8 +137,8 @@ header[role="banner"] {
 
 		.parent-site {
 			line-height: 1;
-		    font-size: $xs_font;
-		    margin-bottom: $sp_1;
+		    font-size: $font__size-sm;
+		    margin-top: $sp_1;
 
 		    @include media( mobile ) {
 		    	font-size: 2.5vw;
@@ -143,7 +146,7 @@ header[role="banner"] {
 		}
 
 		.current-site {
-		    font-size: $xxl_font;
+		    font-size: $size_10;
 		    line-height: 1;
 
 		     @include media( mobile ) {
@@ -159,7 +162,7 @@ header[role="banner"] {
 			border-bottom: none;
 			font-family: $font__body;
 			padding: $sp_1 $sp_4;
-			font-size: $xs_font;
+			font-size: $font__size-sm;
 			text-transform: uppercase;
 			font-weight: 600;
 			white-space: nowrap;
@@ -220,6 +223,7 @@ header[role="banner"] {
 	position: absolute;
 	left: 0;
 	right: 0;
+	z-index: 9;
 	top: 100%;
 	background-color: $citadel_navy;
 	display: none;
@@ -242,12 +246,12 @@ header[role="banner"] {
 			}
 
 			p {
-				font-size: $xs_font;
+				font-size: $font__size-sm;
 				margin: 0;
 			}
 
 			i {
-				font-size: $lg_font;
+				font-size: $font__size-md;
 				margin-bottom: $sp_2;
 			}
 		}

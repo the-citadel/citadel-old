@@ -4,6 +4,7 @@ defined( 'ABSPATH' ) || exit;
 
 $citadel_includes = array(
 	'/admin.php',
+	'/editor.php',
 	'/new-site.php',
 	'/widgets.php',
 );

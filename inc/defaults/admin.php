@@ -13,6 +13,7 @@ if ( ! function_exists( 'citadel_admin_scripts' ) ) {
         $css_version = $theme_version . '.' . filemtime( get_template_directory() . '/style-editor.css' );
         wp_enqueue_style('citadel-admin-styles', get_template_directory_uri() . '/style-editor.css', array(), $css_version);
         wp_enqueue_style('font-awesome', 'https://use.fontawesome.com/releases/v5.3.1/css/all.css');
+        wp_enqueue_style( 'citadel-fonts', 'https://use.typekit.net/onz2qme.css', array(), $theme_version );
     }
     add_action('admin_enqueue_scripts', 'citadel_admin_style');
 }

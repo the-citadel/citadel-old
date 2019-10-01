@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) || exit;
 
 ?>
 
-<aside class="sidebar flex-item" role="complementary">
+<aside class="sidebar" role="complementary">
 	<?php if ( has_nav_menu( 'leftmenu' ) ): ?>
 		<nav class="widget_nav_menu" role="navigation" aria-label="local navigation">
 			<h3><button class="leftmenu-toggle"><i class="fas fa-bars fa-fw"></i><span class="screen-reader-text"><?php echo bloginfo('name'); ?> Menu</span></button><?php echo bloginfo('name'); ?></h3>
@@ -14,5 +14,11 @@ defined( 'ABSPATH' ) || exit;
 				'container' 	 => '',
 			) ); ?>
 		</nav>
+	<?php endif; ?>
+	<?php if ( !is_page() ): ?>
+		<div class="blog-widgets">
+			<h4>Recent Blog Posts</h4>
+			
+		</div>
 	<?php endif; ?>
 </aside>

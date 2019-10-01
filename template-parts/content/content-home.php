@@ -25,7 +25,7 @@ defined( 'ABSPATH' ) || exit;
 
 	<?php endif; ?>
 	
-	<div class="wrapper flex-container page-content">
+	<div class="wrapper flex-container page-content mobile-no-flex">
 		<?php if ( has_nav_menu( 'leftmenu' ) ): ?>
 			<?php get_sidebar(); ?>
 		<?php endif; ?>
@@ -37,3 +37,27 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 
 </article><!-- #post-<?php the_ID(); ?> -->
+
+<?php if (is_active_sidebar('home-cta')) : ?>
+<section id="home-cta">
+
+	<div class="wrapper">
+
+		<?php dynamic_sidebar('home-cta'); ?>
+
+	</div>
+
+</section>
+<?php endif; ?>
+
+<?php if (is_active_sidebar('home-featured-video')) : ?>
+<section id="home-featured-video">
+
+	<div class="wrapper">
+
+		<?php dynamic_sidebar('home-featured-video'); ?>
+
+	</div>
+
+</section>
+<?php endif; ?>

@@ -35,7 +35,8 @@ a {
 }
 
 a:hover,
-a:active {
+a:active,
+a:focus {
 	color: $color__link-hover;
 	outline: 0;
 	text-decoration: none;
@@ -74,7 +75,7 @@ figure {
 }
 
 blockquote {
-	border-left: 2px solid $color__link;
+	border-left: 5px solid $citadel_blue;
 	margin-left: 0;
 	padding: 0 0 0 $size__spacing-unit;
 

@@ -21,11 +21,11 @@ defined( 'ABSPATH' ) || exit;
 
 			<?php if ( is_home() || is_front_page() ) : ?>
 
-			<h1 class="text-center "><?php echo bloginfo('name'); ?></h1>
+				<h1 class="text-center "><?php echo bloginfo('name'); ?></h1>
 
 			<?php else: ?>
 
-			<h1 class="text-center"><?php the_title(); ?></h1>
+				<h1 class="text-center"><?php the_title(); ?></h1>
 
 			<?php endif; ?>
 

@@ -110,6 +110,15 @@ jQuery(document).ready(function($) {
 		$('+ .submenu', this).toggleClass('active').stop().slideToggle(500);
 	});
 
+	$('.sidebar .menu-item-has-children').each(function() {
+		$('> a', this).after('<i class="fas fa-chevron-down"></i>');
+	});
+
+	$('.sidebar .menu-item-has-children > i').click(function() {
+		$(this).toggleClass('active')
+		$(this).next().stop().slideToggle(400);
+	});
+
 	var mainHeader = $('.main-header').outerHeight();
 	$('#tools').height(mainHeader);
 

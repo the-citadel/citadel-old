@@ -1,0 +1,21 @@
+.page-children-items {
+	background-color: $pt_barracks_20;
+	color: #ffffff;
+	border-top: 2px solid $pt_barracks_40;
+	font-size: $font__size-sm;
+
+	ul {
+		margin: 0;
+		text-align: center;
+	}
+
+	li {
+		padding: 1em;
+		display: inline-block;
+	}
+
+	a {
+		display: block;
+	}
+
+}

@@ -2,34 +2,86 @@
 	width: $sidebar_width;
 	border-top: 5px solid #3975b7;
 	padding: $sp_5 $sp_4;
+	@include media(tablet) {
+		width: 100%;
+		text-align: center;
+		border-bottom: 5px solid #3975b7;
+		margin-bottom: $sp_8;
+	}
+
+	.widget_nav_menu {
+		width: 100%;
+	}
+
+	.sidebar-home-link {
+		color: $citadel_blue;
+		display: inline-block;
+		border-bottom-color: #ffffff;
+		font-weight: bold;
+		font-size: $font__size-sm;
+		margin-bottom: $sp_2;
+
+		&:hover {
+			border-bottom-color: $citadel_blue;
+		}
+	}
 
 	h3 {
 		margin-top: 0;
 		font-size: $size_9;
 		line-height: 1.2;
+		@include media(tablet) {
+			margin-bottom: 0;
+		}
 	}
 
-	nav ul {
-		font-size: $xs_font; 
-
-		li {
-			margin-bottom: $sp_2;
+	nav {
+		@include media(tablet) {
+			width: 100%;
 		}
 
-		a {
-			color: $citadel_blue;
-			border-bottom-color: #ffffff;
-			font-weight: bold;
-			text-transform: capitalize;
+		ul {
+			font-size: $font__size-sm; 
+			list-style: none;
+			padding: 0;
+			margin-top: 0;
 
-			&:hover {
-				border-bottom-color: $citadel_blue;
+			li {
+				margin-bottom: $sp_2;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			a {
+				color: $citadel_blue;
+				border-bottom-color: #ffffff;
+				font-weight: bold;
+
+				&:hover {
+					border-bottom-color: $citadel_blue;
+				}
+			}
+
+			.sub-menu {
+				display: none;
+				margin-top: $sp_2;
+				padding: 0 0 0 $sp_3;
 			}
 		}
+	}
 
-		.sub-menu {
-			display: none;
-			padding: $sp_2 $sp_4;
+	i {
+		margin-left: $sp_1;
+		font-family: "Font Awesome 5 Free";
+		font-size: $font__size-xs;
+		cursor: pointer;
+		transform: rotate(0deg);
+		transition: transform ease .4s;
+
+		&.active {
+			transform: rotate(-90deg);
 		}
 	}
 	
@@ -40,10 +92,19 @@
 	    border: none;
 	    background-color: #fff;
 	    margin-right: $sp_1;
+
+	    @include media(tablet) {
+	    	display: inline-block;
+	    }
 	}
 }
 
 #leftmenu {
+
+	@include media(tablet) {
+    	display: none;
+		padding: $sp_4 0 0;
+    }
 
 	.current-menu-item {
 		position: relative;
