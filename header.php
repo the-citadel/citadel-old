@@ -62,7 +62,7 @@ $blogname = get_bloginfo( 'name' );
 				<a class="header-logo flex-item flex-middle" title="Go to The Citadel home page" aria-label="Go to The Citadel home page" href="https://citadel.edu/" rel="home">
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/brandmark/Citadel_Logo_Brandmark_Reverse.png" alt="The Citadel Brandmark">
 				</a>
-				<div class="lockup-text flex-container flex-center flex-col">
+				<div class="lockup-text flex-item flex-center flex-middle flex-col">
 					
 					<div class="current-site flex-item">
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class=""><?php echo bloginfo('name'); ?></a>
