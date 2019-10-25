@@ -38,12 +38,7 @@ a:hover,
 a:active,
 a:focus {
 	color: $color__link-hover;
-	outline: 0;
 	text-decoration: none;
-}
-
-a:focus {
-	outline: thin;
 }
 
 h1,
