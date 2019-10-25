@@ -10,6 +10,7 @@ $shako = '#282E36';
 
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'title-tag' );
+add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'editor-color-palette', array(
 	array(
 		'name'  => __( 'Citadel Navy', 'citadel' ),
