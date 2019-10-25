@@ -155,3 +155,21 @@
 		margin-bottom: 0;
 	}
 }
+
+.message-404 {
+
+	.mobile {
+		display: none;
+
+		@include media(tablet) {
+			display: initial;
+		}
+	}
+
+	.desktop {
+
+		@include media(tablet) {
+			display: none;
+		}
+	}
+}
