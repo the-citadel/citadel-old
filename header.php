@@ -32,60 +32,67 @@ $blogname = get_bloginfo( 'name' );
 
 		<!-- start .top-header -->
 		<?php if ($blogname != $main_site): ?>
-		<div class="wrapper top-header flex-container flex-between">
-			<a href="https://citadel.edu/" title="Go to The Citadel home page" aria-label="Go to The Citadel home page" class="institution-title flex-item flex-middle" rel="home">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/wordmark/Citadel_Logo_Wordmark_Reverse.png" alt="The Citadel Wordmark">
-			</a>
+		<div class="top-header">
+			<div class="wrapper flex-container flex-between">
+				<a href="https://citadel.edu/" title="Go to The Citadel home page" aria-label="Go to The Citadel home page" class="institution-title flex-item flex-middle" rel="home">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/wordmark/Citadel_Logo_Wordmark_Reverse.png" alt="The Citadel Wordmark">
+				</a>
 		<?php else: ?>
-		<div class="wrapper top-header flex-container flex-row-rev">
+		<div class="top-header">
+			<div class="wrapper flex-container flex-row-rev">
 		<?php endif; ?>
-			<div class="right-header flex-item flex-middle flex-right">
-				<nav class="secondary-nav flex-item flex-middle" role="navigation" aria-label="secondary navigation">
-					<?php include 'template-parts/header/secondary-nav.php'; ?>
-				</nav>
-				<div class="action-buttons flex-item flex-middle mobile-hide">
-					<button class="search-toggle">Search</button>
-					<button class="tools-toggle"><span>Tools</span></button>
+				<div class="right-header flex-item flex-middle flex-right">
+					<nav class="secondary-nav flex-item flex-middle" role="navigation" aria-label="secondary navigation">
+						<?php include 'template-parts/header/secondary-nav.php'; ?>
+					</nav>
+					<div class="action-buttons flex-item flex-middle mobile-hide">
+						<button class="search-toggle">Search</button>
+						<button class="tools-toggle"><span>Tools</span></button>
+					</div>
+					<?php include 'template-parts/header/tools.php'; ?>
 				</div>
-				<?php include 'template-parts/header/tools.php'; ?>
 			</div>
 		</div><!-- end .top-header -->
 
 		<!-- start .main-header -->
-		<div class="wrapper main-header flex-container flex-between">
-			<div class="lockup flex-item">
-				<?php if ( ( $blog_id == 1 ) && ($main_blogname == $main_site) ) : ?>
-				<a class="header-logo main-logo flex-item flex-middle" title="Go to The Citadel home page" aria-label="Go to The Citadel home page" href="https://citadel.edu/" rel="home">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/brand_signature/Citadel_Logo_Signature_Horizontal_Reverse.png" alt="The Citadel Brandmark">
-				</a>
-				<?php else: ?>
-				<a class="header-logo flex-item flex-middle" title="Go to The Citadel home page" aria-label="Go to The Citadel home page" href="https://citadel.edu/" rel="home">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/brandmark/Citadel_Logo_Brandmark_Reverse.png" alt="The Citadel Brandmark">
-				</a>
-				<div class="lockup-text flex-item flex-center flex-col">
-					
-					<div class="current-site flex-item">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class=""><?php echo bloginfo('name'); ?></a>
-					</div>
-					<?php if ( ( $blog_id != 1 ) && ($main_blogname != $main_site)  ) : ?>
-					<div class="parent-site flex-item">
-						<a href="<?php echo esc_url(get_blog_details( 1 )->path ); ?>" class=""><?php echo get_blog_details( 1 )->blogname; ?></a>
+		<div class="main-header">
+			<div class="wrapper flex-container flex-between">
+				<div class="lockup flex-item">
+					<?php if ( ( $blog_id == 1 ) && ($main_blogname == $main_site) ) : ?>
+					<a class="header-logo main-logo flex-item flex-middle" title="Go to The Citadel home page" aria-label="Go to The Citadel home page" href="https://citadel.edu/" rel="home">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/brand_signature/Citadel_Logo_Signature_Horizontal_Reverse.png" alt="The Citadel Brandmark">
+					</a>
+					<?php else: ?>
+					<a class="header-logo flex-item flex-middle" title="Go to The Citadel home page" aria-label="Go to The Citadel home page" href="https://citadel.edu/" rel="home">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/brandmark/Citadel_Logo_Brandmark_Reverse.png" alt="The Citadel Brandmark">
+					</a>
+					<div class="lockup-text flex-item flex-center flex-col">
+						
+						<div class="current-site flex-item">
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class=""><?php echo bloginfo('name'); ?></a>
+						</div>
+						<?php if ( ( $blog_id != 1 ) && ($main_blogname != $main_site)  ) : ?>
+						<div class="parent-site flex-item">
+							<a href="<?php echo esc_url(get_blog_details( 1 )->path ); ?>" class=""><?php echo get_blog_details( 1 )->blogname; ?></a>
+						</div>
+						<?php endif; ?>
 					</div>
 					<?php endif; ?>
 				</div>
-				<?php endif; ?>
-			</div>
-			<div class="main-cta mobile-hide flex-item flex-middle">
-				<div class="flex-container text-right">
-					<a href="">Apply Now</a>
-					<a href="">Give Online</a>
+				<div class="main-cta mobile-hide flex-item flex-middle">
+					<div class="flex-container text-right">
+						<a href="">Apply Now</a>
+						<a href="">Give Online</a>
+					</div>
 				</div>
 			</div>
 		</div><!-- end .main-header -->
 
 		<!-- start .main-nav -->
-		<nav class="wrapper main-nav" role="navigation" aria-label="main navigation">
-			<?php include 'template-parts/header/main-nav.php'; ?>
+		<nav class="main-nav" role="navigation" aria-label="main navigation">
+			<div class="wrapper">
+				<?php include 'template-parts/header/main-nav.php'; ?>
+			</div>
 		</nav><!-- end .main-nav -->
 
 	</header>

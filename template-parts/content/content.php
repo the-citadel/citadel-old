@@ -6,41 +6,32 @@ defined( 'ABSPATH' ) || exit;
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php if ( ( is_home() || is_front_page() ) && has_post_thumbnail() ) : ?>
+	<?php citadel_entry_header(); ?>
 
-		<header class="wrapper entry-header home-header header-image">
-			<h1 class="text-center wrapper"><?php echo bloginfo('name'); ?></h1>
-			<?php the_post_thumbnail(); ?>
-		</header>
+	<div class="page-content">
 
-	<?php else: ?>
+		<div class="wrapper flex-container mobile-no-flex">
 
-		<header class="wrapper entry-header">
+			<?php if ( has_nav_menu( 'leftmenu' ) ): ?>
 
-			<?php if (function_exists('citadel_post_meta')) citadel_post_meta(); ?>
-
-			<?php if ( is_home() || is_front_page() ) : ?>
-
-				<h1 class="text-center "><?php echo bloginfo('name'); ?></h1>
-
-			<?php else: ?>
-
-				<h1 class="text-center"><?php the_title(); ?></h1>
+				<?php get_sidebar(); ?>
 
 			<?php endif; ?>
 
-		</header>
+			<div class="flex-item content-container">
 
-	<?php endif; ?>
-	<div class="wrapper flex-container page-content mobile-no-flex">
-		<?php if ( has_nav_menu( 'leftmenu' ) ): ?>
-			<?php get_sidebar(); ?>
-		<?php endif; ?>
-		<div class="flex-item content-container">
-			<div class="entry-content<?php if ( !has_nav_menu( 'leftmenu' ) ): ?> no-sidebar<?php endif; ?>">
-				<?php the_content(); ?>
-			</div>
-		</div><!-- .entry-content -->
+				<div class="entry-content<?php if ( !has_nav_menu( 'leftmenu' ) ): ?> no-sidebar<?php endif; ?>">
+
+					<?php the_content(); ?>
+
+				</div>
+
+			</div><!-- .entry-content -->
+
+		</div>
+		
 	</div>
+
+	<?php citadel_subsite_frontpage(); ?>
 
 </article><!-- #post-<?php the_ID(); ?> -->

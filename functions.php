@@ -4,13 +4,13 @@ defined( 'ABSPATH' ) || exit;
 
 $citadel_includes = array(
 	'/enqueue.php',
+	'/custom-functions.php',
 	'/theme_support.php',
 	'/menus.php',
 	'/widgets.php',
 	'/breadcrumbs.php',
 	'/child-menu.php',
 	'/title-tag.php',
-	'/post-meta.php',
 );
 
 foreach ( $citadel_includes as $file ) {

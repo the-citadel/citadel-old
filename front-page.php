@@ -20,7 +20,7 @@ while ( have_posts() ) :
 
 	} else {
 
-		get_template_part( 'template-parts/content/content', 'home' );
+		get_template_part( 'template-parts/content/content' );
 
 	}
 

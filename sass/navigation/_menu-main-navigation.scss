@@ -12,7 +12,7 @@
 		list-style: none;
 	}
 
-	> ul > li {
+	.wrapper > ul > li {
 		text-transform: uppercase;
 		text-align: center;
 		@include flex-grow (20);

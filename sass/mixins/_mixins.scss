@@ -26,6 +26,8 @@
 @mixin wrapper {
 	padding-left: $site_padding;
 	padding-right: $site_padding;
+	max-width: 2000px;
+    margin: 0 auto;
 }
 
 @mixin remove_wrapper {
