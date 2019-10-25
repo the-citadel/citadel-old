@@ -5,13 +5,13 @@ footer {
 
 	a {
 		color: #ffffff;
-		border-bottom-color: $citadel_blue;
+		border-bottom-color: #ffffff;
 
 		&:hover,
 		&:focus,
 		&:active {
 			color: #ffffff;
-			border-bottom-color: #ffffff;
+			border-bottom-color: transparent;
 		}
 	}
 }
@@ -72,13 +72,7 @@ footer {
 	font-size: $xxs_font;
 	border-bottom: 1px solid #ffffff;
 
-	a {
-		border-bottom-color: #ffffff;
-
-		&:hover {
-			border-bottom-color: $citadel_blue;
-		}
-	}
+	
 }
 
 .bottom-footer {
@@ -93,7 +87,10 @@ footer {
 	list-style: none;
 
 	a {
-		padding: 0 2px;
+		padding: 0 0 5px;
 		font-size: $lg_font;
+	    line-height: 1.5rem;
+	    margin: 0 5px;
+	    display: inline-block;
 	}
 }

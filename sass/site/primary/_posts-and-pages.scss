@@ -7,6 +7,10 @@
 		margin-top: $sp_3;
 		font-size: $font__size-xxl;
 		margin-bottom: 0;
+
+		@include media(tablet) {
+	    	font-size: $font__size-xl;
+	    }
 	}
 
 	&.home-header {
@@ -121,6 +125,10 @@
 .page-content {
 	padding-top: $sp_9;
 	padding-bottom: $sp_9;
+
+	@include media(tablet) {
+		padding-top: 0;
+	}
 }
 
 .content-container {
