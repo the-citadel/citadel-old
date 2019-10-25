@@ -98,16 +98,55 @@ jQuery(document).ready(function($) {
 		
 	}
 
-	reportIssueUrl();
+	function mobileMenu() {
 
-	$('.menu-toggle').click(function() {
-		$(this).toggleClass('active');
-		$('.main-nav').stop().slideToggle(500);
-	});
+		if ( $('#mobile-nav').is(':visible') ) {
+			
+			var mobileNavHeight = $('#mobile-nav').outerHeight();
+
+			if ( !$('body').hasClass('mobile-nav-visible') ) {
+				$('body').css('margin-bottom', mobileNavHeight);
+			}
+
+		}
+
+	}
+
+	function slideToggle($clickELement, $targetElement, $visibility) {
+
+		$($clickELement).click(function() {
+			$(this).toggleClass('active');
+			$($targetElement).stop().slideToggle(400);
+		});
+
+		if ( $visibility == 'desktop' ) {
+
+			if ( $('#mobile-nav').is(':hidden') ) {
+
+				$($targetElement).removeAttr('style');
+
+			}
+
+		} else {
+
+			if ( $('#mobile-nav').is(':vibile') ) {
+
+				$($targetElement).removeAttr('style');
+
+			}
+
+		}
+
+	}
+
+	// $('.menu-toggle').click(function() {
+	// 	$(this).toggleClass('active');
+	// 	$('.main-nav').stop().slideToggle(400);
+	// });
 
 	$('.has-submenu .primary').click(function(e) {
 		e.preventDefault();
-		$('+ .submenu', this).toggleClass('active').stop().slideToggle(500);
+		$('+ .submenu', this).toggleClass('active').stop().slideToggle(400);
 	});
 
 	$('.sidebar .menu-item-has-children').each(function() {
@@ -122,12 +161,25 @@ jQuery(document).ready(function($) {
 	var mainHeader = $('.main-header').outerHeight();
 	$('#tools').height(mainHeader);
 
-	$('.tools-toggle').click(function() {
-		$('#tools').stop().slideToggle(400);
-	});
-
 	$('.leftmenu-toggle').click(function() {
 		$(this).parent().next().stop().slideToggle(400);
+	});
+
+	reportIssueUrl();
+	mobileMenu();
+	slideToggle('.menu-toggle', '.main-nav', 'desktop');
+	slideToggle('.secondary-toggle', '.secondary-nav', 'desktop');
+	slideToggle('.search-toggle', '#search', 'desktop');
+	slideToggle('.tools-toggle', '#tools', 'desktop');
+
+	jQuery(window).scroll(function($) {
+		
+	});
+
+	jQuery(window).resize(function($) {
+
+		mobileMenu();
+
 	});
 
 });

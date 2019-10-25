@@ -8,12 +8,27 @@ header[role="banner"] {
 	}
 }
 
+.right-header {
+
+	@include media( 'tablet' ) {
+		width: 100%;
+	}
+}
+
 .top-header {
 	background-color: $citadel_dark_navy;
 	position: relative;
 
+	@include media( 'tablet' ) {
+		padding: 0;
+	}
+
 	.institution-title {
 		border-bottom: none;
+
+		@include media( 'tablet' ) {
+			display: none;
+		}
 	}
 
 	img {
@@ -23,19 +38,39 @@ header[role="banner"] {
 
 	.secondary-nav {
 
+		@include media( 'tablet' ) {
+			display: none;
+			width: 100%;
+		}
+
 		ul {
 			margin: 0;
 			padding: 0;
 			font-size: $font__size-xs;
+
+			@include media( 'tablet' ) {
+				display: block;
+				margin: $sp_2 0;
+			}
 		}
 
 		li {
-			
+			@include media( 'tablet' ) {
+				display: block;
+				text-align: center;
+				font-size: $size_8;
+			}
 		}
 
 		a {
 			border-bottom: 1px solid transparent;
 			margin: 0 $sp_2;
+
+			@include media( 'tablet' ) {
+				margin: 0;
+				padding: $sp_2 $sp_4;
+				display: block;
+			}
 			
 
 			&:hover,
@@ -103,7 +138,6 @@ header[role="banner"] {
 		@include media( mobile ) {
 			&:not(.main-logo) img {
 				height: auto;
-				width: 8vw;
 				max-width: 44px;
 				min-width: 30px;
 			}
@@ -139,19 +173,11 @@ header[role="banner"] {
 			line-height: 1;
 		    font-size: $font__size-sm;
 		    margin-top: $sp_1;
-
-		    @include media( mobile ) {
-		    	font-size: 2.5vw;
-		    }
 		}
 
 		.current-site {
 		    font-size: $size_10;
 		    line-height: 1;
-
-		     @include media( mobile ) {
-		    	font-size: 5vw;
-		    }
 		}
 	}
 

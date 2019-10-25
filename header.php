@@ -24,7 +24,7 @@ $blogname = get_bloginfo( 'name' );
 	<?php include 'template-parts/header/header_scripts.php' ?>
 </head>
 <body <?php body_class(); ?>>
-	<nav class="skip"  role="navigation">
+	<nav class="skip" role="navigation">
 		<a class="show-on-focus" href="#main">Skip to main content</a>
 	</nav>
 
@@ -32,18 +32,18 @@ $blogname = get_bloginfo( 'name' );
 
 		<!-- start .top-header -->
 		<?php if ($blogname != $main_site): ?>
-		<div class="wrapper top-header mobile-hide flex-container flex-between">
+		<div class="wrapper top-header flex-container flex-between">
 			<a href="https://citadel.edu/" title="Go to The Citadel home page" aria-label="Go to The Citadel home page" class="institution-title flex-item flex-middle" rel="home">
 				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/wordmark/Citadel_Logo_Wordmark_Reverse.png" alt="The Citadel Wordmark">
 			</a>
 		<?php else: ?>
-		<div class="wrapper top-header mobile-hide flex-container flex-row-rev">
+		<div class="wrapper top-header flex-container flex-row-rev">
 		<?php endif; ?>
 			<div class="right-header flex-item flex-middle flex-right">
 				<nav class="secondary-nav flex-item flex-middle" role="navigation" aria-label="secondary navigation">
 					<?php include 'template-parts/header/secondary-nav.php'; ?>
 				</nav>
-				<div class="action-buttons flex-item flex-middle">
+				<div class="action-buttons flex-item flex-middle mobile-hide">
 					<button class="search-toggle">Search</button>
 					<button class="tools-toggle"><span>Tools</span></button>
 				</div>
@@ -62,7 +62,7 @@ $blogname = get_bloginfo( 'name' );
 				<a class="header-logo flex-item flex-middle" title="Go to The Citadel home page" aria-label="Go to The Citadel home page" href="https://citadel.edu/" rel="home">
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/brandmark/Citadel_Logo_Brandmark_Reverse.png" alt="The Citadel Brandmark">
 				</a>
-				<div class="lockup-text flex-item flex-center flex-middle flex-col">
+				<div class="lockup-text flex-item flex-center flex-col">
 					
 					<div class="current-site flex-item">
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class=""><?php echo bloginfo('name'); ?></a>
@@ -81,20 +81,16 @@ $blogname = get_bloginfo( 'name' );
 					<a href="">Give Online</a>
 				</div>
 			</div>
-			<div class="mobile-buttons flex-item flex-middle">
-				<div class="flex-container text-right">
-					<button class="search-toggle"><span class="screen-reader-text">Search</span><i class="fas fa-search fa-fw"></i></button>
-					<button class="menu-toggle"><span class="screen-reader-text">Main Menu</span><i class="fas fa-bars fa-fw"></i></button>
-				</div>
-			</div>
 		</div><!-- end .main-header -->
 
 		<!-- start .main-nav -->
-		<nav class="wrapper main-nav mobile-hide" role="navigation" aria-label="main navigation">
+		<nav class="wrapper main-nav" role="navigation" aria-label="main navigation">
 			<?php include 'template-parts/header/main-nav.php'; ?>
 		</nav><!-- end .main-nav -->
 
 	</header>
+
+	<?php include 'template-parts/header/mobile-nav.php'; ?>
 
 	<!-- start #main -->
 	<main id="main" role="main">

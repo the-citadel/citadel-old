@@ -1,6 +1,10 @@
 .main-nav {
 	background-color: $citadel_blue;
 
+	@include media( 'tablet' ) {
+		display: none;
+	}
+
 	ul {
 		padding: 0;
 		margin: 0;

@@ -1,0 +1,52 @@
+#mobile-nav {
+	position: fixed;
+	display: none;
+	bottom: 0;
+	width: 100%;
+	z-index: 9999;
+	text-align: center;
+	background-color: #ffffff;
+	border-top: 1px solid $pt_barracks;
+
+	@include media( 'tablet' ) {
+		display: block;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		width: 25%;
+	}
+
+	button {
+		width: 100%;
+		color: $shako;
+		background-color: $pt_barracks_20;
+		cursor: pointer;
+
+		&:hover,
+		&:focus {
+			background-color: $pt_barracks_60;
+		}
+	}
+
+	i {
+		display: block;
+		margin: 0 auto;
+		font-size: $size_10;
+	}
+
+	.mobile-label {
+		font-size: $size_6;
+	}
+
+	.search-toggle {
+
+		&::before {
+			content: none;
+		}
+	}
+}
