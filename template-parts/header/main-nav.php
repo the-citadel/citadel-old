@@ -108,13 +108,13 @@ defined( 'ABSPATH' ) || exit;
 		</ul>
 	</li>
 	<li class="flex-item flex-middle">
-		<a href="https://mighty.citadel.edu/" class="primary">Stories</a>
+		<a href="<?php echo esc_url( 'https://mighty.citadel.edu/' ); ?>" class="primary">Stories</a>
 	</li>
 	<li class="has-submenu flex-item flex-middle">
 		<a href="#" class="primary">Campus Life</a>
 		<ul class="submenu">
 			<li><a href="">Annual Events</a></li>
-			<li><a href="http://www.citadelsports.com/">Athletics</a></li>
+			<li><a href="<?php echo esc_url( 'http://www.citadelsports.com/' ); ?>">Athletics</a></li>
 			<li><a href="">Cadet Resources</a></li>
 			<li><a href="">Commandant</a></li>
 			<li><a href="">Campus Resources</a></li>
