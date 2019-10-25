@@ -4,10 +4,6 @@ defined( 'ABSPATH' ) || exit;
 
 global $blog_id;
 
-$main_site = 'The Citadel';
-$main_blogname = get_blog_details( 1 )->blogname;
-$blogname = get_bloginfo( 'name' );
-
 ?>
 
 <?php get_header(); ?>
@@ -18,9 +14,9 @@ $blogname = get_bloginfo( 'name' );
 while ( have_posts() ) :
 	the_post();
 
-	if ( ( $blog_id == 1 ) && ($main_blogname == $main_site)  ) {
+	if ( ( $blog_id == 1 ) ) {
 
-		get_template_part( 'template-parts/content/content', 'citadel_home' );
+		get_template_part( 'template-parts/content/content', 'network_home' );
 
 	} else {
 

@@ -28,7 +28,7 @@ function citadel_filter_wp_title( $title, $sep ) {
 
     } elseif ( 1 == $blog_id ) { // Main site other pages
 
-    	$title .= "$sep The Citadel";
+    	$title .= "The Citadel";
 
     } elseif ( is_home() || is_front_page() ) { // Other sites home page
 
