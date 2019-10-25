@@ -3,10 +3,6 @@
 defined( 'ABSPATH' ) || exit;
 
 global $blog_id;
-
-$main_site = 'The Citadel';
-$main_blogname = get_blog_details( 1 )->blogname;
-$blogname = get_bloginfo( 'name' );
 	
 ?>
 
@@ -31,16 +27,10 @@ $blogname = get_bloginfo( 'name' );
 	<header role="banner" id="header">
 
 		<!-- start .top-header -->
-		<?php if ($blogname != $main_site): ?>
 		<div class="top-header">
-			<div class="wrapper flex-container flex-between">
-				<a href="https://citadel.edu/" title="Go to The Citadel home page" aria-label="Go to The Citadel home page" class="institution-title flex-item flex-middle" rel="home">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/wordmark/Citadel_Logo_Wordmark_Reverse.png" alt="The Citadel Wordmark">
-				</a>
-		<?php else: ?>
-		<div class="top-header">
-			<div class="wrapper flex-container flex-row-rev">
-		<?php endif; ?>
+
+				<?php citadel_top_header_wordmark(); ?>
+
 				<div class="right-header flex-item flex-middle flex-right">
 					<nav class="secondary-nav flex-item flex-middle" role="navigation" aria-label="secondary navigation">
 						<?php include 'template-parts/header/secondary-nav.php'; ?>
@@ -58,26 +48,21 @@ $blogname = get_bloginfo( 'name' );
 		<div class="main-header">
 			<div class="wrapper flex-container flex-between">
 				<div class="lockup flex-item">
-					<?php if ( ( $blog_id == 1 ) && ($main_blogname == $main_site) ) : ?>
-					<a class="header-logo main-logo flex-item flex-middle" title="Go to The Citadel home page" aria-label="Go to The Citadel home page" href="https://citadel.edu/" rel="home">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/brand_signature/Citadel_Logo_Signature_Horizontal_Reverse.png" alt="The Citadel Brandmark">
-					</a>
-					<?php else: ?>
-					<a class="header-logo flex-item flex-middle" title="Go to The Citadel home page" aria-label="Go to The Citadel home page" href="https://citadel.edu/" rel="home">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/brandmark/Citadel_Logo_Brandmark_Reverse.png" alt="The Citadel Brandmark">
-					</a>
-					<div class="lockup-text flex-item flex-center flex-col">
-						
-						<div class="current-site flex-item">
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class=""><?php echo bloginfo('name'); ?></a>
-						</div>
-						<?php if ( ( $blog_id != 1 ) && ($main_blogname != $main_site)  ) : ?>
-						<div class="parent-site flex-item">
-							<a href="<?php echo esc_url(get_blog_details( 1 )->path ); ?>" class=""><?php echo get_blog_details( 1 )->blogname; ?></a>
-						</div>
-						<?php endif; ?>
-					</div>
-					<?php endif; ?>
+
+					<?php 
+
+					if ( ( $blog_id == 1 ) ) :
+
+						citadel_lockup_logo();
+					
+					else:
+
+						citadel_subsite_lockup();
+
+					endif; 
+
+					?>
+
 				</div>
 				<div class="main-cta mobile-hide flex-item flex-middle">
 					<div class="flex-container text-right">

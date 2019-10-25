@@ -2,127 +2,271 @@
 
 defined( 'ABSPATH' ) || exit;
 
-function is_blog () {
-    return ( is_archive() || is_author() || is_category() || is_single() || is_tag()) && 'post' == get_post_type();
+global $blog_id;
+
+// Defines blog pages
+if ( ! function_exists ( 'is_blog' ) ) {
+
+	function is_blog() {
+
+	    return ( is_archive() || is_author() || is_category() || is_single() || is_tag()) && 'post' == get_post_type();
+
+	}
+
 }
 
 // Post Metadata
-function citadel_post_meta() {
+if ( ! function_exists ( 'citadel_post_meta' ) ) {
 
-	if ( is_single() ) {
-	?>
-		<p class="post-meta">
-			<span class="attribution-meta"><?php echo bloginfo( 'name' ); ?> Blog</span>
-			<span class="sep">|</span>
-			<span class="date-meta"><?php echo the_date(); ?></span>
-			<?php if ( has_category() ) : ?>
-			<span class="category-meta"><?php echo get_the_category_list( ',' ); ?></span>
-			<?php endif; ?>
-			<?php if ( has_tag() ) : ?>
-			<span class="tag-meta"><?php echo get_the_tag_list( '', ', ' ); ?></span>
-			<?php endif; ?>
-		</p>
-	<?php
-	} else {
-	?>
-		<p class="post-meta">
-			<span class="attribution-meta"><?php echo bloginfo( 'name' ); ?> Blog</span>
-		</p>
-	<?php
+	function citadel_post_meta() {
+
+		if ( is_single() ) {
+
+		?>
+
+			<p class="post-meta">
+
+				<span class="attribution-meta"><?php echo bloginfo( 'name' ); ?> Blog</span>
+
+				<span class="sep">|</span>
+
+				<span class="date-meta"><?php echo the_date(); ?></span>
+
+				<?php if ( has_category() ) : ?>
+
+				<span class="category-meta"><?php echo get_the_category_list( ',' ); ?></span>
+
+				<?php endif; ?>
+
+				<?php if ( has_tag() ) : ?>
+
+				<span class="tag-meta"><?php echo get_the_tag_list( '', ', ' ); ?></span>
+
+				<?php endif; ?>
+			</p>
+
+		<?php } else { ?>
+
+			<p class="post-meta">
+
+				<span class="attribution-meta"><?php echo bloginfo( 'name' ); ?> Blog</span>
+
+			</p>
+
+		<?php
+		}
+
 	}
 
 }
 
 // Entry Header
-function citadel_entry_header() {
-	if ( ( is_home() || is_front_page() ) && has_post_thumbnail() ) : ?>
+if ( ! function_exists ( 'citadel_entry_header' ) ) {
 
-		<header class="entry-header home-header header-image">
-			<div class="wrapper">
-				<h1 class="text-center"><?php echo bloginfo('name'); ?></h1>
+	function citadel_entry_header() {
+
+		if ( ( is_home() || is_front_page() ) && has_post_thumbnail() ) { ?>
+
+			<header class="entry-header home-header header-image">
+
+				<h1 class="wrapper text-center"><?php echo bloginfo('name'); ?></h1>
+
 				<?php the_post_thumbnail( 'post-thumbnail', ['role' => 'presentation'] ); ?>
-			</div>
-		</header>
 
-	<?php else: ?>
+			</header>
 
-		<header class="entry-header">
+		<?php } else { ?>
 
-			<div class="wrapper">
+			<header class="entry-header">
 
 			<?php 
 
 			if ( is_blog() ) {
 
-				if (function_exists('citadel_post_meta')) citadel_post_meta();
+				if ( function_exists('citadel_post_meta')) citadel_post_meta();
 
 			} else {
 
-				if (function_exists('the_breadcrumb')) the_breadcrumb();
+				if ( function_exists('the_breadcrumb') ) the_breadcrumb();
 
 			}
-			
 
 			?>
 
 			<?php if ( is_home() || is_front_page() ) : ?>
 
-				<h1 class="text-center "><?php echo bloginfo('name'); ?></h1>
+				<h1 class="wrapper text-center "><?php echo bloginfo('name'); ?></h1>
 
 			<?php elseif ( is_404() ): ?>
 
-				<h1 class="text-center"><?php echo __( 'Sorry, this page cannot be found!' ); ?></h1>
+				<h1 class="wrapper text-center"><?php echo __( 'Sorry, this page cannot be found!' ); ?></h1>
 
 			<?php else: ?>
 
-				<h1 class="text-center"><?php the_title(); ?></h1>
+				<h1 class="wrapper text-center"><?php the_title(); ?></h1>
 
 			<?php endif; ?>
 
-			</div>
+			</header>
 
-		</header>
+		<?php }
+	}
 
-	<?php endif;
 }
 
 // Function subsite frontpage
-function citadel_subsite_frontpage() {
+if ( ! function_exists ( 'citadel_subsite_frontpage' ) ) {
 
-	if ( is_home() || is_front_page() ) {
+	function citadel_subsite_frontpage() {
 
-		if (is_active_sidebar('home-cta')) : ?>
+		if ( is_home() || is_front_page() ) {
 
-		<section id="home-cta">
+			if (is_active_sidebar('home-cta')) : ?>
 
-			<div class="wrapper">
+			<section id="home-cta">
 
-				<?php dynamic_sidebar('home-cta'); ?>
+				<div class="wrapper">
 
-			</div>
+					<?php dynamic_sidebar('home-cta'); ?>
 
-		</section>
+				</div>
 
-	<?php
+			</section>
 
-		endif;
+		<?php
 
-		if (is_active_sidebar('home-featured-video')) : ?>
+			endif;
 
-		<section id="home-featured-video">
+			if (is_active_sidebar('home-featured-video')) : ?>
 
-			<div class="wrapper">
+			<section id="home-featured-video">
 
-				<?php dynamic_sidebar('home-featured-video'); ?>
+				<div class="wrapper">
 
-			</div>
+					<?php dynamic_sidebar('home-featured-video'); ?>
 
-		</section>
+				</div>
 
-	<?php 
+			</section>
+
+		<?php 
+
+			endif;
+
+		}
+
+	}
+
+}
+
+// Citadel top header wordmark
+if ( ! function_exists ( 'citadel_top_header_wordmark' ) ) {
+
+	function citadel_top_header_wordmark() {
+
+		if ( 1 !== $blog_id ) :
+
+		?>
+			<div class="wrapper flex-container<?php if ( ( 1 !== $blog_id ) ) : echo ' flex-between'; else: echo ' flex-row-rev'; endif; ?>">
+
+				<a href="https://citadel.edu/" title="Go to The Citadel home page" aria-label="Go to The Citadel home page" class="institution-title flex-item flex-middle" rel="home">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/wordmark/Citadel_Logo_Wordmark_Reverse.png" alt="The Citadel Wordmark">
+				</a>
+
+		<?php
 
 		endif;
 
 	}
 
 }
+
+// Citadel main header logo lockup
+if ( ! function_exists ( 'citadel_lockup_logo' ) ) {
+
+	function citadel_lockup_logo() {
+
+		?>
+
+		<a class="header-logo main-logo flex-item flex-middle" title="Go to The Citadel home page" aria-label="Go to The Citadel home page" href="<?php echo esc_url( 'https://citadel.edu/' ); ?>" rel="home">
+
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/brand_signature/Citadel_Logo_Signature_Horizontal_Reverse.png" alt="The Citadel Brandmark">
+
+		</a>
+
+		<?php
+
+	}
+
+}
+
+// Citadel main subsite header lockup
+if ( ! function_exists ( 'citadel_subsite_lockup' ) ) {
+
+	function citadel_subsite_lockup() {
+
+		?>
+
+		<a class="header-logo flex-item flex-middle" title="Go to The Citadel home page" aria-label="Go to The Citadel home page" href="<?php echo esc_url( 'https://citadel.edu/' ); ?>" rel="home">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/brandmark/Citadel_Logo_Brandmark_Reverse.png" alt="The Citadel Brandmark">
+		</a>
+		<div class="lockup-text flex-item flex-center flex-col">
+			
+			<div class="current-site flex-item">
+
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class=""><?php echo bloginfo('name'); ?></a>
+
+			</div>
+
+		</div>
+
+		<?php
+
+	}
+
+}
+
+// Citadel network subsite header lockup
+if ( ! function_exists ( 'citadel_network_subsite_lockup' ) ) {
+
+	function citadel_network_subsite_lockup() {
+
+		?>
+
+		<a class="header-logo flex-item flex-middle" title="Go to The Citadel home page" aria-label="Go to The Citadel home page" href="<?php echo esc_url( 'https://citadel.edu/' ); ?>" rel="home">
+
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/brandmark/Citadel_Logo_Brandmark_Reverse.png" alt="The Citadel Brandmark">
+
+		</a>
+
+		<div class="lockup-text flex-item flex-center flex-col">
+			
+			<div class="current-site flex-item">
+
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class=""><?php echo bloginfo('name'); ?></a>
+
+			</div>
+
+			<?php if ( 1 !== $blog_id ) : ?>
+
+			<div class="parent-site flex-item">
+
+				<a href="<?php echo esc_url(get_blog_details( 1 )->path ); ?>" class=""><?php echo get_blog_details( 1 )->blogname; ?></a>
+
+			</div>
+
+			<?php endif; ?>
+		</div>
+
+		<?php
+
+	}
+
+}
+
+
+
+
+
+
+
