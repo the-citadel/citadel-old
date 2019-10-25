@@ -12,6 +12,7 @@ if ( ! function_exists( 'citadel_scripts' ) ) {
 
 		$css_version = $theme_version . '.' . filemtime( get_template_directory() . '/style.css' );
 		wp_enqueue_style( 'citadel-styles', get_template_directory_uri() . '/style.css', array(), $css_version );
+		wp_enqueue_style( 'citadel-print-styles', get_template_directory_uri() . '/print.css', array(), $css_version );
 		wp_enqueue_style( 'font-awesome', 'https://use.fontawesome.com/releases/v5.8.2/css/all.css', array(), $theme_version );
 		wp_enqueue_style( 'citadel-fonts', 'https://use.typekit.net/onz2qme.css', array(), $theme_version );
 
