@@ -22,11 +22,21 @@ footer {
 	border-bottom: 1px solid #ffffff;
 	width: auto;
 
+	.wrapper {
+		@include media( 'tablet' ) {
+			display: block;
+		}
+	}
+
 	.footer-brand {
-		width: 100%;
-		max-width: 250px;
 		display: inline-block;
 		vertical-align: middle;
+		border-bottom: none;
+
+		@include media( 'tablet' ) {
+			width: 100%;
+			margin-bottom: $sp_3;
+		}
 
 		&:hover {
 			border-bottom-color: $citadel_blue;
@@ -35,6 +45,8 @@ footer {
 		img {
 			width: 100%;
 			height: auto;
+			max-width: 250px;
+			margin: 0 auto;
 		}
 	}
 
@@ -42,7 +54,10 @@ footer {
 		text-align: left;
 		display: inline-block;
 		vertical-align: middle;
-		margin-left: $sp_10;
+
+		@include media( 'tablet' ) {
+			margin: $sp_3 $sp_6 ;
+		}
 
 		&.address {
 

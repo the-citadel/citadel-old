@@ -3,6 +3,11 @@
 
 	@include media( 'tablet' ) {
 		display: none;
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		z-index: 98;
+		border-top: 1px solid $citadel_blue;
 	}
 
 	ul {
@@ -12,11 +17,30 @@
 		list-style: none;
 	}
 
+	.wrapper {
+		@include media( 'tablet' ) {
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+		> ul {
+			@include media( 'tablet' ) {
+				display: block;
+				max-height: calc(100vh - 80px);
+				overflow-y: scroll;
+			}
+		}
+	}
+
 	.wrapper > ul > li {
 		text-transform: uppercase;
 		text-align: center;
 		@include flex-grow (20);
 		@include basic-transition;
+
+		@include media( 'tablet' ) {
+			display: block;
+		}
 
 		> a {
 			color: #ffffff;
@@ -28,6 +52,10 @@
 			border-bottom: none;
 			font-weight: 600;
 			@include basic-transition;
+			@include media( 'tablet' ) {
+				font-size: $font__size-md;
+				font-weight: normal;
+			}
 		}
 
 		&:hover,
@@ -38,19 +66,35 @@
 		&:hover > a,
 		&:focus > a {
 			color: $citadel_navy;
+			background-color: $pt_barracks_40;
 		}
 	}
 
-	.has-submenu:not(.wide-nav) {
-		position: relative;
-	}	
+	.has-submenu {
 
-	.has-submenu > a::after {
-		margin-left: $sp_1;
-		font-family: "Font Awesome 5 Free";
-		font-weight: 900;
-		content: "\f078";
-		font-size: $font__size-xs;
+		&:not(.wide-nav) {
+			position: relative;
+		}
+
+		> a::after {
+			margin-left: $sp_1;
+			font-family: "Font Awesome 5 Free";
+			font-weight: 900;
+			content: "\f078";
+			font-size: $font__size-xs;
+		}
+
+		&.active {
+
+			> .primary {
+				background-color: #ffffff;
+				color: $citadel_navy;
+			}
+
+			> .submenu {
+				z-index: 92;
+			}
+		}
 	}
 
 	.submenu {
@@ -68,13 +112,28 @@
 		text-align: left;
 		color: $shako;
 
+		@include media( 'tablet' ) {
+			position: static;
+			width: 100%;
+			border: none;
+		}
+
 		.flex-container {
 			padding: $sp_6 $sp_3;
+			@include media( 'tablet' ) {
+				display: block;
+				padding: 0;
+			}
+
 		}
 
 		.nav-title {
 			font-size: $font__size-md;
 			margin-top: 0;
+
+			@include media( 'tablet' ) {
+				padding-top: 1rem;
+			}
 		}
 
 		.nav-col {
@@ -82,6 +141,11 @@
 			flex: 1 1 0px;
 			padding: 0 $sp_3;
 			font-weight: bold;
+
+			@include media( 'tablet' ) {
+				display: block;
+				padding-bottom: 1rem;
+			}
 
 			> :last-child {
 				margin-bottom: 0;
@@ -95,6 +159,10 @@
 		.nav-link-description {
 			display: block;
 			font-weight: normal;
+
+			@include media( 'tablet' ) {
+				display: none;
+			}
 		}
 	}
 

@@ -40,7 +40,12 @@ header[role="banner"] {
 
 		@include media( 'tablet' ) {
 			display: none;
+			position: fixed;
+			bottom: 0;
+			right: 0;
 			width: 100%;
+			background-color: $citadel_navy;
+			z-index: 98;
 		}
 
 		ul {
@@ -89,8 +94,7 @@ header[role="banner"] {
 	}
 
 	.tools-toggle {
-		background-color: $citadel_dark_navy;
-		border-color: $citadel_dark_navy;
+		background-color: transparent;
 		font-size: $font__size-xs;
 		padding: $sp_1 $sp_2;
 		border: none;
@@ -254,13 +258,32 @@ header[role="banner"] {
 	background-color: $citadel_navy;
 	display: none;
 
+	@include media(tablet) {
+		position: fixed;
+		top: unset;
+		bottom: 0;
+		width: 100%;
+		z-index: 90;
+	}
+
 	ul {
 		margin: 0;
 		list-style: none;
 		height: 100%;
 
+		@include media(tablet) {
+			display: block;
+			width: 100%;
+		}
+
 		li {
 			text-align: center;
+
+			@include media(tablet) {
+				width: calc(50% - 4px);
+				display: inline-block;
+				padding: 1rem;
+			}
 
 			a {
 				border-bottom-color: $citadel_navy;

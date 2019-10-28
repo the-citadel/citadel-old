@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) || exit;
 
 ?>
 
-<div id="tools">
+<div id="tools" class="tools-nav">
 	<ul class="flex-container flex-center wrapper flex-between">
 		<li class="flex-item flex-middle">
 			<a href="<?php echo esc_url( 'https://bdmsprd.citadel.edu/AppXtender/login.aspx' ); ?>" target="_blank">

@@ -2,6 +2,10 @@
 	transition: all ease .4s;
 }
 
+@mixin element-transition($element) {
+	transition: $element ease .4s;
+}
+
 @mixin flex {
 	display: -webkit-box;
 	display: -webkit-flex;

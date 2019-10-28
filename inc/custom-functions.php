@@ -4,6 +4,15 @@ defined( 'ABSPATH' ) || exit;
 
 global $blog_id;
 
+// Closes div
+function closeDiv() {
+	?>
+
+	</div>
+
+	<?php
+}
+
 // Defines blog pages
 if ( ! function_exists ( 'is_blog' ) ) {
 
@@ -20,13 +29,13 @@ if ( ! function_exists ( 'citadel_post_meta' ) ) {
 
 	function citadel_post_meta() {
 
-		if ( is_single() ) {
-
 		?>
 
-			<p class="post-meta">
+		<p class="post-meta">
 
-				<span class="attribution-meta"><?php echo bloginfo( 'name' ); ?> Blog</span>
+			<span class="attribution-meta"><?php echo bloginfo( 'name' ); ?> Blog</span>
+
+			<?php if ( is_single() ) { ?>
 
 				<span class="sep">|</span>
 
@@ -43,18 +52,12 @@ if ( ! function_exists ( 'citadel_post_meta' ) ) {
 				<span class="tag-meta"><?php echo get_the_tag_list( '', ', ' ); ?></span>
 
 				<?php endif; ?>
-			</p>
 
-		<?php } else { ?>
+			<?php } ?>
 
-			<p class="post-meta">
-
-				<span class="attribution-meta"><?php echo bloginfo( 'name' ); ?> Blog</span>
-
-			</p>
+		</p>
 
 		<?php
-		}
 
 	}
 
@@ -164,14 +167,22 @@ if ( ! function_exists ( 'citadel_top_header_wordmark' ) ) {
 
 	function citadel_top_header_wordmark() {
 
-		if ( 1 !== $blog_id ) :
+		global $blog_id;
+
+		if ( 1 != $blog_id ) :
 
 		?>
-			<div class="wrapper flex-container<?php if ( ( 1 !== $blog_id ) ) : echo ' flex-between'; else: echo ' flex-row-rev'; endif; ?>">
+			<div class="wrapper flex-container flex-between">
 
 				<a href="https://citadel.edu/" title="Go to The Citadel home page" aria-label="Go to The Citadel home page" class="institution-title flex-item flex-middle" rel="home">
+
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/wordmark/Citadel_Logo_Wordmark_Reverse.png" alt="The Citadel Wordmark">
+
 				</a>
+
+		<?php else : ?>
+
+			<div class="wrapper flex-container flex-row-rev">
 
 		<?php
 
