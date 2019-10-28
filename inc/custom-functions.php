@@ -264,6 +264,29 @@ if ( ! function_exists ( 'citadel_network_subsite_lockup' ) ) {
 
 }
 
+// Login link in footer
+if ( ! function_exists( 'citadel_footer_login' ) ) {
+
+	function citadel_footer_login() {
+
+		$allow = "(^155\.225\.\d+\.\d+$)";
+
+		$login_text = sprintf(
+			' | <a href="%1$s">%2$s</a>',
+			esc_url( site_url() . '/wp-admin', 'citadel' ),
+			sprintf(
+				esc_html__( 'Login' )
+			)
+		);
+
+		$allowed = preg_match( $allow, $_SERVER['REMOTE_ADDR'] ) ? $login_text : '';
+
+		echo $allowed;
+
+	}
+
+}
+
 
 
 
