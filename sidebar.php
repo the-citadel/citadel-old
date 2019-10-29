@@ -50,4 +50,18 @@ defined( 'ABSPATH' ) || exit;
 
 	<?php endif; ?>
 
+	<div id="sidebar-buttons">
+
+	<?php if (is_active_sidebar('sidebar-buttons')) : ?>
+			
+		<?php dynamic_sidebar('sidebar-buttons'); ?>
+
+	<?php else: ?>
+
+
+
+	<?php endif; ?>
+
+	</div>
+
 </aside>

@@ -48,6 +48,10 @@
 		}
 	}
 
+	.widget:not(.widget_citadel_cta_widget) {
+		display: none;
+	}
+
 }
 
 #home-featured-video {
@@ -63,5 +67,10 @@
 		margin: 0 auto;
 		width: 100%;
 		overflow: hidden;
+	}
+
+	.widget:not(.widget_media_video),
+	.widget:not(:nth-child(1)) {
+		display: none;
 	}
 }
