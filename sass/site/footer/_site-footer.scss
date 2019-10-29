@@ -23,19 +23,20 @@ footer {
 	width: auto;
 
 	.wrapper {
-		@include media( 'tablet' ) {
-			display: block;
+		display: block;
+
+		@include media('tablet') {
+			@include flex;
 		}
 	}
 
 	.footer-brand {
-		display: inline-block;
-		vertical-align: middle;
+		margin-bottom: $sp_3;
 		border-bottom: none;
 
 		@include media( 'tablet' ) {
-			width: 100%;
-			margin-bottom: $sp_3;
+			display: inline-block;
+			vertical-align: middle;	
 		}
 
 		&:hover {
@@ -54,9 +55,10 @@ footer {
 		text-align: left;
 		display: inline-block;
 		vertical-align: middle;
+		margin: $sp_3 $sp_6;
 
 		@include media( 'tablet' ) {
-			margin: $sp_3 $sp_6 ;
+			margin: 0;
 		}
 
 		&.address {
@@ -91,7 +93,7 @@ footer {
 }
 
 .bottom-footer {
-	font-size: $xxs_font;
+	font-size: $font__size-xs;
 	padding-top: $sp_2;
 	padding-bottom: $sp_2;
 }

@@ -54,7 +54,7 @@ defined( 'ABSPATH' ) || exit;
 
 	<div class="bottom-footer">
 
-		<div class="wrapper flex-container">
+		<div class="wrapper flex-container flex-between">
 
 			<div class="copyright flex-item flex-middle">
 
@@ -62,16 +62,14 @@ defined( 'ABSPATH' ) || exit;
 
 			</div>
 
+			<?php include 'template-parts/footer/footer-nav.php' ?>
+
 		</div>
 
 	</div>
 
 </footer>
 <!-- End Footer -->
-
-<?php include 'template-parts/footer/footer_scripts.php' ?>
-
-<?php include 'template-parts/footer/custom_scripts.php' ?>
 
 <?php wp_footer(); ?>
 
