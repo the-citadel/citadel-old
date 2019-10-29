@@ -58,7 +58,32 @@ defined( 'ABSPATH' ) || exit;
 
 	<?php else: ?>
 
+		<div class="widget widget_citadel_cta_widget">
+			<a href="http://www.citadel.edu/root/applyhub">
+				<div class="cta-icon">
+					<i class="fa-fw fas fa-check-square"></i>
+				</div>
+				<span class="cta-title">Apply Online</span>
+			</a>
+		</div>
 
+		<div class="widget widget_citadel_cta_widget">
+			<a href="http://www.citadel.edu/root/information-request">
+				<div class="cta-icon">
+					<i class="fa-fw fas fa-info-circle"></i>
+				</div>
+				<span class="cta-title">Request Info</span>
+			</a>
+		</div>
+
+		<div class="widget widget_citadel_cta_widget">
+			<a href="http://www.citadel.edu/root/schedule-a-visit">
+				<div class="cta-icon">
+					<i class="fa-fw fas fa-map-pin"></i>
+				</div>
+				<span class="cta-title">Visit Campus</span>
+			</a>
+		</div>
 
 	<?php endif; ?>
 
