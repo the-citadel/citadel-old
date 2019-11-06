@@ -34,7 +34,7 @@ defined( 'ABSPATH' ) || exit;
 
 			<div class="footer-contact">
 
-				<?php include 'template-parts/footer/social.php' ?>
+				<?php get_template_part( 'template-parts/footer/social.php' ); ?>
 
 			</div>
 
@@ -62,16 +62,14 @@ defined( 'ABSPATH' ) || exit;
 
 			</div>
 
+			<?php get_template_part( 'template-parts/footer/footer-nav.php' ); ?>
+
 		</div>
 
 	</div>
 
 </footer>
 <!-- End Footer -->
-
-<?php include 'template-parts/footer/footer_scripts.php' ?>
-
-<?php include 'template-parts/footer/custom_scripts.php' ?>
 
 <?php wp_footer(); ?>
 

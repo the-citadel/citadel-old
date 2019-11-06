@@ -17,7 +17,6 @@ global $blog_id;
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
     <?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
     <?php wp_head(); ?>
-	<?php include 'template-parts/header/header_scripts.php' ?>
 </head>
 <body <?php body_class(); ?>>
 
@@ -40,23 +39,17 @@ global $blog_id;
 
 					<nav class="secondary-nav flex-item flex-middle" role="navigation" aria-label="secondary navigation">
 
-						<?php include 'template-parts/header/secondary-nav.php'; ?>
+						<?php get_template_part( 'template-parts/header/secondary-nav' ); ?>
 
 					</nav>
-
-					<div class="action-buttons flex-item flex-middle mobile-hide">
-
-						<button class="search-toggle">Search</button>
-
-						<button class="tools-toggle"><span>Tools</span></button>
-
-					</div>
 
 				</div>
 
 			</div>
 
-			<?php include 'template-parts/header/tools.php'; ?>
+			<?php get_template_part( 'template-parts/header/citadel-search' ); ?>
+
+			<?php get_template_part( 'template-parts/header/tools' ); ?>
 
 		</div><!-- end .top-header -->
 
@@ -104,7 +97,7 @@ global $blog_id;
 
 			<div class="wrapper">
 
-				<?php include 'template-parts/header/main-nav.php'; ?>
+				<?php get_template_part( 'template-parts/header/main-nav' ); ?>
 
 			</div>
 			
@@ -112,7 +105,7 @@ global $blog_id;
 
 	</header>
 
-	<?php include 'template-parts/header/mobile-nav.php'; ?>
+	<?php get_template_part( 'template-parts/header/mobile-nav' ); ?>
 
 	<!-- start #main -->
 	<main id="main" role="main">
