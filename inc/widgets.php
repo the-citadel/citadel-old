@@ -20,6 +20,15 @@ register_sidebar(array(
 	'after_title'   => "</span>\n",
 ) );
 
+register_sidebar(array(
+	'name' 			=> 'Sidebar Buttons',
+	'id'         	=> 'sidebar-buttons',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget'  => "</div>\n",
+	'before_title'  => '<span class="hidden">',
+	'after_title'   => "</span>\n",
+) );
+
 // Register and load the widget
 function citadel_load_widget() {
     register_widget( 'citadel_cta_widget' );
@@ -36,10 +45,10 @@ class citadel_cta_widget extends WP_Widget {
 		'citadel_cta_widget', 
 
 		// Widget name will appear in UI
-		__('Citadel CTA', 'citadel_widget_domain'), 
+		__('Citadel CTA', 'citadel'), 
 
 		// Widget description
-		array( 'description' => __( 'Citadel Call to Action Button', 'citadel_widget_domain' ), ) 
+		array( 'description' => __( 'Citadel Call to Action Button', 'citadel' ), ) 
 		);
 	}
 
@@ -53,13 +62,13 @@ class citadel_cta_widget extends WP_Widget {
 		echo $args['before_widget'];
 		
 		if ( ! empty( $link ) )
-		echo __( '<a href="' . $link . '">', 'citadel_widget_domain' );
+		echo __( '<a href="' . $link . '">', 'citadel' );
 		
 		if ( ! empty( $fa ) )
-		echo __( '<div class="cta-icon"><i class="fa-fw ' . $fa . '"></i></div>', 'citadel_widget_domain' );
+		echo __( '<div class="cta-icon"><i class="fa-fw ' . $fa . '"></i></div>', 'citadel' );
 		
 		if ( ! empty( $title ) )
-		echo __( '<span class="cta-title">' . $title . '</span></a>', 'citadel_widget_domain' );
+		echo __( '<span class="cta-title">' . $title . '</span></a>', 'citadel' );
 		
 		echo $args['after_widget'];
 	}
@@ -69,19 +78,19 @@ class citadel_cta_widget extends WP_Widget {
 		if ( isset( $instance[ 'title' ] ) ) {
 			$title = $instance[ 'title' ];
 		} else {
-			$title = __( '', 'citadel_widget_domain' );
+			$title = __( '', 'citadel' );
 		}
 		
 		if ( isset( $instance[ 'link' ] ) ) {
 			$link = $instance[ 'link' ];
 		} else {
-			$link = __( '', 'citadel_widget_domain' );
+			$link = __( '', 'citadel' );
 		}
 		
 		if ( isset( $instance[ 'fa' ] ) ) {
 			$fa = $instance[ 'fa' ];
 		} else {
-			$fa = __( '', 'citadel_widget_domain' );
+			$fa = __( '', 'citadel' );
 		}
 		// Widget admin form
 		?>

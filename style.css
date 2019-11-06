@@ -1035,6 +1035,10 @@ body.dimmer-active #dimmer-overlay {
   z-index: 80;
 }
 
+.hidden {
+  display: none;
+}
+
 .wrapper {
   padding-left: 5.62vw;
   padding-right: 5.62vw;
@@ -1984,6 +1988,9 @@ button.search-toggle:hover, button.search-toggle:focus {
 #home-cta .widget i {
   display: block;
 }
+#home-cta .widget:not(.widget_citadel_cta_widget) {
+  display: none;
+}
 
 #home-featured-video {
   width: 100%;
@@ -1998,6 +2005,10 @@ button.search-toggle:hover, button.search-toggle:focus {
   margin: 0 auto;
   width: 100%;
   overflow: hidden;
+}
+#home-featured-video .widget:not(.widget_media_video),
+#home-featured-video .widget:not(:nth-child(1)) {
+  display: none;
 }
 
 /*--------------------------------------------------------------
@@ -2213,22 +2224,6 @@ footer a:hover, footer a:focus, footer a:active {
     border-bottom-color: #3975B7;
   }
 }
-.sidebar i {
-  margin-left: 0.42rem;
-  font-family: "Font Awesome 5 Free";
-  font-size: 0.6666666667rem;
-  cursor: pointer;
-  -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
-  -webkit-transition: -webkit-transform ease .4s;
-  transition: -webkit-transform ease .4s;
-  transition: transform ease .4s;
-  transition: transform ease .4s, -webkit-transform ease .4s;
-}
-.sidebar i.active {
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-}
 .sidebar .leftmenu-toggle {
   display: inline-block;
   color: #1F3A60;
@@ -2273,6 +2268,63 @@ footer a:hover, footer a:focus, footer a:active {
 }
 #leftmenu > :last-child {
   margin-bottom: 0;
+}
+#leftmenu i {
+  margin-left: 0.42rem;
+  font-family: "Font Awesome 5 Free";
+  font-size: 0.6666666667rem;
+  cursor: pointer;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: -webkit-transform ease .4s;
+  transition: -webkit-transform ease .4s;
+  transition: transform ease .4s;
+  transition: transform ease .4s, -webkit-transform ease .4s;
+}
+#leftmenu i.active {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+#sidebar-buttons {
+  display: block;
+  margin-top: 2.37rem;
+}
+@media only screen and (min-width: 56.12em) {
+  #sidebar-buttons {
+    display: none;
+  }
+}
+#sidebar-buttons .widget:not(.widget_citadel_cta_widget) {
+  display: none;
+}
+#sidebar-buttons a {
+  display: table;
+  width: 100%;
+  border: none;
+  background-color: rgba(206, 199, 191, 0.6);
+  color: #282E36;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+#sidebar-buttons a:hover, #sidebar-buttons a:focus {
+  background-color: rgba(206, 199, 191, 0.8);
+}
+#sidebar-buttons a .cta-icon {
+  display: table-cell;
+  vertical-align: middle;
+  width: 50px;
+  padding: 0.56rem 0.75rem;
+  font-size: 1.33rem;
+  background-color: #3975B7;
+  color: #ffffff;
+}
+#sidebar-buttons a .cta-title {
+  display: table-cell;
+  line-height: 1.4;
+  vertical-align: middle;
+  padding: 0.56rem 0.75rem;
+  font-weight: bold;
 }
 
 /* Blocks */

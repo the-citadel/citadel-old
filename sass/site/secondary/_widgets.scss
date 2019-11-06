@@ -106,19 +106,6 @@
 			}
 		}
 	}
-
-	i {
-		margin-left: $sp_1;
-		font-family: "Font Awesome 5 Free";
-		font-size: $font__size-xs;
-		cursor: pointer;
-		transform: rotate(0deg);
-		transition: transform ease .4s;
-
-		&.active {
-			transform: rotate(-90deg);
-		}
-	}
 	
 	.leftmenu-toggle {
 	    display: inline-block;
@@ -172,5 +159,64 @@
 
 	> :last-child {
 		margin-bottom: 0;
+	}
+
+	i {
+		margin-left: $sp_1;
+		font-family: "Font Awesome 5 Free";
+		font-size: $font__size-xs;
+		cursor: pointer;
+		transform: rotate(0deg);
+		transition: transform ease .4s;
+
+		&.active {
+			transform: rotate(-90deg);
+		}
+	}
+}
+
+#sidebar-buttons {
+	display: block;
+	margin-top: $sp_7;
+
+	@include media(tablet) {
+		display: none;
+	}
+
+	.widget:not(.widget_citadel_cta_widget) {
+		display: none;
+	}
+
+	a {
+		display: table;
+		width: 100%;
+		border: none;
+		background-color: $pt_barracks_60;
+		color: $shako;
+		font-size: $size_7;
+		margin-bottom: $size_7;
+
+		&:hover,
+		&:focus {
+			background-color: $pt_barracks_80;
+		}
+
+		.cta-icon {
+			display: table-cell;
+			vertical-align: middle;
+			width: 50px;	
+			padding: $sp_2 $sp_3;
+			font-size: $size_9;
+			background-color: $citadel_blue;
+			color: #ffffff;
+		}
+
+		.cta-title {
+			display: table-cell;
+			line-height: 1.4;
+			vertical-align: middle;	
+			padding: $sp_2 $sp_3;
+			font-weight: bold;
+		}
 	}
 }
