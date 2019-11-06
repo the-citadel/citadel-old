@@ -9,25 +9,24 @@ header[role="banner"] {
 }
 
 .right-header {
+ 	width: 100%;
 
-	@include media( 'tablet' ) {
-		width: 100%;
+ 	@include media( 'tablet' ) {
+		width: auto;
 	}
 }
 
 .top-header {
 	background-color: $citadel_dark_navy;
 	position: relative;
-
-	@include media( 'tablet' ) {
-		padding: 0;
-	}
+	padding: 0;
 
 	.institution-title {
+		display: none;
 		border-bottom: none;
 
 		@include media( 'tablet' ) {
-			display: none;
+			@include flex-item;
 		}
 	}
 
@@ -37,44 +36,54 @@ header[role="banner"] {
 	}
 
 	.secondary-nav {
+		display: none;
+		position: fixed;
+		bottom: 0;
+		right: 0;
+		width: 100%;
+		background-color: $citadel_navy;
+		z-index: 98;
 
 		@include media( 'tablet' ) {
-			display: none;
-			position: fixed;
-			bottom: 0;
-			right: 0;
-			width: 100%;
-			background-color: $citadel_navy;
-			z-index: 98;
+			@include flex;
+			position: static;
+			z-index: inherit;
+			background-color: transparent;
 		}
 
 		ul {
-			margin: 0;
+			display: block;
+			margin: $sp_2 0;
 			padding: 0;
-			font-size: $font__size-xs;
 
 			@include media( 'tablet' ) {
-				display: block;
-				margin: $sp_2 0;
+				margin: 0;
+				@include flex;
 			}
 		}
 
 		li {
+			display: block;
+			text-align: center;
+			font-size: $size_8;
+
 			@include media( 'tablet' ) {
-				display: block;
-				text-align: center;
-				font-size: $size_8;
+				font-size: $font__size-xs;
+				@include flex;
 			}
 		}
 
 		a {
+			margin: 0;
+			padding: $sp_2 $sp_4;
+			display: block;
 			border-bottom: 1px solid transparent;
-			margin: 0 $sp_2;
 
 			@include media( 'tablet' ) {
-				margin: 0;
-				padding: $sp_2 $sp_4;
-				display: block;
+				margin: 0 $sp_2;
+				white-space: nowrap;
+				display: inline;
+				padding: 0;
 			}
 			
 
@@ -87,17 +96,27 @@ header[role="banner"] {
 	}
 
 	.search-toggle {
+		display: none;
 		border: none;
 		margin-left: $sp_2;
 		font-size: $font__size-xs;
 		padding: $sp_1 $sp_2;
+
+		@include media( 'tablet' ) {
+			display: block;
+		}
 	}
 
 	.tools-toggle {
+		display: none;
 		background-color: transparent;
 		font-size: $font__size-xs;
 		padding: $sp_1 $sp_2;
 		border: none;
+
+		@include media( 'tablet' ) {
+			display: block;
+		}
 
 		span {
 			border-bottom: 1px solid transparent;
@@ -138,21 +157,17 @@ header[role="banner"] {
 			max-width: none;
 			transition: all ease .5s;
 		}
-		
-		@include media( mobile ) {
-			&:not(.main-logo) img {
-				height: auto;
-				max-width: 44px;
-				min-width: 30px;
-			}
+
+		&:not(.main-logo) img {
+			height: auto;
+			max-width: 44px;
+			min-width: 30px;
 		}
 
-		@include media( tablet ) {
-			.main-logo img {
-				height: auto;
-				width: 100%;
-				max-width: 330px;
-			}
+		.main-logo img {
+			height: auto;
+			width: 100%;
+			max-width: 330px;
 		}
 
 	}
@@ -186,6 +201,11 @@ header[role="banner"] {
 	}
 
 	.main-cta {
+		display: none;
+
+		@include media(tablet) {
+			@include flex-item;
+		}
 
 		a {
 			background-color: $citadel_blue;
@@ -208,11 +228,10 @@ header[role="banner"] {
 	}
 
 	.mobile-buttons {
-		display: none;
 		margin-left: $sp_2;
 
 		@include media(tablet) {
-			@include flex;
+			display: none;
 		}
 
 		button {
@@ -249,40 +268,43 @@ header[role="banner"] {
 }
 
 #tools {
+	position: fixed;
 	display: none;
-	position: absolute;
-	left: 0;
-	right: 0;
-	z-index: 9;
-	top: 100%;
+	bottom: 0;
+	width: 100%;
+	z-index: 90;
 	background-color: $citadel_navy;
-	display: none;
 
 	@include media(tablet) {
-		position: fixed;
-		top: unset;
-		bottom: 0;
-		width: 100%;
-		z-index: 90;
+		position: absolute;
+		bottom: unset;
+		left: 0;
+		right: 0;
+		z-index: 9;
+		top: 100%;
 	}
 
 	ul {
+		display: block;
+		width: 100%;
 		margin: 0;
 		list-style: none;
 		height: 100%;
 
 		@include media(tablet) {
-			display: block;
-			width: 100%;
+			@include flex;
 		}
 
 		li {
 			text-align: center;
+			width: calc(50% - 4px);
+			display: inline-block;
+			padding: 1rem;
 
 			@include media(tablet) {
-				width: calc(50% - 4px);
-				display: inline-block;
-				padding: 1rem;
+				@include flex;
+				width: auto;
+				padding: 0;
 			}
 
 			a {

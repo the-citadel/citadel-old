@@ -3,51 +3,44 @@
 defined( 'ABSPATH' ) || exit;
 
 ?>
+<?php if ( has_nav_menu( 'leftmenu' ) ): ?>
 
-<aside class="sidebar" role="complementary">
+	<aside class="sidebar" role="complementary">
 
-	<?php if ( has_nav_menu( 'leftmenu' ) ): ?>
+		<?php if ( has_nav_menu( 'leftmenu' ) ): ?>
 
-		<nav class="widget_nav_menu" role="navigation" aria-label="local navigation">
+			<nav class="widget_nav_menu" role="navigation" aria-label="local navigation">
 
-			<span class="screen-reader-text">Department Menu</span>
+				<span class="screen-reader-text">Department Menu</span>
 
-			<?php
+				<?php
 
-			if ( is_home() || is_front_page() ) :
+				if ( is_home() || is_front_page() ) :
 
-				wp_nav_menu( array(
-					'theme_location'	=> 'leftmenu',
-					'menu_id'        	=> 'leftmenu',
-					'container' 	 	=> '',
-					'items_wrap'		=> '<ul id="%1$s" class="%2$s"><li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item current_page_item"><a href="' . esc_url( home_url( '/' ) ) . '">Home</a></li>%3$s</ul>',
-				) );
+					wp_nav_menu( array(
+						'theme_location'	=> 'leftmenu',
+						'menu_id'        	=> 'leftmenu',
+						'container' 	 	=> '',
+						'items_wrap'		=> '<ul id="%1$s" class="%2$s"><li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item current_page_item"><a href="' . esc_url( home_url( '/' ) ) . '">Home</a></li>%3$s</ul>',
+					) );
 
-			else :
+				else :
 
-				wp_nav_menu( array(
-					'theme_location'	=> 'leftmenu',
-					'menu_id'        	=> 'leftmenu',
-					'container' 	 	=> '',
-					'items_wrap'		=> '<ul id="%1$s" class="%2$s"><li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="' . esc_url( home_url( '/' ) ) . '">Home</a></li>%3$s</ul>',
-				) );
+					wp_nav_menu( array(
+						'theme_location'	=> 'leftmenu',
+						'menu_id'        	=> 'leftmenu',
+						'container' 	 	=> '',
+						'items_wrap'		=> '<ul id="%1$s" class="%2$s"><li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="' . esc_url( home_url( '/' ) ) . '">Home</a></li>%3$s</ul>',
+					) );
 
-			endif;
+				endif;
 
-			?>
+				?>
 
-		</nav>
+			</nav>
 
-	<?php endif; ?>
+		<?php endif; ?>
 
-	<?php if ( !is_page() ): ?>
+	</aside>
 
-		<div class="blog-widgets">
-
-			<h4>Recent Blog Posts</h4>
-			
-		</div>
-
-	<?php endif; ?>
-
-</aside>
+<?php endif; ?>

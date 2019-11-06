@@ -12,7 +12,7 @@ defined( 'ABSPATH' ) || exit;
 
 	<div class="page-content">
 
-		<div class="wrapper flex-container mobile-no-flex">
+		<div class="wrapper flex-container">
 
 			<?php if ( has_nav_menu( 'leftmenu' ) ): ?>
 
@@ -32,7 +32,7 @@ defined( 'ABSPATH' ) || exit;
 						<li><?php echo __( 'The URL is incorrect' ); ?></li>
 					</ul>
 
-					<p class="message-404">We are working on locating this page. In the meantime, please select an option from the <span class="desktop">left</span> menu <span class="mobile">above</span>, see our popular pages or search the entire Citadel website below.</p>
+					<p class="message-404">We are working on locating this page. In the meantime, please select an option from the <span class="desktop">left</span> menu<span class="mobile"> above</span>, see our popular pages or search the entire Citadel website below.</p>
 
 					<h3>Popular pages</h3>
 

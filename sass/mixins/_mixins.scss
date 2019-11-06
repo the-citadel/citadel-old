@@ -6,11 +6,40 @@
 	transition: $element ease .4s;
 }
 
+@mixin clearfix {
+	&::after {
+		content: "";
+		clear: both;
+	}
+}
+
 @mixin flex {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
+}
+
+@mixin flex-container {
+	display: table;
+	width: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+
+	@media screen\9 {
+		@include clearfix;
+	}
+    
+	@media screen\0 {
+		@include clearfix;
+	}
+}
+
+@mixin flex-item {
+	display: table-cell;
+	@include flex;
 }
 
 @mixin flex-grow ($size) {
@@ -20,11 +49,108 @@
 	flex-grow: $size;
 }
 
-@mixin clearfix {
-	&::after {
-		content: "";
-		clear: both;
-	}
+
+@mixin flex-left {
+	float: left;
+	-webkit-box-pack: start;
+	-webkit-justify-content: flex-start;
+		-ms-flex-pack: start;
+			justify-content: flex-start;
+}
+
+@mixin flex-center {
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+		-ms-flex-pack: center;
+			justify-content: center;
+}
+
+@mixin flex-right {
+	float: right;
+	-webkit-box-pack: end;
+	-webkit-justify-content: flex-end;
+		-ms-flex-pack: end;
+			justify-content: flex-end;
+}
+
+@mixin flex-top {
+	-webkit-box-align: start;
+	-webkit-align-items: flex-start;
+		-ms-flex-align: start;
+			align-items: flex-start;
+}
+
+@mixin flex-middle {
+	vertical-align: middle;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+		-ms-flex-align: center;
+			align-items: center;
+}
+
+@mixin flex-bottom {
+	-webkit-box-align: end;
+	-webkit-align-items: flex-end;
+		-ms-flex-align: end;
+			align-items: flex-end;
+}
+
+@mixin flex-stretch {
+	-webkit-box-align: stretch;
+	-webkit-align-items: stretch;
+		-ms-flex-align: stretch;
+			align-items: stretch;
+}
+
+@mixin flex-around {
+	-webkit-justify-content: space-around;
+		-ms-flex-pack: distribute;
+			justify-content: space-around;
+}
+
+@mixin flex-between {
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+		-ms-flex-pack: justify;
+			justify-content: space-between;
+}
+
+@mixin flex-wrap {
+	-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+			flex-wrap: wrap;
+}
+
+@mixin flex-col {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+			flex-direction: column;
+}
+
+@mixin flex-row {
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+		-ms-flex-direction: row;
+			flex-direction: row;
+}
+
+@mixin flex-col-rev {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: reverse;
+	-webkit-flex-direction: column-reverse;
+		-ms-flex-direction: column-reverse;
+			flex-direction: column-reverse;
+}
+
+@mixin flex-row-rev {
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: reverse;
+	-webkit-flex-direction: row-reverse;
+		-ms-flex-direction: row-reverse;
+			flex-direction: row-reverse;
 }
 
 @mixin wrapper {

@@ -5,11 +5,11 @@
 
 	h1 {
 		margin-top: $sp_3;
-		font-size: $font__size-xxl;
+	    font-size: $font__size-xl;
 		margin-bottom: 0;
 
 		@include media(tablet) {
-	    	font-size: $font__size-xl;
+		font-size: $font__size-xxl;
 	    }
 	}
 
@@ -25,34 +25,33 @@
 		background-color: $citadel_navy;
 		position: relative;
 		overflow: hidden;
-		height: 30vw;
+		height: auto;
 		@include media(tablet) {
-			height: auto;
+			height: 30vw;
 		}
 
 		h1 {
 			z-index: 2;
 			width: 100%;
 			color: #ffffff;
-			padding-bottom: $sp_6;
-			@include absolute_center;
+
 			@include media(tablet) {
-				@include absolute_center_unset;
-				padding-top: 0;
-   				padding-bottom: 0;
+				@include absolute_center;
+				padding-bottom: $sp_6;
 			}
 		}
 
 		img {
 			z-index: 1;
-			width: 100%;
 			height: auto;
 			opacity: .125;
+			min-height: 100%;
+			width: auto;
+			max-width: none;
 			@include absolute_center;
+			
 			@include media(tablet) {
-				min-height: 100%;
-				width: auto;
-				max-width: none;
+				width: 100%;
 			}
 		}
 	}
@@ -124,27 +123,36 @@
 }
 
 .page-content {
-	padding-top: $sp_9;
+	padding-top: 0;
 	padding-bottom: $sp_9;
 
 	@include media(tablet) {
-		padding-top: 0;
+		padding-top: $sp_9;
+	}
+
+	> .wrapper {
+		display: block;
+
+		@include media(tablet) {
+			@include flex-container;
+		}
 	}
 }
 
 .content-container {
-	width: calc(100% - 300px);
+	width: 100%;
+
 	@include media(tablet) {
-		width: 100%;
+		width: calc(100% - 300px);
 	}
 }
 
 .entry-content {
-	padding-left: $site_padding;
+	padding-left: 0;
 	width: 100%;
 	
 	@include media(tablet) {
-		padding-left: 0;
+		padding-left: $site_padding;
 	}
 
 	&.no-sidebar {
@@ -168,17 +176,17 @@
 .message-404 {
 
 	.mobile {
-		display: none;
 
 		@include media(tablet) {
-			display: initial;
+			display: none;
 		}
 	}
 
 	.desktop {
-
+		display: none;
+		
 		@include media(tablet) {
-			display: none;
+			display: inline;
 		}
 	}
 }

@@ -10,13 +10,9 @@ defined( 'ABSPATH' ) || exit;
 
 	<div class="page-content">
 
-		<div class="wrapper flex-container mobile-no-flex">
+		<div class="wrapper flex-container">
 
-			<?php if ( has_nav_menu( 'leftmenu' ) ): ?>
-
-				<?php get_sidebar(); ?>
-
-			<?php endif; ?>
+			<?php get_sidebar(); ?>
 
 			<div class="flex-item content-container">
 

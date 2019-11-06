@@ -109,6 +109,13 @@ jQuery(document).ready(function($) {
 			$('#tools').css('bottom', mobileNavHeight);
 			$('.secondary-nav').css('bottom', mobileNavHeight);
 
+		} else {
+
+			$('body').css('margin-bottom', '');
+			$('.main-nav').css('bottom', '').css('display', '');
+			$('#tools').css('bottom', '').css('display', '');
+			$('.secondary-nav').css('bottom', '').css('display', '');
+
 		}
 
 	}
@@ -120,10 +127,12 @@ jQuery(document).ready(function($) {
 			var mainHeader = $('.main-header').outerHeight();
 			$('#tools').height( mainHeader );
 
+		} else {
+			$('#tools').css('height','');
 		}
 
 		$('.tools-toggle').click(function() {
-			$(this).toggleClass('active');
+			$('button.tools-toggle').toggleClass('active');
 			$('#tools').stop().slideToggle(400);
 		});
 
@@ -156,20 +165,15 @@ jQuery(document).ready(function($) {
 
 	}
 
-	// function leftMenuDisplay() {
+	function removeDimmer() {
+		if ( $('#mobile-nav').is(':hidden') ) {
+			$('body').removeClass('dimmer-active');
+			$('#mobile-nav button.active').each(function() {
+				$(this).removeClass('active');
+			});
+		}
+	}
 
-	// 	var currentItem = $('#leftmenu .current-menu-item'),
-	// 		currentItemParent = $('#leftmenu .current-menu-parent');
-
-	// 	if ( $(currentItem).hasClass('menu-item-has-children') ) {
-
-	// 		$(currentItem).siblings().hide();
-
-	// 	}
-
-	// 	$(currentItemParent).siblings().hide();
-
-	// }
 
 	$('#mobile-nav button').click(function() {
 
@@ -194,6 +198,12 @@ jQuery(document).ready(function($) {
 			$('body').addClass('dimmer-active');
 
 		}
+	});
+
+	$('.search-toggle').click(function() {
+
+		$('#citadel-search').toggleClass('active');
+
 	});
 
 	$('.main-nav .has-submenu .primary').click(function(e) {
@@ -222,6 +232,7 @@ jQuery(document).ready(function($) {
 	reportIssueUrl();
 	mobileMenu();
 	toolsHeight();
+	removeDimmer();
 	slideToggle('.menu-toggle', '.main-nav', 'desktop');
 	slideToggle('.secondary-toggle', '.secondary-nav', 'desktop');
 	slideToggle('.search-toggle', '#search', 'desktop');
@@ -234,6 +245,7 @@ jQuery(document).ready(function($) {
 
 		mobileMenu();
 		toolsHeight();
+		removeDimmer();
 
 	});
 

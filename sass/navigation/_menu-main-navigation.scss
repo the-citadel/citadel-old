@@ -1,13 +1,17 @@
 .main-nav {
 	background-color: $citadel_blue;
+	display: none;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	z-index: 98;
+	border-top: 1px solid $citadel_blue;
 
 	@include media( 'tablet' ) {
-		display: none;
-		position: fixed;
-		bottom: 0;
-		width: 100%;
-		z-index: 98;
-		border-top: 1px solid $citadel_blue;
+		display: block;
+		position: static;
+		border-top: none;
+
 	}
 
 	ul {
@@ -18,16 +22,23 @@
 	}
 
 	.wrapper {
+		padding-left: 0;
+		padding-right: 0;
+
 		@include media( 'tablet' ) {
-			padding-left: 0;
-			padding-right: 0;
+			padding-left: $site_padding;
+			padding-right: $site_padding;
 		}
 
 		> ul {
+			display: block;
+			max-height: calc(100vh - 80px);
+			overflow-y: auto;
+
 			@include media( 'tablet' ) {
-				display: block;
-				max-height: calc(100vh - 80px);
-				overflow-y: scroll;
+				@include flex;
+				max-height: 100%;
+				overflow-y: visible;
 			}
 		}
 	}
@@ -35,11 +46,12 @@
 	.wrapper > ul > li {
 		text-transform: uppercase;
 		text-align: center;
-		@include flex-grow (20);
+		@include flex-grow (1);
 		@include basic-transition;
+		display: block;
 
 		@include media( 'tablet' ) {
-			display: block;
+			@include flex-item;
 		}
 
 		> a {
@@ -47,14 +59,17 @@
 			padding: $sp_1 $sp_4;
 			display: block;
 			width: 100%;
-			font-size: $font__size-sm;
+			font-size: $font__size-md;
+			font-weight: normal;
 			cursor: pointer;
 			border-bottom: none;
 			font-weight: 600;
 			@include basic-transition;
+
 			@include media( 'tablet' ) {
-				font-size: $font__size-md;
-				font-weight: normal;
+				font-size: $font__size-sm;
+				font-weight: 600;
+				padding: $sp_1 0;
 			}
 		}
 
@@ -98,31 +113,33 @@
 	}
 
 	.submenu {
-		position: absolute;
 		top: 100%;
 		left: -1px;
 		z-index: 90;
 		display: none;
 		background-color: #ffffff;
-		width: calc(100% + 2px);
-		border: 1px solid $citadel_blue;
-		border-top: 0;
 		display: none;
 		text-transform: none;
 		text-align: left;
 		color: $shako;
+		position: static;
+		width: 100%;
+		border: none;
 
 		@include media( 'tablet' ) {
-			position: static;
-			width: 100%;
-			border: none;
+			width: calc(100% + 2px);
+			position: absolute;
+			border: 1px solid $citadel_blue;
+			border-top: 0;
 		}
 
 		.flex-container {
-			padding: $sp_6 $sp_3;
+			display: block;
+			padding: 0;
+
 			@include media( 'tablet' ) {
-				display: block;
-				padding: 0;
+				padding: $sp_6 $sp_3;
+				@include flex;
 			}
 
 		}
@@ -130,9 +147,10 @@
 		.nav-title {
 			font-size: $font__size-md;
 			margin-top: 0;
+			padding-top: 1rem;
 
 			@include media( 'tablet' ) {
-				padding-top: 1rem;
+				padding-top: 0;
 			}
 		}
 
@@ -141,10 +159,13 @@
 			flex: 1 1 0px;
 			padding: 0 $sp_3;
 			font-weight: bold;
+			display: block;
+			padding-bottom: 1rem;
 
 			@include media( 'tablet' ) {
+				padding-bottom: 0;
 				display: block;
-				padding-bottom: 1rem;
+
 			}
 
 			> :last-child {
@@ -157,11 +178,11 @@
 		}
 
 		.nav-link-description {
-			display: block;
+			display: none;
 			font-weight: normal;
 
 			@include media( 'tablet' ) {
-				display: none;
+				display: block;
 			}
 		}
 	}

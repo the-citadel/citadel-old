@@ -54,7 +54,7 @@ defined( 'ABSPATH' ) || exit;
 
 	<div class="bottom-footer">
 
-		<div class="wrapper flex-container">
+		<div class="wrapper flex-container flex-between">
 
 			<div class="copyright flex-item flex-middle">
 
