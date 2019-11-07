@@ -13,10 +13,6 @@ body.dimmer-active {
 	display: none;
 }
 
-.wrapper {
-	@include wrapper;
-}
-
 .full-width {
 	left: 50%;
 	margin-left: -50vw;
@@ -83,85 +79,6 @@ body.dimmer-active {
 	word-wrap: normal !important;
 }
 
-/*
---------------------
-Flex Layout
---------------------
-*/
-
-.flex-container {
-	@include flex-container;
-}
-
-.flex-item {
-	@include flex-item;
-}
-
-@include media(tablet) {
-	.flex-container,
-	.flex-item {
-		&.mobile-no-flex {
-			display: block;
-		}
-	}
-}
-
-.flex-left {
-	@include flex-left;
-}
-
-.flex-center {
-	@include flex-center;
-}
-
-.flex-right {
-	@include flex-right;
-}
-
-.flex-top {
-	@include flex-top;
-}
-
-.flex-middle {
-	@include flex-middle;
-}
-
-.flex-bottom {
-	@include flex-bottom;
-}
-
-.flex-stretch {
-	@include flex-stretch;
-}
-
-.flex-around {
-	@include flex-around;
-}
-
-.flex-between {
-	@include flex-between;
-}
-
-.flex-wrap {
-	@include flex-wrap;
-}
-
-.flex-col {
-	@include flex-col;
-}
-
-.flex-row {
-	@include flex-row;
-}
-
-.flex-col-rev {
-	@include flex-col-rev;
-}
-
-.flex-row-rev {
-	@include flex-row-rev;
-}
-
 .text-left {
 	text-align: left;
 }
@@ -173,37 +90,3 @@ Flex Layout
 .text-right {
 	text-align: right;
 }
-
-.cit-navy { color: $citadel_navy; }
-.cit-navy-80 { color: $citadel_navy_80; }
-.cit-navy-60 { color: $citadel_navy_60; }
-.cit-navy-40 { color: $citadel_navy_40; }
-.cit-navy-20 { color: $citadel_navy_20; }
-.cit-navy-bg { background-color: $citadel_navy; }
-.cit-navy-bg-80 { background-color: $citadel_navy_80; }
-.cit-navy-bg-60 { background-color: $citadel_navy_60; }
-.cit-navy-bg-40 { background-color: $citadel_navy_40; }
-.cit-navy-bg-20 { background-color: $citadel_navy_20; }
-
-.cit-blue { color: $citadel_blue; }
-.cit-blue-80 { color: $citadel_blue_80; }
-.cit-blue-60 { color: $citadel_blue_60; }
-.cit-blue-40 { color: $citadel_blue_40; }
-.cit-blue-20 { color: $citadel_blue_20; }
-.cit-blue-bg { background-color: $citadel_blue; }
-.cit-blue-bg-80 { background-color: $citadel_blue_80; }
-.cit-blue-bg-60 { background-color: $citadel_blue_60; }
-.cit-blue-bg-40 { background-color: $citadel_blue_40; }
-.cit-blue-bg-20 { background-color: $citadel_blue_20; }
-
-.cit-barracks { color: $pt_barracks; }
-.cit-barracks-bg { background-color: $pt_barracks; }
-
-.cit-shako { color: $shako; }
-.cit-shako-bg { background-color: $shako; }
-
-.cit-gold { color: $band_gold; }
-.cit-gold-bg { background-color: $band_gold; }
-
-.cit-sash { color: $officer_sash; }
-.cit-sash-bg { background-color: $officer_sash; }

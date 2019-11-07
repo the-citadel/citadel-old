@@ -28,7 +28,7 @@ global $blog_id;
 
 	</nav>
 
-	<header role="banner" id="header">
+	<header role="banner" id="masthead">
 
 		<!-- start .top-header -->
 		<div class="top-header">

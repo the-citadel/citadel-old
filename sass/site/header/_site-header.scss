@@ -1,25 +1,5 @@
 
-header[role="banner"] {
-	background-color: $citadel_navy;
-
-	.main-header a,
-	.top-header a {
-		color: #ffffff;
-	}
-}
-
-.right-header {
- 	width: 100%;
-
- 	@include media( 'tablet' ) {
-		width: auto;
-	}
-}
-
 .top-header {
-	background-color: $citadel_dark_navy;
-	position: relative;
-	padding: 0;
 
 	.institution-title {
 		display: none;
@@ -210,7 +190,6 @@ header[role="banner"] {
 		a {
 			background-color: $citadel_blue;
 			border-bottom: none;
-			font-family: $font__body;
 			padding: $sp_1 $sp_4;
 			font-size: $font__size-sm;
 			text-transform: uppercase;

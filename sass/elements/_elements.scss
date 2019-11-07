@@ -1,44 +1,5 @@
-html {
-	box-sizing: border-box;
-}
-
-::-moz-selection {
-	background-color: $color__background_selection;
-	color: $color__background-body;
-}
-
-::selection {
-	background-color: $color__background_selection;
-	color: $color__background-body;
-}
-
-*,
-*:before,
-*:after {
-	box-sizing: inherit;
-}
-
-body {
-	background-color: $color__background-body;
-	overflow-x: hidden;
-}
-
-a {
-	color: $color__link;
-	text-decoration: none;
- 	border-bottom: 1px solid $color__link-hover;
- 	@include basic-transition;
-
- 	img {
-		display: block;
-	}
-}
-
-a:hover,
-a:active,
-a:focus {
-	color: $color__link-hover;
-	text-decoration: none;
+a img {
+	display: block;
 }
 
 h1,

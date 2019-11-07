@@ -32,6 +32,7 @@
 
 		h1 {
 			z-index: 2;
+			position: relative;
 			width: 100%;
 			color: #ffffff;
 
@@ -123,12 +124,6 @@
 }
 
 .page-content {
-	padding-top: 0;
-	padding-bottom: $sp_9;
-
-	@include media(tablet) {
-		padding-top: $sp_9;
-	}
 
 	> .wrapper {
 		display: block;
