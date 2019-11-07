@@ -1,0 +1,155 @@
+/*
+ # Citadel CSS Variables #
+*/
+:root {
+	@each $name, $color in $citadel_colors {
+		--#{$name}: #{$color};
+
+		// @each $shade in $color_shades {
+		// 	--#{$name}-#{$shade}: rgba(#{$color}, #{$shade / 100});
+		//
+		// }
+	}
+}
+
+/*
+ # Citadel Colors #
+*/
+@each $name, $color in $citadel_colors {
+	.#{$name} {
+		color: $color;
+
+		&-bg {
+			background-color: $color;
+		}
+
+		@each $shade in $color_shades {
+			&-#{$shade} {
+				background-color: rgba($color, $shade / 100);
+			}
+		}
+	}
+}
+
+/*
+ # Citadel Fonts #
+*/
+.font-body {
+	font-family: $font__body;
+}
+
+.font-heading {
+	font-family: $font__heading;
+}
+
+.clearfix {
+	@include clearfix;
+}
+
+/*
+ # Flex Elements #
+*/
+.flex-container {
+	@include responsive {
+		@include flex-container;
+	}
+}
+
+.flex-item {
+	@include responsive {
+		@include flex-item;
+	}
+}
+
+
+.flex-left {
+	@include responsive {
+		@include flex-left;
+	}
+}
+
+.flex-center {
+	@include responsive {
+		@include flex-center;
+	}
+}
+
+.flex-right {
+	@include responsive {
+		@include flex-right;
+	}
+}
+
+.flex-top {
+	@include responsive {
+		@include flex-top;
+	}
+}
+
+.flex-middle {
+	@include responsive {
+		@include flex-middle;
+	}
+}
+
+.flex-bottom {
+	@include responsive {
+		@include flex-bottom;
+	}
+}
+
+.flex-stretch {
+	@include responsive {
+		@include flex-stretch;
+	}
+}
+
+.flex-around {
+	@include responsive {
+		@include flex-around;
+	}
+}
+
+.flex-between {
+	@include responsive {
+		@include flex-between;
+	}
+}
+
+.flex-wrap {
+	@include responsive {
+		@include flex-wrap;
+	}
+}
+
+.flex-col {
+	@include responsive {
+		@include flex-col;
+	}
+}
+
+.flex-row {
+	@include responsive {
+		@include flex-row;
+	}
+}
+
+.flex-col-rev {
+	@include responsive {
+		@include flex-col-rev;
+	}
+}
+
+.flex-row-rev {
+	@include responsive {
+		@include flex-row-rev;
+	}
+}
+
+/*
+ # Elements #
+*/
+
+.dropdown {
+	@include dropdown;
+}

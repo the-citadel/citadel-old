@@ -11,7 +11,7 @@ if ( ! function_exists( 'citadel_scripts' ) ) {
 		$theme_version = $the_theme->get( 'Version' );
 
 		$css_version = $theme_version . '.' . filemtime( get_template_directory() . '/style.css' );
-		wp_enqueue_style( 'citadel-framework', 'https://citadel-framework.netlify.com/styles/citadel-framework.css', array(), $css_version );
+		wp_enqueue_style( 'citadel-framework', get_template_directory_uri() . '/citadel-framework.css', array(), $css_version );
 		wp_enqueue_style( 'citadel-styles', get_template_directory_uri() . '/style.css', array(), $css_version );
 		wp_enqueue_style( 'citadel-print-styles', get_template_directory_uri() . '/print.css', array(), $css_version );
 		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/fontawesome/css/all.min.css', array(), $theme_version );

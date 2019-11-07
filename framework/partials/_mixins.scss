@@ -1,0 +1,215 @@
+@mixin responsive {
+	@content;
+	@each $device, $width in $media_sizes {
+		@media screen and (min-width: #{$width}) {
+			&-#{$device} {
+				@content;
+			}
+		}
+	}
+}
+
+@mixin basic-transition {
+	transition: all ease .4s;
+}
+
+@mixin element-transition($elements...) {
+	transition-property: $elements;
+	transition-timing-function: ease;
+	transition-duration: .4s;
+}
+
+@mixin clearfix {
+	&::after {
+		content: "";
+		clear: both;
+		display: table;
+	}
+}
+
+@mixin dropdown {
+	&:after {
+		content: "\f078";
+		margin-left: $size_1;
+		font-family: "Font Awesome 5 Free";
+		font-size: $size_4;
+		font-weight: 900;
+	}
+}
+
+@mixin flex {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+@mixin flex-container {
+	display: table;
+	width: 100%;
+	@include flex;
+
+	@media screen\9 {
+		@include clearfix;
+	}
+
+	@media screen\0 {
+		@include clearfix;
+	}
+}
+
+@mixin flex-item {
+	display: table-cell;
+	@include flex;
+}
+
+@mixin flex-grow ($size) {
+	@supports not (display: flex) {
+		width: $size'%';
+	}
+	flex-grow: $size;
+}
+
+@mixin flex-left {
+	-webkit-box-pack: start;
+	-webkit-justify-content: flex-start;
+		-ms-flex-pack: start;
+			justify-content: flex-start;
+
+	@media screen\9 {
+		float: left;
+	}
+
+	@media screen\0 {
+		float: left;
+	}
+}
+
+@mixin flex-center {
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+		-ms-flex-pack: center;
+			justify-content: center;
+}
+
+@mixin flex-right {
+	-webkit-box-pack: end;
+	-webkit-justify-content: flex-end;
+		-ms-flex-pack: end;
+			justify-content: flex-end;
+
+	@media screen\9 {
+		float: right;
+	}
+
+	@media screen\0 {
+		float: right;
+	}
+}
+
+@mixin flex-top {
+	-webkit-box-align: start;
+	-webkit-align-items: flex-start;
+		-ms-flex-align: start;
+			align-items: flex-start;
+}
+
+@mixin flex-middle {
+	vertical-align: middle;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+		-ms-flex-align: center;
+			align-items: center;
+}
+
+@mixin flex-bottom {
+	-webkit-box-align: end;
+	-webkit-align-items: flex-end;
+		-ms-flex-align: end;
+			align-items: flex-end;
+}
+
+@mixin flex-stretch {
+	-webkit-box-align: stretch;
+	-webkit-align-items: stretch;
+		-ms-flex-align: stretch;
+			align-items: stretch;
+}
+
+@mixin flex-around {
+	-webkit-justify-content: space-around;
+		-ms-flex-pack: distribute;
+			justify-content: space-around;
+}
+
+@mixin flex-between {
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+		-ms-flex-pack: justify;
+			justify-content: space-between;
+}
+
+@mixin flex-wrap {
+	-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+			flex-wrap: wrap;
+}
+
+@mixin flex-col {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+			flex-direction: column;
+}
+
+@mixin flex-row {
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+		-ms-flex-direction: row;
+			flex-direction: row;
+}
+
+@mixin flex-col-rev {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: reverse;
+	-webkit-flex-direction: column-reverse;
+		-ms-flex-direction: column-reverse;
+			flex-direction: column-reverse;
+}
+
+@mixin flex-row-rev {
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: reverse;
+	-webkit-flex-direction: row-reverse;
+		-ms-flex-direction: row-reverse;
+			flex-direction: row-reverse;
+}
+
+// # Citadel Responsive #
+@mixin media( $res ) {
+	@if mobile == $res {
+		@media only screen and (min-width: $width__mobile) {
+			@content;
+		}
+	}
+
+	@if tablet == $res {
+		@media only screen and (min-width: $width__tablet) {
+			@content;
+		}
+	}
+
+	@if desktop == $res {
+		@media only screen and (min-width: $width__desktop) {
+			@content;
+		}
+	}
+
+	@if wide == $res {
+		@media only screen and (min-width: $width__wide) {
+			@content;
+		}
+	}
+}
