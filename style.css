@@ -2129,6 +2129,7 @@ footer a:hover, footer a:focus, footer a:active {
   margin-left: -5.62vw;
   margin-right: -5.62vw;
   width: 100vw;
+  display: block;
 }
 @media only screen and (min-width: 56.12em) {
   .sidebar {
@@ -2287,12 +2288,12 @@ footer a:hover, footer a:focus, footer a:active {
 }
 
 #sidebar-buttons {
-  display: block;
+  display: none;
   margin-top: 2.37rem;
 }
 @media only screen and (min-width: 56.12em) {
   #sidebar-buttons {
-    display: none;
+    display: block;
   }
 }
 #sidebar-buttons .widget:not(.widget_citadel_cta_widget) {
@@ -2304,27 +2305,33 @@ footer a:hover, footer a:focus, footer a:active {
   border: none;
   background-color: rgba(206, 199, 191, 0.6);
   color: #282E36;
-  font-size: 1rem;
+  font-size: 0.84rem;
   margin-bottom: 1rem;
 }
 #sidebar-buttons a:hover, #sidebar-buttons a:focus {
   background-color: rgba(206, 199, 191, 0.8);
 }
+#sidebar-buttons a:hover .cta-icon, #sidebar-buttons a:focus .cta-icon {
+  background-color: #1F3A60;
+}
 #sidebar-buttons a .cta-icon {
   display: table-cell;
   vertical-align: middle;
   width: 50px;
-  padding: 0.56rem 0.75rem;
-  font-size: 1.33rem;
+  padding: 0.42rem 0.56rem;
+  font-size: 1.13rem;
   background-color: #3975B7;
   color: #ffffff;
+  -webkit-transition: background-color ease .4s;
+  transition: background-color ease .4s;
 }
 #sidebar-buttons a .cta-title {
   display: table-cell;
   line-height: 1.4;
   vertical-align: middle;
-  padding: 0.56rem 0.75rem;
+  padding: 0.42rem 0.56rem;
   font-weight: bold;
+  text-align: left;
 }
 
 /* Blocks */

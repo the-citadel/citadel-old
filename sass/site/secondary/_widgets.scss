@@ -7,6 +7,7 @@
     margin-left: -5.62vw;
     margin-right: -5.62vw;
     width: 100vw;
+    display: block;
 
 	@include media(tablet) {
 		width: $sidebar_width;
@@ -176,11 +177,11 @@
 }
 
 #sidebar-buttons {
-	display: block;
+	display: none;
 	margin-top: $sp_7;
 
 	@include media(tablet) {
-		display: none;
+		display: block;
 	}
 
 	.widget:not(.widget_citadel_cta_widget) {
@@ -193,30 +194,38 @@
 		border: none;
 		background-color: $pt_barracks_60;
 		color: $shako;
-		font-size: $size_7;
+		font-size: $size_6;
 		margin-bottom: $size_7;
 
 		&:hover,
 		&:focus {
 			background-color: $pt_barracks_80;
+
+			.cta-icon {
+				background-color: $citadel_navy;
+			}
+
 		}
 
 		.cta-icon {
 			display: table-cell;
 			vertical-align: middle;
 			width: 50px;	
-			padding: $sp_2 $sp_3;
-			font-size: $size_9;
+			padding: $sp_1 $sp_2;
+			font-size: $size_8;
 			background-color: $citadel_blue;
 			color: #ffffff;
+			transition: background-color ease .4s;
+
 		}
 
 		.cta-title {
 			display: table-cell;
 			line-height: 1.4;
 			vertical-align: middle;	
-			padding: $sp_2 $sp_3;
+			padding: $sp_1 $sp_2;
 			font-weight: bold;
+			text-align: left;
 		}
 	}
 }
