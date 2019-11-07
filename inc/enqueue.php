@@ -12,20 +12,8 @@ if ( ! function_exists( 'citadel_scripts' ) ) {
 
 		$css_version = $theme_version . '.' . filemtime( get_template_directory() . '/style.css' );
 		wp_enqueue_style( 'citadel-framework', get_template_directory_uri() . '/citadel-framework.css', array(), $css_version );
-		wp_enqueue_style( 'citadel-styles', get_template_directory_uri() . '/style.css', array(), $css_version );
+		wp_enqueue_style( 'citadel-styles', get_template_directory_uri() . '/style.css', array('citadel-framework'), $css_version );
 		wp_enqueue_style( 'citadel-print-styles', get_template_directory_uri() . '/print.css', array(), $css_version );
-		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/fontawesome/css/all.min.css', array(), $theme_version );
-		wp_enqueue_style( 'citadel-fonts', 'https://use.typekit.net/onz2qme.css', array(), $theme_version );
-
-		//IE styles
-		wp_enqueue_style( 'citadel-ie10', get_template_directory_uri() . '/sass/ie/ie10/ie10.css', array(), $theme_version );
-		wp_style_add_data( 'citadel-ie10', 'conditional', 'gt IE 9' );
-		wp_enqueue_style( 'citadel-ie9', get_template_directory_uri() . '/sass/ie/ie9/ie9.css', array(), $theme_version );
-		wp_style_add_data( 'citadel-ie9', 'conditional', 'lte IE 9' );
-		wp_enqueue_style( 'citadel-ie8', get_template_directory_uri() . '/sass/ie/ie8/ie8.css', array(), $theme_version );
-		wp_style_add_data( 'citadel-ie8', 'conditional', 'lte IE 8' );
-		wp_enqueue_style( 'citadel-ie7', get_template_directory_uri() . '/sass/ie/ie7/ie7.css', array(), $theme_version );
-		wp_style_add_data( 'citadel-ie7', 'conditional', 'lte IE 7' );
 
 		wp_enqueue_script( 'jquery' );
 
@@ -34,4 +22,3 @@ if ( ! function_exists( 'citadel_scripts' ) ) {
 	}
 	add_action( 'wp_enqueue_scripts', 'citadel_scripts' );
 } // endif function_exists( 'citadel_scripts' )
-

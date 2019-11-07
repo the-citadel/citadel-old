@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 defined( 'ABSPATH' ) || exit;
 
@@ -12,7 +12,7 @@ defined( 'ABSPATH' ) || exit;
 while ( have_posts() ) :
 	the_post();
 
-	get_template_part( 'template-parts/content/content' );
+	get_template_part( 'template-parts/content/content', 'page' );
 
 endwhile; // End of the loop.
 ?>
